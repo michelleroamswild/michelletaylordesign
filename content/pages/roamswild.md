@@ -27,9 +27,9 @@ overviewTools:
 
 # Choosing a Problem
 choosingTitle: "Finding the right domain to explore"
-choosingDescription: "I intentionally chose something that was personal to me but still a real problem, and something I would be excited about. I am constantly on the road and traveling outdoors - and I mainly camp out on public lands for overlanding or offroading trips. So I combined a few instances that were part of a complex domain:"
+choosingDescription: "I intentionally chose something that was personal to me but still a real problem, and something I would be excited about. I am constantly on the road and traveling outdoors - and I mainly camp out on public lands for overlanding or offroading trips. So I combined a few instances that were part of a complex domain. From experience, this space has messy and imperfect data and requires judgment, not just retrieval, which ensured I was learning hard things rather than building a simplified or artificial example."
 choosingDomains:
-  - icon: "Mountains"
+  - icon: "Jeep"
     title: "Outdoor Travel"
     description: "Road-based exploration across public lands, national forests, and BLM areas."
   - icon: "Tent"
@@ -76,8 +76,14 @@ takeaway2Title: "Design remains essential"
 takeaway2Description: "AI can generate layouts and suggest patterns, but it cannot replace the intentionality of design decisions. Style guides, consistency, hierarchy, and refined micro-interactions still require a designer's eye. The tools accelerate execution – they do not replace craft."
 
 # From Ideas to Systems
-systemsTitle: "Building the core intelligence"
-systemsDescription: "The heart of RoamsWild is a scoring system that evaluates locations across multiple dimensions -- turning raw data into actionable recommendations for travelers."
+systemsTitle: "From Ideas to Systems"
+systemsDescription: "I started with simple heuristics to predict potential dispersed campsites by combining public land data with road networks, identifying dead ends and intersections where campsites often appear."
+systemsDescription2: "From there, I designed and built systems that:"
+systemsBullets:
+  - "Score terrain lighting quality using sun azimuth and weather data"
+  - "Evaluate scenic potential and access confidence"
+  - "Factor in timing relevance for photography"
+systemsClosing: "These systems powered a photo spot–focused exploration experience, with reasoning intentionally exposed in user-friendly language."
 scoringDimensions:
   - icon: "CloudSun"
     title: "Terrain"

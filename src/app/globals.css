@@ -131,7 +131,7 @@ body {
   padding: 0.625rem 1.25rem;
   background: var(--color-charcoal);
   color: white;
-  border-radius: 0.5rem;
+  border-radius: 9999px;
   font-size: 0.875rem;
   font-weight: 500;
   transition: all 0.2s ease;

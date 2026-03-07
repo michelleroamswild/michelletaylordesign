@@ -29,12 +29,15 @@ import {
   Brain,
   Lightning,
   Scales,
+  ChartLine,
+  WifiSlash,
+  Jeep,
 } from "@phosphor-icons/react/dist/ssr";
 import { getPageContent } from "@/lib/content";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const iconMap: Record<string, any> = {
-  Mountains, Tent, Camera, Compass, Path, Star, CloudSun, MapTrifold, TreeEvergreen,
+  Mountains, Tent, Camera, Compass, Path, Star, CloudSun, MapTrifold, TreeEvergreen, Jeep,
 };
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -63,7 +66,7 @@ export default function RoamsWild() {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-rw-forest/60" />
+          <div className="absolute inset-0 bg-black/40" />
         </div>
         <div className="container-site relative z-10 text-center">
           <Image
@@ -87,13 +90,22 @@ export default function RoamsWild() {
         <div className="max-w-6xl mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-[2fr_3fr] gap-12 lg:gap-16 items-start">
             <div className="lg:pt-0 lg:pb-24">
-              <h2 className="heading-lg mb-6">{content.introTitle}</h2>
+              <h2 className="heading-xl mb-10">{content.introTitle}</h2>
               <p className="body-md text-muted mb-6">
                 {content.introDescription1}
               </p>
-              <p className="body-md text-muted">
+              <p className="body-md text-muted mb-6">
                 {content.introDescription2}
               </p>
+              <a
+                href="https://www.roamswild.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary inline-flex items-center gap-2"
+              >
+                Visit RoamsWild
+                <ArrowSquareOut size={16} weight="bold" />
+              </a>
             </div>
             <div className="mb-[-450px] lg:mb-[-600px]">
               <Image
@@ -101,7 +113,7 @@ export default function RoamsWild() {
                 alt="RoamsWild feature cards showing Smart Route Planning, Campsite Database, Trail Discovery, Trip Collaboration, Day-by-Day Itinerary, and Photography Conditions"
                 width={1200}
                 height={1300}
-                className="w-[140%] max-w-none h-auto"
+                className="w-[120%] max-w-none h-auto"
               />
             </div>
           </div>
@@ -115,7 +127,7 @@ export default function RoamsWild() {
             Project Overview
           </p>
           <div className="mb-16 max-w-3xl">
-            <h3 className="heading-md mb-4">Objective</h3>
+            <h3 className="heading-xl mb-10">Objective</h3>
             <p className="body-md text-muted mb-6">
               {content.overviewObjective1}
             </p>
@@ -171,43 +183,46 @@ export default function RoamsWild() {
       </section>
 
       {/* Choosing a Problem */}
-      <section className="section-spacing bg-rw-cream">
-        <div className="max-w-5xl mx-auto px-6 md:px-12">
+      <section className="section-spacing bg-white">
+        <div className="container-site">
           <div className="case-study-section">
-            <p className="text-sm font-semibold uppercase tracking-widest text-muted mb-3">
-              Choosing a Problem
-            </p>
-            <h2 className="heading-lg mb-4 max-w-2xl">
-              {content.choosingTitle}
-            </h2>
-            <p className="body-lg mb-10 max-w-2xl">
-              {content.choosingDescription}
-            </p>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
-              {(content.choosingDomains as Array<{icon: string; title: string; description: string}>).map((domain, i) => {
-                const Icon = iconMap[domain.icon];
-                const colors = [
-                  { bg: "rgba(60, 138, 121, 0.12)", text: "#3c8a79" },
-                  { bg: "rgba(205, 106, 61, 0.12)", text: "#cd6a3d" },
-                  { bg: "rgba(234, 155, 12, 0.12)", text: "#ea9b0c" },
-                ];
-                const color = colors[i % colors.length];
-                return (
-                  <div key={domain.title} className="bg-white rounded-xl p-5">
-                    <div className="p-2 rounded-lg inline-flex mb-3" style={{ backgroundColor: color.bg }}>
-                      {Icon && <Icon size={22} weight="duotone" style={{ color: color.text }} />}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-widest text-muted mb-3">
+                  Choosing a Problem
+                </p>
+                <h2 className="heading-xl mb-10">
+                  {content.choosingTitle}
+                </h2>
+                <p className="body-lg">
+                  {content.choosingDescription}
+                </p>
+              </div>
+              <div className="space-y-4">
+                {(content.choosingDomains as Array<{icon: string; title: string; description: string}>).map((domain, i) => {
+                  const Icon = iconMap[domain.icon];
+                  const colors = [
+                    { bg: "rgba(60, 138, 121, 0.12)", text: "#3c8a79" },
+                    { bg: "rgba(205, 106, 61, 0.12)", text: "#cd6a3d" },
+                    { bg: "rgba(234, 155, 12, 0.12)", text: "#ea9b0c" },
+                  ];
+                  const color = colors[i % colors.length];
+                  return (
+                    <div key={domain.title} className="rounded-xl p-5" style={{ backgroundColor: color.bg }}>
+                      <div className="p-2 rounded-lg inline-flex mb-3 bg-white/60">
+                        {Icon && <Icon size={22} weight="duotone" style={{ color: color.text }} />}
+                      </div>
+                      <h3 className="text-base font-semibold mb-1">{domain.title}</h3>
+                      <p className="text-sm text-muted">{domain.description}</p>
                     </div>
-                    <h3 className="text-base font-semibold mb-1">{domain.title}</h3>
-                    <p className="text-sm text-muted">{domain.description}</p>
-                  </div>
-                );
-              })}
+                  );
+                })}
+              </div>
             </div>
 
           </div>
         </div>
-        <div className="mt-12">
+        <div className="mt-20 px-6 md:px-12">
           <Image
             src="/images/roamswild/Competitorapps.png"
             alt="Competitive analysis of existing camping and outdoor apps"
@@ -219,15 +234,15 @@ export default function RoamsWild() {
       </section>
 
       {/* Problem Statement */}
-      <section className="py-24 md:py-32 bg-rw-forest-dark">
+      <section className="py-28 md:py-36" style={{ backgroundColor: "#e9e5d4" }}>
         <div className="container-site">
-          <div className="max-w-4xl mx-auto text-center px-8 md:px-16">
-            <p className="text-sm font-semibold uppercase tracking-widest text-rw-hike mb-6">
+          <div className="max-w-5xl mx-auto text-center px-8 md:px-16">
+            <p className="text-sm font-semibold uppercase tracking-widest mb-8" style={{ color: "#6b8a1d" }}>
               Problem Statement
             </p>
-            <p className="heading-lg text-white">
+            <p className="heading-hero" style={{ color: "#3f3e2c" }}>
               &ldquo;{content.problemStatement.split(content.problemHighlight)[0]}
-              <span className="text-rw-amber">{content.problemHighlight}</span>
+              <span style={{ color: "#3c8a79" }}>{content.problemHighlight}</span>
               {content.problemStatement.split(content.problemHighlight)[1]}&rdquo;
             </p>
           </div>
@@ -240,7 +255,7 @@ export default function RoamsWild() {
           <div className="case-study-section">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-16">
               <div>
-                <h2 className="heading-lg mb-6">The Beginning</h2>
+                <h2 className="heading-xl mb-10">The Beginning</h2>
                 <p className="body-lg text-muted mb-6">
                   {content.beginningDescription1}
                 </p>
@@ -252,15 +267,15 @@ export default function RoamsWild() {
                   {(content.beginningCards as Array<{icon: string; label: string; title: string; description: string}>).map((card, i) => {
                     const Icon = iconMap[card.icon];
                     const colors = [
-                      { bg: "rgba(52, 181, 165, 0.12)", text: "#34b5a5", label: "#34b5a5" },
-                      { bg: "rgba(232, 90, 154, 0.12)", text: "#e85a9a", label: "#e85a9a" },
-                      { bg: "rgba(106, 138, 29, 0.12)", text: "#6b8a1d", label: "#6b8a1d" },
+                      { bg: "#f9f8f6", accent: "rgba(60, 138, 121, 0.15)", text: "#3c8a79", label: "#3c8a79" },
+                      { bg: "#f9f8f6", accent: "rgba(234, 155, 12, 0.15)", text: "#ea9b0c", label: "#ea9b0c" },
+                      { bg: "#f9f8f6", accent: "rgba(107, 92, 230, 0.15)", text: "#6b5ce6", label: "#6b5ce6" },
                     ];
                     const color = colors[i % colors.length];
                     return (
-                      <div key={card.label} className="bg-rw-cream rounded-xl p-5">
+                      <div key={card.label} className="rounded-xl p-5" style={{ backgroundColor: color.bg }}>
                         <div className="flex items-start gap-3">
-                          <div className="p-2 rounded-lg shrink-0" style={{ backgroundColor: color.bg }}>
+                          <div className="p-2 rounded-lg shrink-0" style={{ backgroundColor: color.accent }}>
                             {Icon && <Icon size={22} weight="duotone" style={{ color: color.text }} />}
                           </div>
                           <div>
@@ -293,7 +308,7 @@ export default function RoamsWild() {
 
       {/* Takeaway 1 */}
       <section className="py-20 md:py-28" style={{ backgroundColor: "hsl(74, 68%, 56%, 0.12)" }}>
-        <div className="max-w-2xl mx-auto px-6 md:px-12 text-center">
+        <div className="max-w-3xl mx-auto px-6 md:px-12 text-center">
           <div className="inline-flex p-3 rounded-lg mb-5" style={{ backgroundColor: "hsl(74, 68%, 35%, 0.15)" }}>
             <Lightbulb
               size={28}
@@ -356,7 +371,7 @@ export default function RoamsWild() {
               <p className="text-sm font-semibold uppercase tracking-widest text-muted mb-3">
                 The Foundation
               </p>
-              <h2 className="heading-lg mb-4">
+              <h2 className="heading-xl mb-10">
                 {content.foundationTitle}
               </h2>
               <p className="body-lg">
@@ -391,7 +406,7 @@ export default function RoamsWild() {
 
       {/* Takeaway 2 */}
       <section className="py-20 md:py-28" style={{ backgroundColor: "hsl(74, 68%, 56%, 0.12)" }}>
-        <div className="max-w-2xl mx-auto px-6 md:px-12 text-center">
+        <div className="max-w-3xl mx-auto px-6 md:px-12 text-center">
           <div className="inline-flex p-3 rounded-lg mb-5" style={{ backgroundColor: "hsl(74, 68%, 35%, 0.15)" }}>
             <Lightbulb
               size={28}
@@ -425,39 +440,32 @@ export default function RoamsWild() {
                 />
               </div>
               <div>
-                <p className="text-sm font-semibold uppercase tracking-widest text-muted mb-3">
-                  From Ideas to Systems
-                </p>
-                <h2 className="heading-lg mb-4">
+                <h2 className="heading-xl mb-10">
                   {content.systemsTitle}
                 </h2>
-                <p className="body-lg">
+                <p className="body-lg text-muted mb-4">
                   {content.systemsDescription}
+                </p>
+                <p className="body-lg text-muted mb-3">
+                  {content.systemsDescription2}
+                </p>
+                <ul className="space-y-2 mb-4">
+                  {(content.systemsBullets as string[]).map((item, i) => (
+                    <li key={i} className="flex items-start gap-3">
+                      <div className="p-1 rounded-full mt-1 shrink-0" style={{ backgroundColor: "rgba(106, 138, 29, 0.2)" }}>
+                        <CheckCircle size={16} weight="fill" style={{ color: "#6b8a1d" }} />
+                      </div>
+                      <p className="body-md text-muted">{item}</p>
+                    </li>
+                  ))}
+                </ul>
+                <p className="body-lg text-muted">
+                  {content.systemsClosing}
                 </p>
               </div>
             </div>
 
           </div>
-        </div>
-      </section>
-
-      {/* Takeaway 3 */}
-      <section className="py-20 md:py-28" style={{ backgroundColor: "hsl(74, 68%, 56%, 0.12)" }}>
-        <div className="max-w-2xl mx-auto px-6 md:px-12 text-center">
-          <div className="inline-flex p-3 rounded-lg mb-5" style={{ backgroundColor: "hsl(74, 68%, 35%, 0.15)" }}>
-            <Lightbulb
-              size={28}
-              weight="duotone"
-              style={{ color: "hsl(74, 68%, 35%)" }}
-            />
-          </div>
-          <p className="text-xs font-semibold uppercase tracking-widest mb-2" style={{ color: "hsl(74, 68%, 35%)" }}>
-            Takeaway #3
-          </p>
-          <h3 className="heading-md mb-3">{content.takeaway3Title}</h3>
-          <p className="body-md text-muted">
-            {content.takeaway3Description}
-          </p>
         </div>
       </section>
 
@@ -477,12 +485,12 @@ export default function RoamsWild() {
       </section>
 
       {/* Designing the Intelligence Layer */}
-      <section className="section-spacing bg-rw-cream">
+      <section className="section-spacing" style={{ backgroundColor: "hsla(60, 16.67%, 92.94%, 1)" }}>
         <div className="container-site">
           <div className="case-study-section">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
               <div>
-                <h2 className="heading-lg mb-6">
+                <h2 className="heading-xl mb-10">
                   {content.intelligenceTitle}
                 </h2>
                 <div className="space-y-4">
@@ -542,44 +550,64 @@ export default function RoamsWild() {
         </div>
       </section>
 
+      {/* Takeaway 3 */}
+      <section className="py-20 md:py-28" style={{ backgroundColor: "hsl(74, 68%, 56%, 0.12)" }}>
+        <div className="max-w-3xl mx-auto px-6 md:px-12 text-center">
+          <div className="inline-flex p-3 rounded-lg mb-5" style={{ backgroundColor: "hsl(74, 68%, 35%, 0.15)" }}>
+            <Lightbulb
+              size={28}
+              weight="duotone"
+              style={{ color: "hsl(74, 68%, 35%)" }}
+            />
+          </div>
+          <p className="text-xs font-semibold uppercase tracking-widest mb-2" style={{ color: "hsl(74, 68%, 35%)" }}>
+            Takeaway #3
+          </p>
+          <h3 className="heading-md mb-3">{content.takeaway3Title}</h3>
+          <p className="body-md text-muted">
+            {content.takeaway3Description}
+          </p>
+        </div>
+      </section>
+
       {/* Key Product Experiences */}
-      <section className="py-24 md:py-32 bg-rw-cream">
+      <section className="py-24 md:py-32" style={{ backgroundColor: "hsl(36, 23%, 97%)" }}>
         <div className="container-site">
           <div className="max-w-2xl mx-auto text-center mb-16">
-            <h2 className="heading-lg mb-4">Key Product Experiences</h2>
+            <h2 className="heading-xl mb-10">Key Product Experiences</h2>
             <p className="body-lg text-muted">
               The biggest pain point I wanted to solve was decision overload. When traveling, the problem isn&apos;t a lack of options—it&apos;s evaluating which ones are actually worth it.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
             {[
               {
-                image: "/images/roamswild/photoweather.png",
+                image: "/images/roamswild/photoweather-ns.png",
                 alt: "Photo Weather Conditions feature",
                 title: "Photo Weather Conditions",
                 description: "Standard weather apps show data; photographers need timing insight. This service evaluates cloud cover, cloud level, and wind during sunrise and sunset windows to determine whether conditions are promising. The result is a simplified signal with brief reasoning, helping users decide if the sky is likely to be clear, dramatic, or somewhere in between.",
               },
               {
-                image: "/images/roamswild/besthikestoday.png",
+                image: "/images/roamswild/besthikestoday-ns.png",
                 alt: "Best Hikes Today feature",
                 title: "Best Hikes Today",
                 description: "Finds nearby hiking trails via Google Places and ranks them for right now using real-time weather from NOAA, sun position, crowd levels, and trail effort to surface the best hikes for today\u2019s conditions.",
               },
               {
-                image: "/images/roamswild/surprisemesmall.png",
+                image: "/images/roamswild/surprisemesmall-ns.png",
                 alt: "Surprise Me feature",
                 title: "Surprise Me",
                 description: "Picks a random outdoor region for you based on your location, scoring candidates by public land access, trail density, campsites, and biome diversity, then enriches the result with a scenic drive anchor from Overpass API.",
               },
               {
-                image: "/images/roamswild/photoscout.png",
+                image: "/images/roamswild/photoscout-ns.png",
                 alt: "Photo Scout feature",
                 title: "Photo Scout",
                 description: "Analyzes terrain elevation data around a location to find optimal sunrise/sunset photography spots, identifying dramatic terrain features, calculating sun-terrain lighting geometry, verifying shadow-free sightlines to determine shooting locations.",
               },
             ].map((card) => (
-              <div key={card.title} className="rounded-xl overflow-hidden flex flex-col" style={{ backgroundColor: "#1e2a14" }}>
+              <div key={card.title} className="rounded-xl overflow-hidden flex flex-col bg-white" style={{ boxShadow: "0 8px 40px -8px rgba(0, 0, 0, 0.25)" }}>
                 <Image
                   src={card.image}
                   alt={card.alt}
@@ -588,8 +616,8 @@ export default function RoamsWild() {
                   className="w-full h-auto"
                 />
                 <div className="p-6 flex-1">
-                  <h3 className="font-semibold text-white mb-2">{card.title}</h3>
-                  <p className="text-sm text-white/60 leading-relaxed">{card.description}</p>
+                  <h3 className="text-lg font-semibold text-charcoal mb-2">{card.title}</h3>
+                  <p className="text-sm text-muted leading-relaxed">{card.description}</p>
                 </div>
               </div>
             ))}
@@ -599,7 +627,7 @@ export default function RoamsWild() {
 
       {/* Takeaway 4 */}
       <section className="py-20 md:py-28" style={{ backgroundColor: "hsl(74, 68%, 56%, 0.12)" }}>
-        <div className="max-w-2xl mx-auto px-6 md:px-12 text-center">
+        <div className="max-w-3xl mx-auto px-6 md:px-12 text-center">
           <div className="inline-flex p-3 rounded-lg mb-5" style={{ backgroundColor: "hsl(74, 68%, 35%, 0.15)" }}>
             <Lightbulb
               size={28}
@@ -712,7 +740,7 @@ export default function RoamsWild() {
       </section>
 
       {/* Outcomes & What's Next */}
-      <section className="section-spacing bg-rw-cream">
+      <section className="bg-rw-cream" style={{ paddingTop: "clamp(3rem, 8vw, 6rem)" }}>
         <div className="container-site">
           <div className="case-study-section">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -753,12 +781,28 @@ export default function RoamsWild() {
                 <p className="body-lg text-muted mb-6">
                   {content.whatsNextDescription}
                 </p>
-                <ul className="space-y-3 mb-8">
-                  {(content.whatsNextItems as Array<{ title: string; description: string }>).map((item, i) => (
-                    <li key={i} className="body-md text-muted">
-                      <strong className="text-charcoal">{item.title}</strong> {item.description}
-                    </li>
-                  ))}
+                <ul className="space-y-4 mb-8">
+                  {(content.whatsNextItems as Array<{ title: string; description: string }>).map((item, i) => {
+                    const icons = [Mountains, ChartLine, WifiSlash, Shuffle];
+                    const colors = [
+                      { bg: "rgba(205, 106, 61, 0.12)", text: "#cd6a3d" },
+                      { bg: "rgba(52, 181, 165, 0.12)", text: "#34b5a5" },
+                      { bg: "rgba(74, 150, 237, 0.12)", text: "#4a96ed" },
+                      { bg: "rgba(107, 92, 230, 0.12)", text: "#6b5ce6" },
+                    ];
+                    const Icon = icons[i % icons.length];
+                    const color = colors[i % colors.length];
+                    return (
+                      <li key={i} className="flex items-start gap-3">
+                        <div className="p-2 rounded-lg shrink-0" style={{ backgroundColor: color.bg }}>
+                          <Icon size={18} weight="duotone" style={{ color: color.text }} />
+                        </div>
+                        <p className="body-md text-muted">
+                          <strong className="text-charcoal">{item.title}</strong> {item.description}
+                        </p>
+                      </li>
+                    );
+                  })}
                 </ul>
                 <p className="body-md text-muted">
                   {content.whatsNextClosing}
@@ -766,22 +810,27 @@ export default function RoamsWild() {
               </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Landing Page Showcase */}
-      <section className="bg-rw-sand">
-        <div className="container-site py-8">
-          <div className="img-rounded">
+          <div className="mt-12 max-w-5xl mx-auto overflow-hidden rounded-t-xl" style={{ maxHeight: "450px", boxShadow: "0 25px 60px -12px rgba(0, 0, 0, 0.35)" }}>
             <Image
-              src="/images/roamswild/landingpagemacbook.png"
-              alt="RoamsWild landing page displayed on a MacBook"
+              src="/images/roamswild/roadmap.png"
+              alt="RoamsWild product roadmap in Notion showing backlog, in progress, launched, planned, and testing columns"
               width={1440}
-              height={900}
+              height={810}
               className="w-full h-auto"
             />
           </div>
         </div>
+      </section>
+
+      {/* Landing Page Showcase */}
+      <section>
+        <Image
+          src="/images/roamswild/landingpagemacbook.png"
+          alt="RoamsWild landing page displayed on a MacBook"
+          width={1920}
+          height={1080}
+          className="w-full h-auto block"
+        />
       </section>
 
       {/* Campsite Showcase */}
@@ -803,7 +852,7 @@ export default function RoamsWild() {
       <section className="section-spacing bg-charcoal">
         <div className="container-site text-center">
           <div className="max-w-2xl mx-auto">
-            <h2 className="heading-lg text-white mb-4">
+            <h2 className="heading-xl text-white mb-4">
               {content.ctaTitle}
             </h2>
             <p className="body-lg !text-white/70 mb-8">
