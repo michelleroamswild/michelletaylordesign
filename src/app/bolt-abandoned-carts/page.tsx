@@ -12,14 +12,51 @@ import {
   RocketLaunch,
 } from "@phosphor-icons/react/dist/ssr";
 import Link from "next/link";
+import { getPageContent } from "@/lib/content";
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const iconMap: Record<string, any> = {
+  DeviceMobileSpeaker,
+  ClockCountdown,
+  Lightbulb,
+  ChartLineUp,
+};
+
+const futureVisionIcons = [
+  "DeviceMobileSpeaker",
+  "ClockCountdown",
+  "Lightbulb",
+  "ChartLineUp",
+];
+
+const content = getPageContent("bolt-abandoned-carts");
 
 export const metadata = {
-  title: "Bolt Abandoned Carts Case Study — Michelle Taylor",
-  description:
-    "How Michelle Taylor redesigned abandoned cart recovery at Bolt, increasing conversion by up to 26% and recovering $18M in lost revenue.",
+  title: content.pageTitle,
+  description: content.pageDescription,
 };
 
 export default function BoltAbandonedCarts() {
+  const resultsMetrics = content.resultsMetrics as Array<{
+    value: string;
+    label: string;
+  }>;
+
+  const emailRedesignImages = content.emailRedesignImages as Array<{
+    src: string;
+    alt: string;
+  }>;
+
+  const dashboardImages = content.dashboardImages as Array<{
+    src: string;
+    alt: string;
+  }>;
+
+  const futureVisionCards = content.futureVisionCards as Array<{
+    title: string;
+    description: string;
+  }>;
+
   return (
     <>
       {/* Back Navigation */}
@@ -40,8 +77,8 @@ export default function BoltAbandonedCarts() {
         <div className="container-site">
           <div className="flex items-center gap-4 mb-8">
             <Image
-              src="/images/logos/BoltLogo.png"
-              alt="Bolt"
+              src={content.heroLogo.src}
+              alt={content.heroLogo.alt}
               width={80}
               height={32}
               className="h-8 w-auto"
@@ -49,20 +86,16 @@ export default function BoltAbandonedCarts() {
           </div>
           <div className="max-w-3xl mb-12">
             <h1 className="heading-xl mb-6">
-              Increasing Abandoned Cart Conversion by{" "}
-              <span className="highlight">up to 26%</span>
+              {content.heroTitle.split(content.heroHighlight)[0]}
+              <span className="highlight">{content.heroHighlight}</span>
+              {content.heroTitle.split(content.heroHighlight)[1]}
             </h1>
-            <p className="body-lg">
-              Redesigned abandoned cart recovery emails and SMS with
-              direct-to-checkout links, pre-loading saved cart contents and
-              shopper information for one-click checkout — recovering millions in
-              potentially lost revenue for Bolt merchants.
-            </p>
+            <p className="body-lg">{content.heroDescription}</p>
           </div>
           <div className="img-rounded">
             <Image
-              src="/images/abandoned-carts/ACHero.png"
-              alt="Abandoned cart recovery hero showing email and SMS notifications"
+              src={content.heroImage.src}
+              alt={content.heroImage.alt}
               width={1440}
               height={810}
               className="w-full h-auto"
@@ -87,29 +120,25 @@ export default function BoltAbandonedCarts() {
                     />
                   </div>
                   <p className="text-sm font-semibold text-muted uppercase tracking-wide">
-                    The Problem
+                    {content.problemLabel}
                   </p>
                 </div>
-                <h2 className="heading-lg mb-6">
-                  Cart abandonment plagues e-commerce at massive scale
-                </h2>
-                <p className="body-md mb-4">
-                  Across industries, <strong className="text-charcoal">45-70% of shopping carts are abandoned</strong> before
-                  checkout. For Bolt&apos;s merchants, this represented millions
-                  of dollars in potentially lost revenue every month.
-                </p>
-                <p className="body-md">
-                  The existing recovery emails were generic, poorly timed, and
-                  directed shoppers back to merchant homepages rather than their
-                  saved carts — losing all cart context and requiring shoppers to
-                  start over. The friction was too high, and conversion suffered
-                  as a result.
-                </p>
+                <h2 className="heading-lg mb-6">{content.problemTitle}</h2>
+                <p
+                  className="body-md mb-4"
+                  dangerouslySetInnerHTML={{
+                    __html: content.problemDescription1.replace(
+                      content.problemDescription1Bold,
+                      `<strong class="text-charcoal">${content.problemDescription1Bold}</strong>`
+                    ),
+                  }}
+                />
+                <p className="body-md">{content.problemDescription2}</p>
               </div>
               <div className="img-rounded">
                 <Image
-                  src="/images/abandoned-carts/Before.png"
-                  alt="Before state of abandoned cart emails directing to homepages"
+                  src={content.problemImage.src}
+                  alt={content.problemImage.alt}
                   width={720}
                   height={540}
                   className="w-full h-auto"
@@ -134,43 +163,22 @@ export default function BoltAbandonedCarts() {
                   />
                 </div>
                 <p className="text-sm font-semibold text-muted uppercase tracking-wide">
-                  Key Results
+                  {content.resultsLabel}
                 </p>
               </div>
-              <h2 className="heading-lg mb-4">
-                Measurable impact across every metric
-              </h2>
-              <p className="body-md">
-                The redesigned abandoned cart system delivered significant
-                improvements in engagement, recovery, and merchant adoption.
-              </p>
+              <h2 className="heading-lg mb-4">{content.resultsTitle}</h2>
+              <p className="body-md">{content.resultsDescription}</p>
             </div>
 
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-              <div className="metric-card">
-                <p className="metric-value text-accent-dark">68%</p>
-                <p className="metric-label">Email open rate</p>
-              </div>
-              <div className="metric-card">
-                <p className="metric-value text-accent-dark">18%</p>
-                <p className="metric-label">Click-to-open rate</p>
-              </div>
-              <div className="metric-card">
-                <p className="metric-value text-accent-dark">12%</p>
-                <p className="metric-label">Average recovery rate</p>
-              </div>
-              <div className="metric-card">
-                <p className="metric-value text-accent-dark">$18M</p>
-                <p className="metric-label">Recovered revenue</p>
-              </div>
-              <div className="metric-card">
-                <p className="metric-value text-accent-dark">100+</p>
-                <p className="metric-label">Merchant adoption</p>
-              </div>
-              <div className="metric-card">
-                <p className="metric-value text-accent-dark">1%</p>
-                <p className="metric-label">Unsubscribe rate</p>
-              </div>
+              {resultsMetrics.map((metric, index) => (
+                <div key={index} className="metric-card">
+                  <p className="metric-value text-accent-dark">
+                    {metric.value}
+                  </p>
+                  <p className="metric-label">{metric.label}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -191,35 +199,38 @@ export default function BoltAbandonedCarts() {
                     />
                   </div>
                   <p className="text-sm font-semibold text-muted uppercase tracking-wide">
-                    Notification Timing
+                    {content.timingLabel}
                   </p>
                 </div>
-                <h2 className="heading-lg mb-6">
-                  Optimized notification timing for maximum recovery
-                </h2>
-                <p className="body-md mb-4">
-                  Through research and testing, we established strategic send
-                  windows to maximize engagement without overwhelming shoppers.
-                  The first email fires at{" "}
-                  <strong className="text-charcoal">2 hours</strong> after
-                  abandonment — catching intent while it&apos;s still fresh — with a
-                  follow-up at{" "}
-                  <strong className="text-charcoal">24 hours</strong> for
-                  shoppers who haven&apos;t yet returned.
-                </p>
-                <p className="body-md">
-                  SMS notifications follow strict{" "}
-                  <strong className="text-charcoal">TCPA regulations</strong>,
-                  only sending during permitted hours and honoring opt-out
-                  preferences. The timing logic accounts for shopper timezone,
-                  consent status, and channel preferences to ensure compliant,
-                  effective outreach.
-                </p>
+                <h2 className="heading-lg mb-6">{content.timingTitle}</h2>
+                <p
+                  className="body-md mb-4"
+                  dangerouslySetInnerHTML={{
+                    __html: content.timingDescription1
+                      .replace(
+                        content.timingDescription1Bold1,
+                        `<strong class="text-charcoal">${content.timingDescription1Bold1}</strong>`
+                      )
+                      .replace(
+                        content.timingDescription1Bold2,
+                        `<strong class="text-charcoal">${content.timingDescription1Bold2}</strong>`
+                      ),
+                  }}
+                />
+                <p
+                  className="body-md"
+                  dangerouslySetInnerHTML={{
+                    __html: content.timingDescription2.replace(
+                      content.timingDescription2Bold,
+                      `<strong class="text-charcoal">${content.timingDescription2Bold}</strong>`
+                    ),
+                  }}
+                />
               </div>
               <div className="img-rounded">
                 <Image
-                  src="/images/abandoned-carts/Notification Logic.png"
-                  alt="Notification timing logic flow showing 2-hour and 24-hour send windows"
+                  src={content.timingImage.src}
+                  alt={content.timingImage.alt}
                   width={720}
                   height={540}
                   className="w-full h-auto"
@@ -244,28 +255,27 @@ export default function BoltAbandonedCarts() {
                   />
                 </div>
                 <p className="text-sm font-semibold text-muted uppercase tracking-wide">
-                  Email & SMS Redesign
+                  {content.emailRedesignLabel}
                 </p>
               </div>
               <h2 className="heading-lg mb-6">
-                Redesigned notifications that drive action
+                {content.emailRedesignTitle}
               </h2>
-              <p className="body-md">
-                We updated the email branding to reflect each merchant&apos;s
-                identity, optimized subject lines for higher open rates, and
-                replaced generic homepage links with a{" "}
-                <strong className="text-charcoal">
-                  &quot;Checkout Now&quot; CTA
-                </strong>{" "}
-                that pre-loads the shopper&apos;s saved cart — removing friction
-                and getting them directly to checkout in one click.
-              </p>
+              <p
+                className="body-md"
+                dangerouslySetInnerHTML={{
+                  __html: content.emailRedesignDescription.replace(
+                    content.emailRedesignDescriptionBold,
+                    `<strong class="text-charcoal">${content.emailRedesignDescriptionBold}</strong>`
+                  ),
+                }}
+              />
             </div>
 
             <div className="img-rounded mb-8">
               <Image
-                src="/images/abandoned-carts/AC-Emails.png"
-                alt="Redesigned abandoned cart email templates with merchant branding"
+                src={emailRedesignImages[0].src}
+                alt={emailRedesignImages[0].alt}
                 width={1440}
                 height={810}
                 className="w-full h-auto"
@@ -273,24 +283,17 @@ export default function BoltAbandonedCarts() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="img-rounded">
-                <Image
-                  src="/images/abandoned-carts/email-notification.png"
-                  alt="Email notification with direct-to-checkout link"
-                  width={720}
-                  height={540}
-                  className="w-full h-auto"
-                />
-              </div>
-              <div className="img-rounded">
-                <Image
-                  src="/images/abandoned-carts/sms-notification.png"
-                  alt="SMS notification with cart recovery link"
-                  width={720}
-                  height={540}
-                  className="w-full h-auto"
-                />
-              </div>
+              {emailRedesignImages.slice(1).map((img, index) => (
+                <div key={index} className="img-rounded">
+                  <Image
+                    src={img.src}
+                    alt={img.alt}
+                    width={720}
+                    height={540}
+                    className="w-full h-auto"
+                  />
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -311,34 +314,33 @@ export default function BoltAbandonedCarts() {
                     />
                   </div>
                   <p className="text-sm font-semibold text-muted uppercase tracking-wide">
-                    Merchant Dashboard
+                    {content.dashboardLabel}
                   </p>
                 </div>
-                <h2 className="heading-lg mb-6">
-                  Giving merchants visibility and control
-                </h2>
-                <p className="body-md mb-4">
-                  The merchant dashboard serves as the feature homepage,
-                  providing{" "}
-                  <strong className="text-charcoal">
-                    configuration controls
-                  </strong>{" "}
-                  for notification settings, branding, and send preferences.
-                </p>
-                <p className="body-md">
-                  Hero metrics surface key performance data at a glance, while
-                  detailed{" "}
-                  <strong className="text-charcoal">
-                    abandonment analytics
-                  </strong>{" "}
-                  help merchants understand recovery trends, open rates, and
-                  revenue impact over time.
-                </p>
+                <h2 className="heading-lg mb-6">{content.dashboardTitle}</h2>
+                <p
+                  className="body-md mb-4"
+                  dangerouslySetInnerHTML={{
+                    __html: content.dashboardDescription1.replace(
+                      content.dashboardDescription1Bold,
+                      `<strong class="text-charcoal">${content.dashboardDescription1Bold}</strong>`
+                    ),
+                  }}
+                />
+                <p
+                  className="body-md"
+                  dangerouslySetInnerHTML={{
+                    __html: content.dashboardDescription2.replace(
+                      content.dashboardDescription2Bold,
+                      `<strong class="text-charcoal">${content.dashboardDescription2Bold}</strong>`
+                    ),
+                  }}
+                />
               </div>
               <div className="img-rounded">
                 <Image
-                  src="/images/abandoned-carts/dashboard.png"
-                  alt="Merchant dashboard with configuration controls and hero metrics"
+                  src={dashboardImages[0].src}
+                  alt={dashboardImages[0].alt}
                   width={720}
                   height={540}
                   className="w-full h-auto"
@@ -348,8 +350,8 @@ export default function BoltAbandonedCarts() {
 
             <div className="img-rounded mt-10">
               <Image
-                src="/images/abandoned-carts/ACLanding.png"
-                alt="Abandoned cart feature landing page with analytics overview"
+                src={dashboardImages[1].src}
+                alt={dashboardImages[1].alt}
                 width={1440}
                 height={810}
                 className="w-full h-auto"
@@ -366,8 +368,8 @@ export default function BoltAbandonedCarts() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="order-2 lg:order-1 img-rounded">
                 <Image
-                  src="/images/abandoned-carts/TextConsent.png"
-                  alt="TCPA-compliant SMS consent collection flow"
+                  src={content.smsConsentImage.src}
+                  alt={content.smsConsentImage.alt}
                   width={720}
                   height={540}
                   className="w-full h-auto"
@@ -383,25 +385,20 @@ export default function BoltAbandonedCarts() {
                     />
                   </div>
                   <p className="text-sm font-semibold text-muted uppercase tracking-wide">
-                    SMS Consent
+                    {content.smsConsentLabel}
                   </p>
                 </div>
-                <h2 className="heading-lg mb-6">
-                  TCPA-compliant consent management
-                </h2>
-                <p className="body-md mb-4">
-                  SMS recovery required a carefully designed consent collection
-                  flow to comply with{" "}
-                  <strong className="text-charcoal">TCPA regulations</strong>.
-                  We integrated consent capture directly into the checkout
-                  experience, making it easy for shoppers to opt in while
-                  maintaining full legal compliance.
-                </p>
-                <p className="body-md">
-                  The system tracks consent status per shopper, respects opt-out
-                  requests immediately, and provides merchants with clear
-                  visibility into their SMS-eligible audience size.
-                </p>
+                <h2 className="heading-lg mb-6">{content.smsConsentTitle}</h2>
+                <p
+                  className="body-md mb-4"
+                  dangerouslySetInnerHTML={{
+                    __html: content.smsConsentDescription1.replace(
+                      content.smsConsentDescription1Bold,
+                      `<strong class="text-charcoal">${content.smsConsentDescription1Bold}</strong>`
+                    ),
+                  }}
+                />
+                <p className="body-md">{content.smsConsentDescription2}</p>
               </div>
             </div>
           </div>
@@ -422,86 +419,34 @@ export default function BoltAbandonedCarts() {
                   />
                 </div>
                 <p className="text-sm font-semibold text-muted uppercase tracking-wide">
-                  Future Vision
+                  {content.futureVisionLabel}
                 </p>
               </div>
               <h2 className="heading-lg mb-6">
-                What comes next for cart recovery
+                {content.futureVisionTitle}
               </h2>
-              <p className="body-md">
-                The abandoned cart system laid the groundwork for a broader
-                vision of intelligent, multi-channel shopper re-engagement.
-              </p>
+              <p className="body-md">{content.futureVisionDescription}</p>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              <div className="bg-white rounded-xl p-6">
-                <div className="p-2 bg-cream rounded-lg inline-block mb-4">
-                  <DeviceMobileSpeaker
-                    size={24}
-                    weight="duotone"
-                    className="text-charcoal"
-                  />
-                </div>
-                <h3 className="heading-md text-lg mb-2">
-                  Multi-channel sequences
-                </h3>
-                <p className="body-md text-sm">
-                  Coordinated recovery flows across email, SMS, push
-                  notifications, and retargeting ads — adapting channel priority
-                  based on shopper behavior.
-                </p>
-              </div>
-              <div className="bg-white rounded-xl p-6">
-                <div className="p-2 bg-cream rounded-lg inline-block mb-4">
-                  <ClockCountdown
-                    size={24}
-                    weight="duotone"
-                    className="text-charcoal"
-                  />
-                </div>
-                <h3 className="heading-md text-lg mb-2">
-                  AI-powered send timing
-                </h3>
-                <p className="body-md text-sm">
-                  Machine learning models that predict optimal send times per
-                  individual shopper, moving beyond fixed windows to personalized
-                  delivery.
-                </p>
-              </div>
-              <div className="bg-white rounded-xl p-6">
-                <div className="p-2 bg-cream rounded-lg inline-block mb-4">
-                  <Lightbulb
-                    size={24}
-                    weight="duotone"
-                    className="text-charcoal"
-                  />
-                </div>
-                <h3 className="heading-md text-lg mb-2">
-                  Personalized recommendations
-                </h3>
-                <p className="body-md text-sm">
-                  Product suggestions based on browsing history and cart
-                  contents, turning recovery emails into discovery moments that
-                  increase AOV.
-                </p>
-              </div>
-              <div className="bg-white rounded-xl p-6">
-                <div className="p-2 bg-cream rounded-lg inline-block mb-4">
-                  <ChartLineUp
-                    size={24}
-                    weight="duotone"
-                    className="text-charcoal"
-                  />
-                </div>
-                <h3 className="heading-md text-lg mb-2">
-                  Advanced analytics
-                </h3>
-                <p className="body-md text-sm">
-                  Deeper insights into recovery attribution, cohort analysis, and
-                  A/B testing frameworks to continuously optimize performance.
-                </p>
-              </div>
+              {futureVisionCards.map((card, index) => {
+                const IconComponent = iconMap[futureVisionIcons[index]];
+                return (
+                  <div key={index} className="bg-white rounded-xl p-6">
+                    <div className="p-2 bg-cream rounded-lg inline-block mb-4">
+                      {IconComponent && (
+                        <IconComponent
+                          size={24}
+                          weight="duotone"
+                          className="text-charcoal"
+                        />
+                      )}
+                    </div>
+                    <h3 className="heading-md text-lg mb-2">{card.title}</h3>
+                    <p className="body-md text-sm">{card.description}</p>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>

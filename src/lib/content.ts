@@ -52,3 +52,10 @@ export function getHomePage(): HomeMeta {
   const { data } = matter(raw);
   return data as HomeMeta;
 }
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function getPageContent(slug: string): Record<string, any> {
+  const raw = fs.readFileSync(path.join(pagesDir, `${slug}.md`), "utf-8");
+  const { data } = matter(raw);
+  return data;
+}
