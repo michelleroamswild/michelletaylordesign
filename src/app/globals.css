@@ -17,6 +17,15 @@
   --color-c1-blue: #004977;
   --color-c1-red: #d03027;
   --color-chr-blue: #0055a4;
+  --color-rw-green: #4a5530;
+  --color-rw-green-light: #6b7a45;
+  --color-rw-sage: #8a9a6c;
+  --color-rw-olive: #7a8450;
+  --color-rw-amber: #d4a03c;
+  --color-rw-coral: #c85a4a;
+  --color-rw-cream: #f5f2ec;
+  --color-rw-sand: #e8dfd0;
+  --color-rw-forest: #2d3a1e;
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
 }
 

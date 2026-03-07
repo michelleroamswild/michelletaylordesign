@@ -2,47 +2,76 @@ import {
   CalendarDots,
   Compass,
   Strategy,
+  ShoppingCart,
+  Receipt,
+  Package,
 } from "@phosphor-icons/react/dist/ssr";
 import CaseStudyCard from "@/components/CaseStudyCard";
-import { getProjects } from "@/lib/content";
+import { getProjects, getHomePage } from "@/lib/content";
+
+const calloutIcons = [ShoppingCart, Receipt, Package];
 
 export default function Home() {
   const projects = getProjects();
+  const home = getHomePage();
 
   return (
     <>
       {/* Hero */}
       <section className="pt-16 pb-12 md:pt-24 md:pb-16 bg-white">
         <div className="container-site">
-          <p className="text-sm text-muted mb-4">Hi, I&apos;m Michelle</p>
-          <h1 className="heading-hero max-w-4xl mb-8">
-            I&apos;m a product designer with over 10 years of experience solving
-            complex problems and delivering impactful results across industries.
-          </h1>
-          <p className="body-lg text-muted max-w-3xl mb-12">
-            I helped boost abandoned cart recovery rates by up to 26% at{" "}
-            <span className="highlight">Bolt</span>, streamlined expense
-            reconciliation for{" "}
-            <span className="highlight">Capital One</span> businesses cutting
-            weeks of work out of expense processes, and developed innovative
-            methods to prevent shipping exceptions in supply chain management at{" "}
-            <span className="highlight">CHR</span>. My work focuses on creating
-            efficiencies for users that deliver measurable business results.
-          </p>
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-12 lg:gap-16 items-start">
+            {/* Left - headline and description */}
+            <div>
+              <p className="text-sm text-muted mb-4">{home.greeting}</p>
+              <h1 className="heading-hero mb-8">{home.headline}</h1>
+              <p className="body-lg text-muted max-w-2xl">
+                {home.description}
+              </p>
+            </div>
 
-          <div className="flex flex-wrap gap-6 text-sm text-muted">
-            <div className="flex items-center gap-2">
-              <CalendarDots size={18} weight="regular" />
-              <span>10+ years experience</span>
+            {/* Right - result callouts stacked */}
+            <div className="flex flex-col gap-4">
+              {home.callouts.map((callout, i) => {
+                const Icon = calloutIcons[i] ?? ShoppingCart;
+                return (
+                  <div
+                    key={callout.company}
+                    className="border border-gray-200 rounded-lg p-5 flex flex-col gap-2"
+                  >
+                    <div className="flex items-center gap-2 text-muted">
+                      <Icon size={16} weight="duotone" />
+                      <span className="text-xs font-semibold uppercase tracking-wider">
+                        {callout.company}
+                      </span>
+                    </div>
+                    <p className="text-2xl font-extrabold text-charcoal tracking-tight">
+                      {callout.metric}
+                    </p>
+                    <p className="text-sm text-muted leading-snug">
+                      {callout.detail}
+                    </p>
+                  </div>
+                );
+              })}
             </div>
-            <div className="flex items-center gap-2">
-              <Compass size={18} weight="regular" />
-              <span>E-commerce, Fintech, Logistics</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Strategy size={18} weight="regular" />
-              <span>Strategy-led design for B2B and SaaS Products</span>
-            </div>
+          </div>
+
+          <div className="flex flex-wrap gap-6 text-sm text-muted mt-12">
+            {home.traits.map((trait) => (
+              <div key={trait} className="flex items-center gap-2">
+                {trait.includes("years") && (
+                  <CalendarDots size={18} weight="regular" />
+                )}
+                {trait.includes("commerce") && (
+                  <Compass size={18} weight="regular" />
+                )}
+                {trait.includes("Strategy") && (
+                  <Strategy size={18} weight="regular" />
+                )}
+                <span>{trait}</span>
+              </div>
+            ))}
           </div>
         </div>
       </section>

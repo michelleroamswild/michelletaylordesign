@@ -3,6 +3,7 @@ import path from "path";
 import matter from "gray-matter";
 
 const projectsDir = path.join(process.cwd(), "content/projects");
+const pagesDir = path.join(process.cwd(), "content/pages");
 
 export interface ProjectMeta {
   slug: string;
@@ -30,4 +31,24 @@ export function getProjects(): ProjectMeta[] {
   });
 
   return projects.sort((a, b) => a.order - b.order);
+}
+
+export interface HomeCallout {
+  company: string;
+  metric: string;
+  detail: string;
+}
+
+export interface HomeMeta {
+  greeting: string;
+  headline: string;
+  description: string;
+  traits: string[];
+  callouts: HomeCallout[];
+}
+
+export function getHomePage(): HomeMeta {
+  const raw = fs.readFileSync(path.join(pagesDir, "home.md"), "utf-8");
+  const { data } = matter(raw);
+  return data as HomeMeta;
 }

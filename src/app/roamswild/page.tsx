@@ -13,132 +13,153 @@ import {
   TreeEvergreen,
   Star,
   Path,
+  Robot,
+  Heart,
+  ChatCircleDots,
+  GithubLogo,
+  Database,
+  Globe,
+  PaintBrush,
+  Notepad,
 } from "@phosphor-icons/react/dist/ssr";
 
 export default function RoamsWild() {
   return (
     <>
       {/* Hero */}
-      <section className="relative min-h-[85vh] flex items-end overflow-hidden">
+      <section className="relative min-h-[65vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/roamswild/DJI_0693.jpg"
+            src="/images/roamswild/DJI_0024.jpg"
             alt="Aerial landscape of dispersed camping terrain"
             fill
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/40 to-transparent" />
+          <div className="absolute inset-0 bg-rw-green/60" />
         </div>
-        <div className="container-site relative z-10 pb-16 pt-32">
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 text-white/70 hover:text-white mb-8 transition-colors text-sm"
-          >
-            <ArrowLeft size={16} weight="bold" />
-            Back to portfolio
-          </Link>
-          <div className="max-w-3xl">
-            <div className="flex items-center gap-3 mb-6">
-              <Image
-                src="/images/roamswild/Logo.png"
-                alt="RoamsWild logo"
-                width={48}
-                height={48}
-                className="rounded-lg"
-              />
-              <span className="text-white/80 font-medium text-lg">
-                RoamsWild
-              </span>
+        <div className="container-site relative z-10 text-center">
+          <Image
+            src="/images/roamswild/Logo.png"
+            alt="RoamsWild logo"
+            width={120}
+            height={120}
+            className="rounded-lg mx-auto mb-6 brightness-0 invert"
+          />
+          <h1 className="heading-xl text-white mb-6">
+            Learning AI by Building
+          </h1>
+          <p className="body-lg text-white/80 max-w-2xl mx-auto">
+            Creating a location intelligence platform for discovering dispersed
+            campsites using terrain data, AI-assisted scoring, and calibrated
+            heuristics to help travelers make smarter decisions.
+          </p>
+        </div>
+      </section>
+
+      {/* RoamsWild */}
+      <section className="pt-24 md:pt-32 pb-0 bg-white overflow-visible relative z-10">
+        <div className="max-w-6xl mx-auto px-6 md:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-[2fr_3fr] gap-12 lg:gap-16 items-start">
+            <div className="lg:pt-0 lg:pb-24">
+              <h2 className="heading-lg mb-6">RoamsWild</h2>
+              <p className="body-md text-muted mb-6">
+                RoamsWild began as a learning project to explore how AI and
+                modern APIs could power more intelligent outdoor exploration
+                beyond static pins and outdated user reports.
+              </p>
+              <p className="body-md text-muted">
+                Rather than working on a small or hypothetical problem, I chose
+                a complex, real-world domain I know deeply: road-based travel,
+                dispersed camping, and landscape photography. Using modern AI
+                tools as a build partner, I designed and implemented an
+                intelligent exploration app that helps people make better
+                decisions in the moment — where to go, when to go, and why
+                it&apos;s worth it. The project reflects my process of learning
+                by building, treating data, scoring logic, and human judgment as
+                core design materials.
+              </p>
             </div>
-            <h1 className="heading-xl text-white mb-6">
-              Learning AI by Building
-            </h1>
-            <p className="body-lg !text-white/80 max-w-2xl">
-              Creating a location intelligence platform for discovering dispersed
-              campsites using terrain data, AI-assisted scoring, and calibrated
-              heuristics to help travelers make smarter decisions.
-            </p>
+            <div className="mb-[-450px] lg:mb-[-600px]">
+              <Image
+                src="/images/roamswild/features.png"
+                alt="RoamsWild feature cards showing Smart Route Planning, Campsite Database, Trail Discovery, Trip Collaboration, Day-by-Day Itinerary, and Photography Conditions"
+                width={1200}
+                height={1300}
+                className="w-[140%] max-w-none h-auto"
+              />
+            </div>
           </div>
         </div>
       </section>
 
       {/* Project Overview */}
-      <section className="section-spacing bg-cream">
-        <div className="container-site">
-          <div className="case-study-section">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-              <div>
-                <p className="text-sm font-semibold uppercase tracking-widest text-muted mb-3">
-                  Project Overview
-                </p>
-                <h2 className="heading-lg mb-6">
-                  A personal project to explore{" "}
-                  <span className="highlight">AI-assisted product design</span>
-                </h2>
-                <p className="body-lg mb-6">
-                  RoamsWild is a location intelligence platform designed to help
-                  road-based travelers discover dispersed campsites, scenic
-                  routes, and photo-worthy landscapes. But the real objective was
-                  learning how AI tools extend product design capabilities.
-                </p>
-                <p className="body-md">
-                  Rather than learning AI in the abstract, I chose to build
-                  something real -- a full-stack product that would push me to
-                  use AI tools across research, design, development, and
-                  deployment.
-                </p>
+      <section className="py-24 md:py-32" style={{ backgroundColor: "rgb(242, 242, 241)" }}>
+        <div className="max-w-6xl mx-auto px-6 md:px-12">
+          <p className="text-sm font-semibold uppercase tracking-widest text-muted mb-4">
+            Project Overview
+          </p>
+          <div className="mb-16 max-w-3xl">
+            <h3 className="heading-md mb-4">Objective</h3>
+            <p className="body-md text-muted mb-6">
+              The primary goal of this project was to learn how AI tools and
+              modern APIs could extend my capabilities as a Product Designer.
+              Rather than treating AI as a novelty feature, I used it as a
+              practical build partner to help me design, prototype, and
+              implement systems that would normally require an engineering
+              team. Large language models supported rapid exploration of system
+              architecture, API design, and data transformations, allowing me
+              to move from ideas to working implementations much faster than
+              traditional learning paths.
+            </p>
+            <p className="body-md text-muted">
+              This case study focuses less on a polished final product and
+              more on how my role evolved as I learned to design and build
+              AI-informed systems end to end.
+            </p>
+          </div>
+
+          <div className="mb-8">
+            <p className="text-sm font-semibold uppercase tracking-widest text-muted mb-3">
+              Role
+            </p>
+            <p className="body-md text-muted">
+              Solo designer &amp; developer — product strategy, UX/UI design,
+              front-end development, data integration.
+            </p>
+          </div>
+
+          <div>
+              <p className="text-sm font-semibold uppercase tracking-widest text-muted mb-3">
+                Tools Used
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {[
+                  { name: "Claude Code", icon: Robot },
+                  { name: "Loveable", icon: Heart },
+                  { name: "ChatGPT", icon: ChatCircleDots },
+                  { name: "GitHub", icon: GithubLogo },
+                  { name: "Supabase", icon: Database },
+                  { name: "Vercel", icon: Globe },
+                  { name: "Procreate", icon: PaintBrush },
+                  { name: "Notion", icon: Notepad },
+                ].map((tool) => (
+                  <span
+                    key={tool.name}
+                    className="bg-white rounded-full px-4 py-2 text-sm font-medium text-charcoal inline-flex items-center gap-2"
+                  >
+                    <tool.icon size={16} weight="duotone" />
+                    {tool.name}
+                  </span>
+                ))}
               </div>
-              <div>
-                <p className="text-sm font-semibold uppercase tracking-widest text-muted mb-4">
-                  Tools Used
-                </p>
-                <div className="flex flex-wrap gap-3">
-                  {[
-                    "Claude Code",
-                    "Loveable",
-                    "ChatGPT",
-                    "GitHub",
-                    "Supabase",
-                    "Vercel",
-                    "Procreate",
-                    "Notion",
-                  ].map((tool) => (
-                    <span
-                      key={tool}
-                      className="bg-white rounded-full px-4 py-2 text-sm font-medium text-charcoal"
-                    >
-                      {tool}
-                    </span>
-                  ))}
-                </div>
-                <div className="mt-8">
-                  <p className="text-sm font-semibold uppercase tracking-widest text-muted mb-4">
-                    Objective
-                  </p>
-                  <p className="body-md">
-                    Learning how AI tools extend product design capabilities --
-                    from ideation through deployment.
-                  </p>
-                </div>
-                <div className="mt-8">
-                  <p className="text-sm font-semibold uppercase tracking-widest text-muted mb-4">
-                    Role
-                  </p>
-                  <p className="body-md">
-                    Solo designer & developer -- product strategy, UX/UI design,
-                    front-end development, data integration.
-                  </p>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
 
       {/* App Mockup */}
-      <section className="bg-cream-dark">
-        <div className="container-site py-8">
+      <section className="bg-rw-sand">
+        <div className="container-site py-32 md:py-44">
           <div className="img-rounded">
             <Image
               src="/images/roamswild/mockup.png"
@@ -152,8 +173,8 @@ export default function RoamsWild() {
       </section>
 
       {/* Choosing a Problem */}
-      <section className="section-spacing bg-cream">
-        <div className="container-site">
+      <section className="section-spacing bg-rw-cream">
+        <div className="max-w-5xl mx-auto px-6 md:px-12">
           <div className="case-study-section">
             <p className="text-sm font-semibold uppercase tracking-widest text-muted mb-3">
               Choosing a Problem
@@ -167,206 +188,254 @@ export default function RoamsWild() {
               data could create real value.
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-              <div className="bg-white rounded-xl p-6">
-                <div className="p-3 bg-cream rounded-lg inline-flex mb-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
+              <div className="bg-white rounded-xl p-5">
+                <div className="p-2 bg-rw-green/10 rounded-lg inline-flex mb-3">
                   <Mountains
-                    size={28}
+                    size={22}
                     weight="duotone"
-                    className="text-charcoal"
+                    className="text-rw-green"
                   />
                 </div>
-                <h3 className="heading-md mb-2">Outdoor Travel</h3>
-                <p className="body-md">
+                <h3 className="text-base font-semibold mb-1">Outdoor Travel</h3>
+                <p className="text-sm text-muted">
                   Road-based exploration across public lands, national forests,
                   and BLM areas with limited information infrastructure.
                 </p>
               </div>
-              <div className="bg-white rounded-xl p-6">
-                <div className="p-3 bg-cream rounded-lg inline-flex mb-4">
+              <div className="bg-white rounded-xl p-5">
+                <div className="p-2 bg-rw-green/10 rounded-lg inline-flex mb-3">
                   <Tent
-                    size={28}
+                    size={22}
                     weight="duotone"
-                    className="text-charcoal"
+                    className="text-rw-green"
                   />
                 </div>
-                <h3 className="heading-md mb-2">Dispersed Camping</h3>
-                <p className="body-md">
+                <h3 className="text-base font-semibold mb-1">Dispersed Camping</h3>
+                <p className="text-sm text-muted">
                   Free camping on public land without designated sites --
                   requiring knowledge of access, terrain, and regulations.
                 </p>
               </div>
-              <div className="bg-white rounded-xl p-6">
-                <div className="p-3 bg-cream rounded-lg inline-flex mb-4">
+              <div className="bg-white rounded-xl p-5">
+                <div className="p-2 bg-rw-green/10 rounded-lg inline-flex mb-3">
                   <Camera
-                    size={28}
+                    size={22}
                     weight="duotone"
-                    className="text-charcoal"
+                    className="text-rw-green"
                   />
                 </div>
-                <h3 className="heading-md mb-2">Landscape Photography</h3>
-                <p className="body-md">
+                <h3 className="text-base font-semibold mb-1">Landscape Photography</h3>
+                <p className="text-sm text-muted">
                   Finding optimal lighting, terrain features, and weather
                   conditions for capturing compelling outdoor scenes.
                 </p>
               </div>
             </div>
 
-            <div className="bg-white rounded-xl p-8 mb-10">
-              <p className="text-sm font-semibold uppercase tracking-widest text-muted mb-3">
-                Problem Statement
-              </p>
-              <p className="heading-md">
-                &ldquo;How might I design a system that helps people make{" "}
-                <span className="highlight">better decisions</span>, not just
-                find places?&rdquo;
-              </p>
-            </div>
+          </div>
+        </div>
+        <div className="mt-12">
+          <Image
+            src="/images/roamswild/Competitorapps.png"
+            alt="Competitive analysis of existing camping and outdoor apps"
+            width={1920}
+            height={800}
+            className="w-full h-auto"
+          />
+        </div>
+      </section>
 
-            <div className="img-rounded">
-              <Image
-                src="/images/roamswild/Competitorapps.png"
-                alt="Competitive analysis of existing camping and outdoor apps"
-                width={1440}
-                height={800}
-                className="w-full h-auto"
-              />
-            </div>
+      {/* Problem Statement */}
+      <section className="py-24 md:py-32 bg-rw-forest">
+        <div className="container-site">
+          <div className="max-w-4xl mx-auto text-center px-8 md:px-16">
+            <p className="text-sm font-semibold uppercase tracking-widest text-rw-sage mb-6">
+              Problem Statement
+            </p>
+            <p className="heading-lg text-white">
+              &ldquo;How might I design a system that helps people make{" "}
+              <span className="text-rw-amber">better decisions</span>, not just
+              find places?&rdquo;
+            </p>
           </div>
         </div>
       </section>
 
       {/* The Beginning */}
-      <section className="section-spacing bg-white">
+      <section className="section-spacing bg-white overflow-hidden">
         <div className="container-site">
           <div className="case-study-section">
-            <p className="text-sm font-semibold uppercase tracking-widest text-muted mb-3">
-              The Beginning
-            </p>
-            <h2 className="heading-lg mb-4 max-w-2xl">
-              Three clarifications before building
-            </h2>
-            <p className="body-lg mb-10 max-w-2xl">
-              Before writing any code or opening a design tool, I needed to
-              establish clear boundaries for what this product would and would
-              not be.
-            </p>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-16">
+              <div>
+                <h2 className="heading-lg mb-6">The Beginning</h2>
+                <p className="body-lg text-muted mb-6">
+                  The start of this project wasn&apos;t planned. I started with a
+                  vague prompt that was more about exploring possibilities than
+                  building a specific product. It wasn&apos;t until I had Claude,
+                  Supabase, and a local development server running that I realized I
+                  could actually build something end to end.
+                </p>
+                <p className="body-lg text-muted mb-8">
+                  I began by clarifying three things:
+                </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-              <div className="bg-cream rounded-xl p-6">
-                <div className="p-3 bg-white rounded-lg inline-flex mb-4">
-                  <Compass
-                    size={28}
-                    weight="duotone"
-                    className="text-charcoal"
-                  />
+                <div className="grid grid-cols-1 gap-4">
+                  <div className="bg-rw-cream rounded-xl p-5">
+                    <div className="flex items-start gap-3">
+                      <div className="p-2 bg-rw-green/10 rounded-lg shrink-0">
+                        <Compass
+                          size={22}
+                          weight="duotone"
+                          className="text-rw-green"
+                        />
+                      </div>
+                      <div>
+                        <p className="text-xs font-semibold uppercase tracking-widest text-rw-sage mb-1">
+                          Who
+                        </p>
+                        <h3 className="text-base font-semibold mb-1">Road-based travelers</h3>
+                        <p className="text-sm text-muted">
+                          People who explore by vehicle -- van lifers, overlanders, and
+                          road trippers who need to make decisions about where to stop
+                          and camp.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="bg-rw-cream rounded-xl p-5">
+                    <div className="flex items-start gap-3">
+                      <div className="p-2 bg-rw-green/10 rounded-lg shrink-0">
+                        <Path
+                          size={22}
+                          weight="duotone"
+                          className="text-rw-green"
+                        />
+                      </div>
+                      <div>
+                        <p className="text-xs font-semibold uppercase tracking-widest text-rw-sage mb-1">
+                          Struggles
+                        </p>
+                        <h3 className="text-base font-semibold mb-1">
+                          Access, terrain & timing
+                        </h3>
+                        <p className="text-sm text-muted">
+                          Understanding land access rules, assessing terrain quality for
+                          camping, and timing trips around weather and lighting
+                          conditions.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="bg-rw-cream rounded-xl p-5">
+                    <div className="flex items-start gap-3">
+                      <div className="p-2 bg-rw-green/10 rounded-lg shrink-0">
+                        <Star
+                          size={22}
+                          weight="duotone"
+                          className="text-rw-green"
+                        />
+                      </div>
+                      <div>
+                        <p className="text-xs font-semibold uppercase tracking-widest text-rw-sage mb-1">
+                          Success Metric
+                        </p>
+                        <h3 className="text-base font-semibold mb-1">
+                          Fewer but smarter recommendations
+                        </h3>
+                        <p className="text-sm text-muted">
+                          Not more results -- better ones. Quality over quantity,
+                          surfacing only locations that match real conditions and
+                          preferences.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <p className="text-sm font-semibold uppercase tracking-widest text-muted mb-2">
-                  Who
-                </p>
-                <h3 className="heading-md mb-2">Road-based travelers</h3>
-                <p className="body-md">
-                  People who explore by vehicle -- van lifers, overlanders, and
-                  road trippers who need to make decisions about where to stop
-                  and camp.
-                </p>
               </div>
-              <div className="bg-cream rounded-xl p-6">
-                <div className="p-3 bg-white rounded-lg inline-flex mb-4">
-                  <Path
-                    size={28}
-                    weight="duotone"
-                    className="text-charcoal"
-                  />
-                </div>
-                <p className="text-sm font-semibold uppercase tracking-widest text-muted mb-2">
-                  Struggles
-                </p>
-                <h3 className="heading-md mb-2">
-                  Access, terrain & timing
-                </h3>
-                <p className="body-md">
-                  Understanding land access rules, assessing terrain quality for
-                  camping, and timing trips around weather and lighting
-                  conditions.
-                </p>
-              </div>
-              <div className="bg-cream rounded-xl p-6">
-                <div className="p-3 bg-white rounded-lg inline-flex mb-4">
-                  <Star
-                    size={28}
-                    weight="duotone"
-                    className="text-charcoal"
-                  />
-                </div>
-                <p className="text-sm font-semibold uppercase tracking-widest text-muted mb-2">
-                  Success Metric
-                </p>
-                <h3 className="heading-md mb-2">
-                  Fewer but smarter recommendations
-                </h3>
-                <p className="body-md">
-                  Not more results -- better ones. Quality over quantity,
-                  surfacing only locations that match real conditions and
-                  preferences.
-                </p>
-              </div>
-            </div>
-
-            {/* Takeaway 1 */}
-            <div className="bg-cream rounded-xl p-8 flex items-start gap-5 mb-10">
-              <div className="p-3 bg-white rounded-lg shrink-0">
-                <Lightbulb
-                  size={28}
-                  weight="duotone"
-                  className="text-charcoal"
+              <div className="lg:-mr-[30vw]">
+                <Image
+                  src="/images/roamswild/beginning-screenshot.png"
+                  alt="Screenshot showing Claude Code terminal and RoamsWild app development"
+                  width={1400}
+                  height={900}
+                  className="w-full h-auto rounded-xl shadow-2xl"
                 />
               </div>
-              <div>
-                <p className="text-sm font-semibold uppercase tracking-widest text-muted mb-1">
-                  Takeaway #1
-                </p>
-                <h3 className="heading-md mb-2">Start with a clear plan</h3>
-                <p className="body-md">
-                  AI tools are powerful accelerators, but they amplify whatever
-                  direction you give them. Without clear constraints and goals,
-                  you end up iterating on the wrong things faster. Define
-                  the problem, the audience, and what success looks like before
-                  touching any tool.
-                </p>
-              </div>
             </div>
 
-            <div className="img-rounded">
-              <Image
-                src="/images/roamswild/processoverview.png"
-                alt="Process overview showing the project planning and workflow"
-                width={1440}
-                height={800}
+          </div>
+        </div>
+      </section>
+
+      {/* Takeaway 1 */}
+      <section className="py-16 md:py-20" style={{ backgroundColor: "rgba(212, 160, 60, 0.12)" }}>
+        <div className="max-w-3xl mx-auto px-6 md:px-12 text-center">
+          <div className="inline-flex p-3 rounded-lg mb-5" style={{ backgroundColor: "rgba(212, 160, 60, 0.2)" }}>
+            <Lightbulb
+              size={28}
+              weight="duotone"
+              style={{ color: "#d4a03c" }}
+            />
+          </div>
+          <p className="text-xs font-semibold uppercase tracking-widest mb-2" style={{ color: "#d4a03c" }}>
+            Takeaway #1
+          </p>
+          <h3 className="heading-md mb-3">Start with a clear plan</h3>
+          <p className="body-md text-muted max-w-2xl mx-auto">
+            AI tools are powerful accelerators, but they amplify whatever
+            direction you give them. Without clear constraints and goals,
+            you end up iterating on the wrong things faster. Define
+            the problem, the audience, and what success looks like before
+            touching any tool.
+          </p>
+        </div>
+      </section>
+
+      {/* Initial Output */}
+      <section className="py-24 md:py-32 bg-white">
+        <div className="max-w-6xl mx-auto px-6 md:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div>
+              <p className="body-lg text-muted">
+                The initial output was extremely incomplete because I
+                hadn&apos;t clearly defined what I was trying to make. Features
+                were vague, and some flows didn&apos;t make sense from a product
+                perspective. As I spent more time experimenting and evaluating
+                public APIs, the project began to take shape into something more
+                intentional.
+              </p>
+            </div>
+            <div className="rounded-xl overflow-hidden shadow-lg">
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
                 className="w-full h-auto"
-              />
+              >
+                <source src="/images/roamswild/initialappflow.mov" type="video/mp4" />
+              </video>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Takeaway 1 Image */}
-      <section className="bg-cream-dark">
-        <div className="container-site py-8">
-          <div className="img-rounded">
-            <Image
-              src="/images/roamswild/takeaway1.png"
-              alt="Takeaway 1 visual - starting with a clear plan"
-              width={1440}
-              height={800}
-              className="w-full h-auto"
-            />
-          </div>
-        </div>
+      {/* Ideation Timelapse */}
+      <section className="bg-white">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-auto"
+        >
+          <source src="/images/roamswild/Ideatimelapse.mp4" type="video/mp4" />
+        </video>
       </section>
 
       {/* The Foundation */}
-      <section className="section-spacing bg-cream">
+      <section className="section-spacing bg-rw-cream">
         <div className="container-site">
           <div className="case-study-section">
             <p className="text-sm font-semibold uppercase tracking-widest text-muted mb-3">
@@ -404,12 +473,12 @@ export default function RoamsWild() {
             </div>
 
             {/* Takeaway 2 */}
-            <div className="bg-white rounded-xl p-8 flex items-start gap-5">
-              <div className="p-3 bg-cream rounded-lg shrink-0">
+            <div className="bg-rw-green/10 border border-rw-green/20 rounded-xl p-8 flex items-start gap-5">
+              <div className="p-3 bg-rw-green/15 rounded-lg shrink-0">
                 <Lightbulb
                   size={28}
                   weight="duotone"
-                  className="text-charcoal"
+                  className="text-rw-green"
                 />
               </div>
               <div>
@@ -431,7 +500,7 @@ export default function RoamsWild() {
       </section>
 
       {/* Takeaway 2 Image */}
-      <section className="bg-cream-dark">
+      <section className="bg-rw-sand">
         <div className="container-site py-8">
           <div className="img-rounded">
             <Image
@@ -463,7 +532,7 @@ export default function RoamsWild() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
               <div className="metric-card">
-                <div className="p-3 bg-cream rounded-lg inline-flex mb-3">
+                <div className="p-3 bg-rw-green/10 rounded-lg inline-flex mb-3">
                   <CloudSun
                     size={28}
                     weight="duotone"
@@ -477,7 +546,7 @@ export default function RoamsWild() {
                 </p>
               </div>
               <div className="metric-card">
-                <div className="p-3 bg-cream rounded-lg inline-flex mb-3">
+                <div className="p-3 bg-rw-green/10 rounded-lg inline-flex mb-3">
                   <Mountains
                     size={28}
                     weight="duotone"
@@ -491,7 +560,7 @@ export default function RoamsWild() {
                 </p>
               </div>
               <div className="metric-card">
-                <div className="p-3 bg-cream rounded-lg inline-flex mb-3">
+                <div className="p-3 bg-rw-green/10 rounded-lg inline-flex mb-3">
                   <MapTrifold
                     size={28}
                     weight="duotone"
@@ -505,7 +574,7 @@ export default function RoamsWild() {
                 </p>
               </div>
               <div className="metric-card">
-                <div className="p-3 bg-cream rounded-lg inline-flex mb-3">
+                <div className="p-3 bg-rw-green/10 rounded-lg inline-flex mb-3">
                   <Camera
                     size={28}
                     weight="duotone"
@@ -531,12 +600,12 @@ export default function RoamsWild() {
             </div>
 
             {/* Takeaway 3 */}
-            <div className="bg-cream rounded-xl p-8 flex items-start gap-5">
-              <div className="p-3 bg-white rounded-lg shrink-0">
+            <div className="bg-rw-green/10 border border-rw-green/20 rounded-xl p-8 flex items-start gap-5">
+              <div className="p-3 bg-rw-green/15 rounded-lg shrink-0">
                 <Lightbulb
                   size={28}
                   weight="duotone"
-                  className="text-charcoal"
+                  className="text-rw-green"
                 />
               </div>
               <div>
@@ -560,7 +629,7 @@ export default function RoamsWild() {
       </section>
 
       {/* Takeaway 3 Image */}
-      <section className="bg-cream-dark">
+      <section className="bg-rw-sand">
         <div className="container-site py-8">
           <div className="img-rounded">
             <Image
@@ -575,7 +644,7 @@ export default function RoamsWild() {
       </section>
 
       {/* Designing the Intelligence Layer */}
-      <section className="section-spacing bg-cream">
+      <section className="section-spacing bg-rw-cream">
         <div className="container-site">
           <div className="case-study-section">
             <p className="text-sm font-semibold uppercase tracking-widest text-muted mb-3">
@@ -593,7 +662,7 @@ export default function RoamsWild() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
               <div className="bg-white rounded-xl p-6 text-center">
-                <div className="p-3 bg-cream rounded-lg inline-flex mb-4">
+                <div className="p-3 bg-rw-green/10 rounded-lg inline-flex mb-4">
                   <CloudSun
                     size={28}
                     weight="duotone"
@@ -607,7 +676,7 @@ export default function RoamsWild() {
                 </p>
               </div>
               <div className="bg-white rounded-xl p-6 text-center">
-                <div className="p-3 bg-cream rounded-lg inline-flex mb-4">
+                <div className="p-3 bg-rw-green/10 rounded-lg inline-flex mb-4">
                   <TreeEvergreen
                     size={28}
                     weight="duotone"
@@ -623,7 +692,7 @@ export default function RoamsWild() {
                 </p>
               </div>
               <div className="bg-white rounded-xl p-6 text-center">
-                <div className="p-3 bg-cream rounded-lg inline-flex mb-4">
+                <div className="p-3 bg-rw-green/10 rounded-lg inline-flex mb-4">
                   <CloudSun
                     size={28}
                     weight="duotone"
@@ -639,7 +708,7 @@ export default function RoamsWild() {
                 </p>
               </div>
               <div className="bg-white rounded-xl p-6 text-center">
-                <div className="p-3 bg-cream rounded-lg inline-flex mb-4">
+                <div className="p-3 bg-rw-green/10 rounded-lg inline-flex mb-4">
                   <MapTrifold
                     size={28}
                     weight="duotone"
@@ -670,7 +739,7 @@ export default function RoamsWild() {
       </section>
 
       {/* Landing Page Showcase */}
-      <section className="bg-cream-dark">
+      <section className="bg-rw-sand">
         <div className="container-site py-8">
           <div className="img-rounded">
             <Image
