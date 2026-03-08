@@ -5,20 +5,32 @@ import matter from "gray-matter";
 const projectsDir = path.join(process.cwd(), "content/projects");
 const pagesDir = path.join(process.cwd(), "content/pages");
 
+export interface KeyResult {
+  icon: string;
+  value: string;
+  label: string;
+}
+
 export interface ProjectMeta {
   slug: string;
   order: number;
   title: string;
   summary: string;
   results: string;
+  keyResults?: KeyResult[];
   cta: string;
   logo: string;
   logoAlt: string;
   logoWidth: number;
+  logoHeight?: number;
   image: string;
   imageAlt: string;
   bg: string;
   darkText: boolean;
+  featured?: boolean;
+  tags?: string[];
+  accent?: string;
+  lightAccent?: boolean;
 }
 
 export function getProjects(): ProjectMeta[] {

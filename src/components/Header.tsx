@@ -11,13 +11,16 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-md">
       <div className="container-site flex items-center justify-between h-20">
-        <Link href="/">
+        <Link href="/" className="flex items-center gap-2.5">
           <Image
             src="/images/logos/LogoMark.png"
             alt="Michelle Taylor"
-            width={18}
-            height={18}
+            width={9}
+            height={9}
           />
+          <span className="text-sm font-extrabold uppercase tracking-[0.15em] text-charcoal">
+            Michelle Taylor
+          </span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-5">

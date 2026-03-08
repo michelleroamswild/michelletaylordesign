@@ -18,7 +18,7 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-16 pb-12 md:pt-24 md:pb-16 bg-white">
+      <section className="pt-16 pb-20 md:pt-24 md:pb-28 bg-white">
         <div className="container-site">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-12 lg:gap-16 items-start">
             {/* Left - headline and description */}
@@ -57,19 +57,19 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="flex flex-wrap gap-6 text-sm text-muted mt-12">
+          <div className="inline-flex items-center bg-gray-50 border rounded-full divide-x mt-3 mb-12" style={{ borderColor: "hsl(249, 60%, 80%)", divideColor: "hsl(249, 60%, 80%)" }}>
             {home.traits.map((trait) => (
-              <div key={trait} className="flex items-center gap-2">
+              <div key={trait} className="flex items-center gap-2 text-sm text-muted px-5 py-2.5" style={{ borderColor: "hsl(249, 60%, 80%)" }}>
                 {trait.includes("years") && (
-                  <CalendarDots size={18} weight="regular" />
+                  <CalendarDots size={16} weight="duotone" style={{ color: "hsl(249, 80%, 60%)" }} />
                 )}
                 {trait.includes("commerce") && (
-                  <Compass size={18} weight="regular" />
+                  <Compass size={16} weight="duotone" style={{ color: "hsl(249, 80%, 60%)" }} />
                 )}
                 {trait.includes("Strategy") && (
-                  <Strategy size={18} weight="regular" />
+                  <Strategy size={16} weight="duotone" style={{ color: "hsl(249, 80%, 60%)" }} />
                 )}
-                <span>{trait}</span>
+                <span className="font-medium">{trait}</span>
               </div>
             ))}
           </div>
@@ -85,15 +85,21 @@ export default function Home() {
               logo={project.logo}
               logoAlt={project.logoAlt}
               logoWidth={project.logoWidth}
+              logoHeight={project.logoHeight}
               title={project.title}
               summary={project.summary}
               results={project.results}
+              keyResults={project.keyResults}
               cta={project.cta}
               href={`/${project.slug}`}
               image={project.image}
               imageAlt={project.imageAlt}
               bg={project.bg}
               darkText={project.darkText}
+              featured={project.featured}
+              tags={project.tags}
+              accent={project.accent}
+              lightAccent={project.lightAccent}
             />
           ))}
         </div>

@@ -5,7 +5,7 @@ description: "I design products that turn complexity into clarity — simplifyin
 traits:
   - "10+ years experience"
   - "E-commerce, Fintech, Logistics"
-  - "Strategy-led design for B2B and SaaS Products"
+  - "Strategy-led design for B2B , B2B2c, and SaaS Products"
 callouts:
   - company: Bolt
     metric: "Up to 26% cart recovery"

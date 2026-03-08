@@ -16,7 +16,9 @@
   --color-bolt-dark: #1a1a1a;
   --color-c1-blue: #004977;
   --color-c1-red: #d03027;
+  --color-c1-gray: #F1F1F3;
   --color-chr-blue: #0055a4;
+  --color-chr-bg: hsla(198, 100%, 34%, 0.2);
   --color-rw-forest: #6b8a1d;
   --color-rw-forest-dark: #2d3a1e;
   --color-rw-forest-light: #a5c94a;
@@ -30,7 +32,7 @@
   --color-rw-pink: #e85a9a;
   --color-rw-teal: #34b5a5;
   --color-rw-violet: #6b5ce6;
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
 }
 
 html {
@@ -110,17 +112,42 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.625rem 1.25rem;
+  padding: 1.15rem 2.75rem;
   background: var(--color-charcoal);
   color: white;
   border-radius: 9999px;
-  font-size: 0.8125rem;
-  font-weight: 500;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
   transition: all 0.2s ease;
 }
 
 .btn-case-study:hover {
   background: var(--color-charcoal-light);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.btn-accent {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1.15rem 2.75rem;
+  background: var(--accent-color);
+  color: white;
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: all 0.2s ease;
+}
+
+.btn-accent:hover {
+  opacity: 0.85;
   transform: translateY(-1px);
 }
 
