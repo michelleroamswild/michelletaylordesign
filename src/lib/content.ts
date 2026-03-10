@@ -45,18 +45,11 @@ export function getProjects(): ProjectMeta[] {
   return projects.sort((a, b) => a.order - b.order);
 }
 
-export interface HomeCallout {
-  company: string;
-  metric: string;
-  detail: string;
-}
-
 export interface HomeMeta {
   greeting: string;
-  headline: string;
   description: string;
   traits: string[];
-  callouts: HomeCallout[];
+  traitDetails: string[];
 }
 
 export function getHomePage(): HomeMeta {

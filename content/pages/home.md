@@ -1,19 +1,12 @@
 ---
 greeting: "Hi, I'm Michelle"
-headline: "I'm a product designer with over 10 years of experience solving complex problems and delivering impactful results across industries."
-description: "I helped boost abandoned cart recovery rates by **up to 26%** at Bolt, streamlined expense reconciliation for Capital One businesses **cutting weeks of work out** of expense processes, and developed innovative methods to **prevent shipping exceptions** in supply chain management at CHR. My work focuses on creating efficiencies for users that deliver measurable business results."
+description: "I helped increase abandoned cart recovery by **up to 13%**, reduced account creation bottlenecks from **70+ days to minutes,** and streamlined business expense reconciliation, **eliminating weeks of manual work** from financial workflows."
 traits:
   - "10+ years experience"
-  - "E-commerce, Fintech, Logistics"
-  - "B2B , B2B2C, Consumer and SaaS Products"
-callouts:
-  - company: Bolt
-    metric: "Up to 26% cart recovery"
-    detail: "Redesigned abandoned cart emails to recover $18M in lost revenue"
-  - company: Capital One
-    metric: "Weeks of work cut"
-    detail: "Automated expense reconciliation for corporate card administrators across 5 pilot clients"
-  - company: C.H. Robinson
-    metric: "Exceptions prevented"
-    detail: "Built a predictive logistics platform to catch shipping delays before they happen"
+  - "E-commerce, Fintech, & Logistics"
+  - "B2B, B2B2C, and SaaS Products"
+traitDetails:
+  - "Designing across companies like Bolt, Capital One, and C.H. Robinson — from startups to enterprise."
+  - "Deep domain expertise in high-stakes industries where design directly impacts revenue and operations."
+  - "Designing scalable systems that serve multiple user types — from internal tools to customer-facing platforms."
 ---

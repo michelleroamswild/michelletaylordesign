@@ -29,14 +29,16 @@ const futureVisionIcons = [
   "ChartLineUp",
 ];
 
-const content = getPageContent("bolt-abandoned-carts");
-
-export const metadata = {
-  title: content.pageTitle,
-  description: content.pageDescription,
-};
+export function generateMetadata() {
+  const content = getPageContent("bolt-abandoned-carts");
+  return {
+    title: content.pageTitle,
+    description: content.pageDescription,
+  };
+}
 
 export default function BoltAbandonedCarts() {
+  const content = getPageContent("bolt-abandoned-carts");
   const resultsMetrics = content.resultsMetrics as Array<{
     value: string;
     label: string;

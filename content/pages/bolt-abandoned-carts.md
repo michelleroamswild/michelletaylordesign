@@ -7,8 +7,8 @@ pageDescription: "How Michelle Taylor redesigned abandoned cart recovery at Bolt
 heroLogo:
   src: "/images/logos/BoltLogo.png"
   alt: "Bolt"
-heroTitle: "Increasing Abandoned Cart Conversion by up to 26%"
-heroHighlight: "up to 26%"
+heroTitle: "Increasing Abandoned Cart Conversion by up to 13%"
+heroHighlight: "up to 13%"
 heroDescription: "Redesigned abandoned cart recovery emails and SMS with direct-to-checkout links, pre-loading saved cart contents and shopper information for one-click checkout — recovering millions in potentially lost revenue for Bolt merchants."
 heroImage:
   src: "/images/abandoned-carts/ACHero.png"
