@@ -42,7 +42,8 @@ export default function Header() {
           <a
             href="/michelletaylorresume2026.pdf"
             target="_blank"
-            className="inline-flex items-center px-4 py-2 bg-charcoal text-white text-xs font-medium rounded-full hover:bg-charcoal-light transition-colors"
+            className="inline-flex items-center px-4 py-2 text-white text-xs font-medium rounded-full transition-all hover:opacity-85 hover:-translate-y-0.5"
+            style={{ backgroundColor: "hsl(249, 80%, 60%)" }}
           >
             Download Resum&eacute;
           </a>
@@ -78,7 +79,8 @@ export default function Header() {
           <a
             href="/michelletaylorresume2026.pdf"
             target="_blank"
-            className="inline-flex items-center px-4 py-2 bg-charcoal text-white text-xs font-medium rounded-full"
+            className="inline-flex items-center px-4 py-2 text-white text-xs font-medium rounded-full"
+            style={{ backgroundColor: "hsl(249, 80%, 60%)" }}
           >
             Download Resum&eacute;
           </a>

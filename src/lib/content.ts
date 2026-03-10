@@ -28,6 +28,7 @@ export interface ProjectMeta {
   bg: string;
   darkText: boolean;
   featured?: boolean;
+  hidden?: boolean;
   tags?: string[];
   accent?: string;
   lightAccent?: boolean;
@@ -42,7 +43,13 @@ export function getProjects(): ProjectMeta[] {
     return data as ProjectMeta;
   });
 
-  return projects.sort((a, b) => a.order - b.order);
+  return projects.filter((p) => !p.hidden).sort((a, b) => a.order - b.order);
+}
+
+export interface HowIWorkItem {
+  title: string;
+  icon: string;
+  description: string;
 }
 
 export interface HomeMeta {
@@ -50,6 +57,8 @@ export interface HomeMeta {
   description: string;
   traits: string[];
   traitDetails: string[];
+  howIWorkHeadline: string;
+  howIWork: HowIWorkItem[];
 }
 
 export function getHomePage(): HomeMeta {

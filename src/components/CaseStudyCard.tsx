@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import ScrollReveal from "./ScrollReveal";
 import {
   ListChecks,
   Lightning,
@@ -87,8 +88,8 @@ export default function CaseStudyCard({
   lightAccent = false,
 }: CaseStudyCardProps) {
   const textColor = darkText ? "text-charcoal" : "text-white";
-  const mutedColor = darkText ? "text-muted" : "text-white/90";
-  const labelColor = darkText ? "text-charcoal" : "text-white";
+  const mutedColor = darkText ? "text-muted-light" : "text-white/70";
+  const labelColor = darkText ? "text-muted" : "text-white/80";
   const btnClass = accent
     ? "btn-case-study"
     : darkText
@@ -127,7 +128,7 @@ export default function CaseStudyCard({
             className="object-contain object-left mb-3"
             style={{ width: `${logoWidth}px`, height: "auto" }}
           />
-          <h3 className={`heading-lg ${textColor}`}>{title}</h3>
+          <h3 className={`heading-lg ${textColor} mb-4`}>{title}</h3>
           <div className="space-y-4">
             <div>
               <p className={`text-xs font-bold uppercase tracking-wider mb-1 ${labelColor}`}>
@@ -142,7 +143,7 @@ export default function CaseStudyCard({
               <p className={`body-md ${mutedColor}`}>{results}</p>
             </div>
             {keyResults && keyResults.length > 0 && (
-              <div className="grid grid-cols-3 gap-3 mt-2">
+              <div className="grid grid-cols-3 gap-3 mt-6">
                 {keyResults.map((kr) => {
                   const Icon = iconMap[kr.icon];
                   return (
@@ -179,7 +180,7 @@ export default function CaseStudyCard({
         </div>
 
         {/* Image side - always right */}
-        <div className="relative min-h-[350px] md:min-h-[800px] p-6 md:p-10 flex items-center justify-center">
+        <ScrollReveal className="relative min-h-[350px] md:min-h-[800px] p-6 md:p-10 flex items-center justify-center">
           {image.endsWith(".gif") ? (
             // eslint-disable-next-line @next/next/no-img-element
             <img
@@ -198,7 +199,7 @@ export default function CaseStudyCard({
               />
             </div>
           )}
-        </div>
+        </ScrollReveal>
       </div>
     </div>
   );
