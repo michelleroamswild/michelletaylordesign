@@ -52,6 +52,12 @@ const toolIconMap: Record<string, any> = {
   "Notion": Notepad,
 };
 
+export const metadata = {
+  title: "RoamsWild — Data-Driven Campsite Discovery Tool",
+  description:
+    "A passion project exploring how terrain data, road networks, and weather signals can surface high-potential campsites and photo locations for outdoor travel.",
+};
+
 export default function RoamsWild() {
   const content = getPageContent("roamswild");
   return (

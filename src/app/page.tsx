@@ -1,12 +1,10 @@
 import {
-  CalendarDots,
-  Compass,
-  Strategy,
   ShoppingCart,
   Receipt,
   Package,
 } from "@phosphor-icons/react/dist/ssr";
 import CaseStudyCard from "@/components/CaseStudyCard";
+import TraitPills from "@/components/TraitPills";
 import { getProjects, getHomePage } from "@/lib/content";
 
 const calloutIcons = [ShoppingCart, Receipt, Package];
@@ -17,29 +15,48 @@ export default function Home() {
 
   return (
     <>
+      <div className="relative overflow-x-clip">
+
       {/* Hero */}
-      <section className="pt-16 pb-20 md:pt-24 md:pb-28 bg-white">
+      <section className="pt-32 pb-36 md:pt-44 md:pb-52 relative">
+        <div className="hero-blob hero-blob-1" />
+        <div className="hero-blob hero-blob-2" />
+        <div className="hero-blob hero-blob-3" />
         <div className="container-site">
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-12 lg:gap-16 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-12 lg:gap-16 items-center">
             {/* Left - headline and description */}
             <div>
               <p className="text-sm text-muted mb-4">{home.greeting}</p>
               <h1 className="heading-hero mb-8">{home.headline}</h1>
-              <p className="body-lg text-muted max-w-2xl">
-                {home.description}
-              </p>
+              <p
+                className="body-lg text-muted max-w-2xl"
+                dangerouslySetInnerHTML={{
+                  __html: home.description.replace(
+                    /\*\*(.*?)\*\*/g,
+                    '<strong class="text-charcoal font-semibold">$1</strong>'
+                  ),
+                }}
+              />
+
             </div>
 
             {/* Right - result callouts stacked */}
             <div className="flex flex-col gap-4">
               {home.callouts.map((callout, i) => {
                 const Icon = calloutIcons[i] ?? ShoppingCart;
+                const colors = [
+                  { border: "hsl(214, 100%, 50%)", bg: "hsl(214, 100%, 97%)" },
+                  { border: "hsl(249, 80%, 60%)", bg: "hsl(249, 80%, 97%)" },
+                  { border: "#F37B1F", bg: "hsl(25, 100%, 97%)" },
+                ];
+                const color = colors[i] ?? colors[0];
                 return (
                   <div
                     key={callout.company}
-                    className="border border-gray-200 rounded-lg p-5 flex flex-col gap-2"
+                    className="rounded-lg p-5 flex flex-col gap-2 border-l-4 bg-white"
+                    style={{ borderLeftColor: color.border }}
                   >
-                    <div className="flex items-center gap-2 text-muted">
+                    <div className="flex items-center gap-2" style={{ color: color.border }}>
                       <Icon size={16} weight="duotone" />
                       <span className="text-xs font-semibold uppercase tracking-wider">
                         {callout.company}
@@ -57,27 +74,12 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="inline-flex items-center bg-gray-50 border rounded-full divide-x mt-3 mb-12" style={{ borderColor: "hsl(249, 60%, 80%)", divideColor: "hsl(249, 60%, 80%)" }}>
-            {home.traits.map((trait) => (
-              <div key={trait} className="flex items-center gap-2 text-sm text-muted px-5 py-2.5" style={{ borderColor: "hsl(249, 60%, 80%)" }}>
-                {trait.includes("years") && (
-                  <CalendarDots size={16} weight="duotone" style={{ color: "hsl(249, 80%, 60%)" }} />
-                )}
-                {trait.includes("commerce") && (
-                  <Compass size={16} weight="duotone" style={{ color: "hsl(249, 80%, 60%)" }} />
-                )}
-                {trait.includes("Strategy") && (
-                  <Strategy size={16} weight="duotone" style={{ color: "hsl(249, 80%, 60%)" }} />
-                )}
-                <span className="font-medium">{trait}</span>
-              </div>
-            ))}
-          </div>
+          <TraitPills traits={home.traits} />
         </div>
       </section>
 
       {/* Case Studies */}
-      <section className="pb-16 md:pb-24 bg-white">
+      <section className="pb-16 md:pb-24">
         <div className="container-site space-y-10">
           {projects.map((project) => (
             <CaseStudyCard
@@ -104,6 +106,7 @@ export default function Home() {
           ))}
         </div>
       </section>
+      </div>
     </>
   );
 }

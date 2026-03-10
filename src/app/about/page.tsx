@@ -101,6 +101,12 @@ const timeline = [
   },
 ];
 
+export const metadata = {
+  title: "About Michelle Taylor — Product Designer",
+  description:
+    "Michelle Taylor is a product designer with 10+ years of experience in e-commerce, fintech, and enterprise SaaS, specializing in strategy-led design for B2B and B2B2C products.",
+};
+
 export default function AboutPage() {
   return (
     <>

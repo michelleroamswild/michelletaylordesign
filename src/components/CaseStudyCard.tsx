@@ -124,8 +124,8 @@ export default function CaseStudyCard({
             alt={logoAlt}
             width={logoWidth}
             height={logoHeight}
-            className="w-auto object-contain object-left"
-            style={{ height: logoHeight ? `${logoHeight}px` : "2rem" }}
+            className="object-contain object-left mb-3"
+            style={{ width: `${logoWidth}px`, height: "auto" }}
           />
           <h3 className={`heading-lg ${textColor}`}>{title}</h3>
           <div className="space-y-4">
