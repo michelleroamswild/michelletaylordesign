@@ -99,7 +99,7 @@ export default function CaseStudyCard({
   return (
     <div className={`card ${bg} relative`}>
       {tags && tags.length > 0 && (
-        <div className="absolute top-10 md:top-12 lg:top-16 right-10 md:right-12 lg:right-16 z-10 flex flex-wrap gap-2 justify-end">
+        <div className="hidden md:flex absolute top-12 lg:top-16 right-12 lg:right-16 z-10 flex-wrap gap-2 justify-end">
           {tags.map((t) => (
             <span
               key={t}
@@ -128,6 +128,25 @@ export default function CaseStudyCard({
             className="object-contain object-left mb-3"
             style={{ width: `${logoWidth}px`, height: "auto" }}
           />
+          {tags && tags.length > 0 && (
+            <div className="flex md:hidden flex-wrap gap-1.5 -mt-2">
+              {tags.map((t) => (
+                <span
+                  key={t}
+                  className="text-[0.55rem] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full border inline-flex items-center gap-1"
+                  style={{
+                    backgroundColor: accent
+                      ? lightAccent ? `color-mix(in srgb, ${accent} 8%, white)` : `color-mix(in srgb, ${accent} 15%, white)`
+                      : darkText ? "hsl(249, 80%, 92%)" : "rgba(255,255,255,0.15)",
+                    color: lightAccent ? "#1a1a1a" : accent || (darkText ? "hsl(249, 80%, 60%)" : "rgba(255,255,255,0.8)"),
+                    borderColor: accent || (darkText ? "hsl(249, 80%, 60%)" : "rgba(255,255,255,0.3)"),
+                  }}
+                >
+                  {t}
+                </span>
+              ))}
+            </div>
+          )}
           <h3 className={`heading-lg ${textColor} mb-4`}>{title}</h3>
           <div className="space-y-4">
             <div>

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import {
   ArrowLeft,
+  ArrowRight,
   EnvelopeSimple,
   DeviceMobileSpeaker,
   ChartLineUp,
@@ -12,6 +13,7 @@ import {
   RocketLaunch,
 } from "@phosphor-icons/react/dist/ssr";
 import Link from "next/link";
+import ScrollReveal from "@/components/ScrollReveal";
 import { getPageContent } from "@/lib/content";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -137,7 +139,7 @@ export default function BoltAbandonedCarts() {
                 />
                 <p className="body-md">{content.problemDescription2}</p>
               </div>
-              <div className="img-rounded">
+              <ScrollReveal className="img-rounded">
                 <Image
                   src={content.problemImage.src}
                   alt={content.problemImage.alt}
@@ -145,7 +147,7 @@ export default function BoltAbandonedCarts() {
                   height={540}
                   className="w-full h-auto"
                 />
-              </div>
+              </ScrollReveal>
             </div>
           </div>
         </div>
@@ -229,7 +231,7 @@ export default function BoltAbandonedCarts() {
                   }}
                 />
               </div>
-              <div className="img-rounded">
+              <ScrollReveal className="img-rounded">
                 <Image
                   src={content.timingImage.src}
                   alt={content.timingImage.alt}
@@ -237,7 +239,7 @@ export default function BoltAbandonedCarts() {
                   height={540}
                   className="w-full h-auto"
                 />
-              </div>
+              </ScrollReveal>
             </div>
           </div>
         </div>
@@ -274,7 +276,7 @@ export default function BoltAbandonedCarts() {
               />
             </div>
 
-            <div className="img-rounded mb-8">
+            <ScrollReveal className="img-rounded mb-8">
               <Image
                 src={emailRedesignImages[0].src}
                 alt={emailRedesignImages[0].alt}
@@ -282,11 +284,11 @@ export default function BoltAbandonedCarts() {
                 height={810}
                 className="w-full h-auto"
               />
-            </div>
+            </ScrollReveal>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {emailRedesignImages.slice(1).map((img, index) => (
-                <div key={index} className="img-rounded">
+                <ScrollReveal key={index} className="img-rounded">
                   <Image
                     src={img.src}
                     alt={img.alt}
@@ -294,7 +296,7 @@ export default function BoltAbandonedCarts() {
                     height={540}
                     className="w-full h-auto"
                   />
-                </div>
+                </ScrollReveal>
               ))}
             </div>
           </div>
@@ -339,7 +341,7 @@ export default function BoltAbandonedCarts() {
                   }}
                 />
               </div>
-              <div className="img-rounded">
+              <ScrollReveal className="img-rounded">
                 <Image
                   src={dashboardImages[0].src}
                   alt={dashboardImages[0].alt}
@@ -347,10 +349,10 @@ export default function BoltAbandonedCarts() {
                   height={540}
                   className="w-full h-auto"
                 />
-              </div>
+              </ScrollReveal>
             </div>
 
-            <div className="img-rounded mt-10">
+            <ScrollReveal className="img-rounded mt-10">
               <Image
                 src={dashboardImages[1].src}
                 alt={dashboardImages[1].alt}
@@ -358,7 +360,7 @@ export default function BoltAbandonedCarts() {
                 height={810}
                 className="w-full h-auto"
               />
-            </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
@@ -368,7 +370,7 @@ export default function BoltAbandonedCarts() {
         <div className="container-site">
           <div className="case-study-section">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div className="order-2 lg:order-1 img-rounded">
+              <ScrollReveal className="order-2 lg:order-1 img-rounded">
                 <Image
                   src={content.smsConsentImage.src}
                   alt={content.smsConsentImage.alt}
@@ -376,7 +378,7 @@ export default function BoltAbandonedCarts() {
                   height={540}
                   className="w-full h-auto"
                 />
-              </div>
+              </ScrollReveal>
               <div className="order-1 lg:order-2">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="p-2 bg-white rounded-lg">
@@ -449,6 +451,56 @@ export default function BoltAbandonedCarts() {
                   </div>
                 );
               })}
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* Footer CTA */}
+      <section className="py-16 md:py-24">
+        <div className="container-site">
+          <div className="relative overflow-hidden p-10 md:p-16" style={{ backgroundColor: "hsl(209, 100%, 25%)" }}>
+            <div className="hidden lg:block absolute top-0 bottom-0 w-px bg-white/15" style={{ left: "55%" }} />
+            <div className="grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-12 lg:gap-16 items-center">
+            <div className="max-w-xl">
+              <p className="text-xs font-semibold uppercase tracking-widest mb-3" style={{ color: "hsl(214, 100%, 50%)" }}>
+                Thank you for reading
+              </p>
+              <h2 className="heading-md text-white mb-4">
+                Want to see more of my work?
+              </h2>
+              <p className="body-lg !text-white/70 mb-8">
+                Check out my other case studies or head back to the portfolio.
+              </p>
+              <Link
+                href="/"
+                className="btn-primary inline-flex items-center gap-2 hover:opacity-85 hover:-translate-y-0.5 transition-all"
+                style={{ backgroundColor: "hsl(249, 80%, 60%)" }}
+              >
+                <ArrowLeft size={18} weight="bold" />
+                Back to Portfolio
+              </Link>
+            </div>
+
+            <Link href="/expense-management" className="group block">
+              <h2 className="heading-xl text-white mb-6">
+                Next Project
+              </h2>
+              <div className="mb-4">
+                <Image
+                  src="/images/expense-management/ExpenseManagementMobile.png"
+                  alt="Capital One expense management screens"
+                  width={600}
+                  height={400}
+                  className="w-full h-auto group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <p className="text-white font-semibold group-hover:text-white/80 transition-colors">
+                Automating admin workflows and simplifying expense reporting
+              </p>
+              <span className="inline-flex items-center gap-1.5 text-sm text-white/50 group-hover:text-white/70 transition-colors mt-2">
+                View Case Study <ArrowRight size={14} weight="bold" />
+              </span>
+            </Link>
             </div>
           </div>
         </div>

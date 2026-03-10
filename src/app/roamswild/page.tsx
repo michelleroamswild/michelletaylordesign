@@ -7,6 +7,7 @@ import {
   Tent,
   Mountains,
   ArrowLeft,
+  ArrowRight,
   ArrowSquareOut,
   Compass,
   CloudSun,
@@ -33,6 +34,7 @@ import {
   WifiSlash,
   Jeep,
 } from "@phosphor-icons/react/dist/ssr";
+import ScrollReveal from "@/components/ScrollReveal";
 import { getPageContent } from "@/lib/content";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -176,7 +178,7 @@ export default function RoamsWild() {
       {/* App Mockup */}
       <section className="bg-rw-sand">
         <div className="container-site py-32 md:py-44">
-          <div className="img-rounded">
+          <ScrollReveal className="img-rounded">
             <Image
               src="/images/roamswild/mockup.png"
               alt="RoamsWild app mockup showing the campsite discovery interface"
@@ -184,7 +186,7 @@ export default function RoamsWild() {
               height={900}
               className="w-full h-auto"
             />
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 
@@ -386,7 +388,7 @@ export default function RoamsWild() {
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12 items-start">
-              <div className="img-rounded self-start">
+              <ScrollReveal className="img-rounded self-start">
                 <Image
                   src="/images/roamswild/styleguide.webp"
                   alt="RoamsWild design system style guide"
@@ -394,7 +396,7 @@ export default function RoamsWild() {
                   height={500}
                   className="w-full h-auto"
                 />
-              </div>
+              </ScrollReveal>
               <div className="rounded-xl border border-sand overflow-y-auto" style={{ height: "443px" }}>
                 <Image
                   src="/images/roamswild/landing-page.png"
@@ -436,7 +438,7 @@ export default function RoamsWild() {
         <div className="container-site">
           <div className="case-study-section">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
-              <div className="img-rounded">
+              <ScrollReveal className="img-rounded">
                 <Image
                   src="/images/roamswild/explore-annotated.jpg"
                   alt="RoamsWild explore interface with annotations showing public land boundaries, MVUM roads, filter by access, potential camps, and confidence scoring"
@@ -444,7 +446,7 @@ export default function RoamsWild() {
                   height={500}
                   className="w-full h-auto"
                 />
-              </div>
+              </ScrollReveal>
               <div>
                 <h2 className="heading-xl mb-10">
                   {content.systemsTitle}
@@ -478,7 +480,7 @@ export default function RoamsWild() {
       {/* Explore Tab Image */}
       <section className="bg-white">
         <div className="container-site py-8">
-          <div className="img-rounded">
+          <ScrollReveal className="img-rounded">
             <Image
               src="/images/roamswild/Exploretab.png"
               alt="RoamsWild explore tab showing the campsite discovery interface"
@@ -486,7 +488,7 @@ export default function RoamsWild() {
               height={900}
               className="w-full h-auto"
             />
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 
@@ -841,8 +843,8 @@ export default function RoamsWild() {
 
       {/* Campsite Showcase */}
       <section className="bg-cream">
-        <div className="container-site py-8">
-          <div className="img-rounded">
+        <div className="container-site py-20 md:py-32">
+          <ScrollReveal className="img-rounded">
             <Image
               src="/images/roamswild/campsitesmacbook.png"
               alt="RoamsWild campsite view on MacBook"
@@ -850,37 +852,66 @@ export default function RoamsWild() {
               height={900}
               className="w-full h-auto"
             />
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="section-spacing bg-charcoal">
-        <div className="container-site text-center">
-          <div className="max-w-2xl mx-auto">
-            <h2 className="heading-xl text-white mb-4">
-              {content.ctaTitle}
-            </h2>
-            <p className="body-lg !text-white/70 mb-8">
-              {content.ctaDescription}
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a
-                href="https://roamswild.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary !bg-accent !text-charcoal hover:!bg-accent-dark inline-flex items-center gap-2"
-              >
-                View the App
-                <ArrowSquareOut size={18} weight="bold" />
-              </a>
-              <Link
-                href="/"
-                className="btn-primary !bg-white/10 !text-white hover:!bg-white/20 inline-flex items-center gap-2"
-              >
-                <ArrowLeft size={18} weight="bold" />
-                Back to Portfolio
-              </Link>
+      {/* Footer CTA */}
+      <section className="py-16 md:py-24">
+        <div className="container-site">
+          <div className="relative overflow-hidden p-10 md:p-16" style={{ backgroundColor: "hsl(67, 100%, 50%)" }}>
+            <div className="hidden lg:block absolute top-0 bottom-0 w-px bg-black/10" style={{ left: "55%" }} />
+            <div className="grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-12 lg:gap-16 items-center">
+            {/* Left */}
+            <div className="max-w-xl">
+              <h2 className="heading-md text-charcoal mb-4">
+                {content.ctaTitle}
+              </h2>
+              <p className="body-lg text-charcoal/70 mb-8">
+                {content.ctaDescription}
+              </p>
+              <div className="flex flex-col sm:flex-row items-start gap-4">
+                <a
+                  href="https://roamswild.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary inline-flex items-center gap-2 hover:opacity-85 hover:-translate-y-0.5 transition-all"
+                  style={{ backgroundColor: "hsl(249, 80%, 60%)" }}
+                >
+                  View the App
+                  <ArrowSquareOut size={18} weight="bold" />
+                </a>
+                <Link
+                  href="/"
+                  className="btn-primary !bg-black/10 !text-charcoal hover:!bg-black/20 inline-flex items-center gap-2"
+                >
+                  <ArrowLeft size={18} weight="bold" />
+                  Back to Portfolio
+                </Link>
+              </div>
+            </div>
+
+            {/* Right - Next Project */}
+            <Link href="/onboarding" className="group block">
+              <h2 className="heading-xl text-charcoal mb-6">
+                Next Project
+              </h2>
+              <div className="mb-4">
+                <Image
+                  src="/images/onboarding/OnboardingHighlight.png"
+                  alt="Bolt onboarding interface"
+                  width={600}
+                  height={400}
+                  className="w-full h-auto group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <p className="text-charcoal font-semibold group-hover:text-charcoal/80 transition-colors">
+                Reducing merchant account creation from weeks to minutes
+              </p>
+              <span className="inline-flex items-center gap-1.5 text-sm text-charcoal/50 group-hover:text-charcoal/70 transition-colors mt-2">
+                View Case Study <ArrowRight size={14} weight="bold" />
+              </span>
+            </Link>
             </div>
           </div>
         </div>

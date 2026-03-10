@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowLeft,
+  ArrowRight,
   UsersFour,
   Lightbulb,
   MagnifyingGlass,
@@ -13,6 +14,7 @@ import {
   Sliders,
   Layout,
 } from "@phosphor-icons/react/dist/ssr";
+import ScrollReveal from "@/components/ScrollReveal";
 import { getPageContent } from "@/lib/content";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -250,7 +252,7 @@ export default function ExpenseManagementPage() {
                   ))}
                 </div>
               </div>
-              <div className="img-rounded">
+              <ScrollReveal className="img-rounded">
                 <Image
                   src={content.pilot_image_src}
                   alt={content.pilot_image_alt}
@@ -258,7 +260,7 @@ export default function ExpenseManagementPage() {
                   height={480}
                   className="w-full"
                 />
-              </div>
+              </ScrollReveal>
             </div>
           </div>
         </div>
@@ -346,7 +348,7 @@ export default function ExpenseManagementPage() {
             </div>
 
             <div className="space-y-8">
-              <div className="img-rounded">
+              <ScrollReveal className="img-rounded">
                 <Image
                   src={solution1Images[0].src}
                   alt={solution1Images[0].alt}
@@ -354,10 +356,10 @@ export default function ExpenseManagementPage() {
                   height={solution1Images[0].height}
                   className="w-full"
                 />
-              </div>
+              </ScrollReveal>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {solution1Images.slice(1).map((img, i) => (
-                  <div key={i} className="img-rounded">
+                  <ScrollReveal key={i} className="img-rounded">
                     <Image
                       src={img.src}
                       alt={img.alt}
@@ -365,7 +367,7 @@ export default function ExpenseManagementPage() {
                       height={img.height}
                       className="w-full"
                     />
-                  </div>
+                  </ScrollReveal>
                 ))}
               </div>
             </div>
@@ -427,7 +429,7 @@ export default function ExpenseManagementPage() {
               <p className="text-sm font-semibold uppercase tracking-wider text-muted mb-4">
                 {content.solution2_before_label}
               </p>
-              <div className="img-rounded border border-sand">
+              <ScrollReveal className="img-rounded border border-sand">
                 <Image
                   src={content.solution2_before_image_src}
                   alt={content.solution2_before_image_alt}
@@ -435,14 +437,14 @@ export default function ExpenseManagementPage() {
                   height={810}
                   className="w-full"
                 />
-              </div>
+              </ScrollReveal>
             </div>
 
             <div className="mb-10">
               <p className="text-sm font-semibold uppercase tracking-wider text-c1-blue mb-4">
                 {content.solution2_after_label}
               </p>
-              <div className="img-rounded">
+              <ScrollReveal className="img-rounded">
                 <Image
                   src={content.solution2_after_image_src}
                   alt={content.solution2_after_image_alt}
@@ -450,7 +452,7 @@ export default function ExpenseManagementPage() {
                   height={810}
                   className="w-full"
                 />
-              </div>
+              </ScrollReveal>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -459,7 +461,7 @@ export default function ExpenseManagementPage() {
                   <p className="text-sm font-semibold uppercase tracking-wider text-c1-blue mb-4">
                     {img.label}
                   </p>
-                  <div className="img-rounded">
+                  <ScrollReveal className="img-rounded">
                     <Image
                       src={img.src}
                       alt={img.alt}
@@ -467,7 +469,7 @@ export default function ExpenseManagementPage() {
                       height={480}
                       className="w-full"
                     />
-                  </div>
+                  </ScrollReveal>
                 </div>
               ))}
             </div>
@@ -496,7 +498,7 @@ export default function ExpenseManagementPage() {
                 </div>
               ))}
             </div>
-            <div className="img-rounded">
+            <ScrollReveal className="img-rounded">
               <Image
                 src={content.outcome_image_src}
                 alt={content.outcome_image_alt}
@@ -504,18 +506,59 @@ export default function ExpenseManagementPage() {
                 height={810}
                 className="w-full"
               />
-            </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
 
-      {/* Back to Work */}
-      <section className="py-12 bg-white">
-        <div className="container-site text-center">
-          <Link href={content.bottom_link_href} className="btn-primary">
-            <ArrowLeft size={18} weight="bold" />
-            {content.bottom_link_text}
-          </Link>
+      {/* Footer CTA */}
+      <section className="py-16 md:py-24">
+        <div className="container-site">
+          <div className="relative overflow-hidden p-10 md:p-16" style={{ backgroundColor: "hsl(74, 68%, 35%)" }}>
+            <div className="hidden lg:block absolute top-0 bottom-0 w-px bg-white/15" style={{ left: "55%" }} />
+            <div className="grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-12 lg:gap-16 items-center">
+            <div className="max-w-xl">
+              <p className="text-xs font-semibold uppercase tracking-widest text-c1-blue mb-3">
+                Thank you for reading
+              </p>
+              <h2 className="heading-md text-white mb-4">
+                Want to see more of my work?
+              </h2>
+              <p className="body-lg !text-white/70 mb-8">
+                Check out my other case studies or head back to the portfolio.
+              </p>
+              <Link
+                href="/"
+                className="btn-primary inline-flex items-center gap-2 hover:opacity-85 hover:-translate-y-0.5 transition-all"
+                style={{ backgroundColor: "hsl(249, 80%, 60%)" }}
+              >
+                <ArrowLeft size={18} weight="bold" />
+                Back to Portfolio
+              </Link>
+            </div>
+
+            <Link href="/roamswild" className="group block">
+              <h2 className="heading-xl text-white mb-6">
+                Next Project
+              </h2>
+              <div className="mb-4">
+                <Image
+                  src="/images/roamswild/mockup.png"
+                  alt="RoamsWild app mockup"
+                  width={600}
+                  height={400}
+                  className="w-full h-auto group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <p className="text-white font-semibold group-hover:text-white/80 transition-colors">
+                An AI-assisted exploration tool for finding better campsites, routes, and light
+              </p>
+              <span className="inline-flex items-center gap-1.5 text-sm text-white/50 group-hover:text-white/70 transition-colors mt-2">
+                View Project <ArrowRight size={14} weight="bold" />
+              </span>
+            </Link>
+            </div>
+          </div>
         </div>
       </section>
     </>

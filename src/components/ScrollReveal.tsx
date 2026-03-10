@@ -28,7 +28,7 @@ export default function ScrollReveal({ children, className }: { children: ReactN
       className={`transition-all duration-700 ease-out ${className || ""}`}
       style={{
         opacity: visible ? 1 : 0,
-        transform: visible ? "translateY(0)" : "translateY(30px)",
+        transform: visible ? "translateY(0)" : "translateY(16px)",
       }}
     >
       {children}
