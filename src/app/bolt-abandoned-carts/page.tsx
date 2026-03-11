@@ -462,7 +462,7 @@ export default function BoltAbandonedCarts() {
             <div className="hidden lg:block absolute top-0 bottom-0 w-px bg-white/15" style={{ left: "55%" }} />
             <div className="grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-12 lg:gap-16 items-center">
             <div className="max-w-xl">
-              <p className="text-xs font-semibold uppercase tracking-widest mb-3" style={{ color: "hsl(214, 100%, 50%)" }}>
+              <p className="text-xs font-semibold uppercase tracking-widest text-white/60 mb-3">
                 Thank you for reading
               </p>
               <h2 className="heading-md text-white mb-4">
