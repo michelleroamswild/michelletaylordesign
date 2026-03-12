@@ -129,6 +129,98 @@ outcomesCards:
     title: "Increased Deal Velocity"
     description: "By shortening time-to-live and simplifying sandbox setup, the new onboarding experience positioned the sales team to increase deal velocity and allow prospects to evaluate Bolt more quickly on their own sites."
 
+# Partners
+overviewPartners:
+  - name: "Product Manager"
+    icon: "UserCircle"
+  - name: "Engineering Team"
+    icon: "Code"
+  - name: "Implementation Managers"
+    icon: "UsersThree"
+  - name: "Sales Partners"
+    icon: "Handshake"
+  - name: "Payments Team"
+    icon: "CreditCard"
+
+# Overview Cards
+overviewCards:
+  - icon: "ClockCountdown"
+    title: "Background"
+    type: "paragraph"
+    description: "Bolt historically was a single-product company and so onboarding was handled internally, which meant a lot of manual processes. With new products coming into existence fast and frequently, this process had become outdated and a bottleneck to merchants getting online."
+  - icon: "Rocket"
+    title: "Goal"
+    type: "bullets"
+    items:
+      - "Increase merchant self-service experiences, reduce internal touch points and manual work to get merchants live faster."
+      - "Cut down time to go live to act on potential revenue lying in open opportunities."
+  - icon: "Warning"
+    title: "Challenges"
+    type: "bullets"
+    items:
+      - "Hunting down the need for specific data points from multiple cross-disciplinary teams to determine what actual data we needed from merchants."
+      - "Change is hard, so getting Implementation Managers to start using the new form took a bit longer than it should have."
+
+# Goals & Metrics
+goalsLabel: "Goals & Metrics"
+goalsTitle: "Goals & Metrics"
+goalsDescription1: "Creating a streamlined onboarding flow across Bolts product offerings and enabling faster time to live would give the sales team greater flexibility with how they engage prospects. By lowering the duration and effort required to stand up a sandbox the sales team could potentially close deals faster by proving a simple/streamlined onboarding process, and allowing merchants to experience Bolt on their own website with little effort."
+goalsDescription2: "Ultimately, the redesigned flow aimed to reduce Merchant and Bolt communication cycles from five interactions down to one while automating tasks previously handled manually by the Professional services team."
+goalsMetrics:
+  - icon: "Gauge"
+    title: "Increased Onboarding Efficiency"
+    measure: "As measured by PS metrics"
+    source: "Surveys"
+  - icon: "Rocket"
+    title: "Reduced Time to Launch"
+    measure: "As measured by PS metrics"
+    source: "Financial Force"
+  - icon: "Handshake"
+    title: "Increase SI Deals"
+    measure: "More SIs using Bolt"
+    source: "Provided by partnerships"
+  - icon: "Lightning"
+    title: "Increased Deal Velocity"
+    measure: "More M2 managed checkout deals signed"
+    source: "Salesforce"
+    stretch: true
+goalsImageCaption: "Current state onboarding flow — a complex, multi-step process with numerous manual touchpoints and handoffs between teams."
+
+# Discovery Additional
+discoveryDescription2: "We created a detailed spreadsheet to map every input and included:"
+discoveryBullets:
+  - "What the information was used for internally (i.e. payment setup, sandbox experience, etc.)"
+  - "Whether it was necessary to set up a merchant account (i.e. get them access to the merchant dashboard)"
+  - "Which user role was expected to provide it (engineer, owner, etc.)"
+discoveryDescription3: "All of this data was then translated into the desired end-to-end flow, clarifying what surface the user was on at each step, what inputs were required, and how the experience should adapt if steps were completed out of sequence."
+
+# Design Explorations Description
+explorationsFullDescription: "Because this work was driven primarily by data analysis and product strategy, the UI was intentionally kept as simple as possible. I leveraged existing components from our design system and explored a few iterations of the onboarding screens, progressing from simple, wireframe-like concepts to a more polished, branded Bolt experience."
+designGoals:
+  - "Create a simple, scalable UI that could support future products and features"
+  - "Enable merchants to set up a Bolt account with as little friction as possible"
+  - "Communicate progress and completion to reduce uncertainty and abandonment"
+  - "Align with new branding while feeling lightweight, straightforward, and modern"
+
+# Phase I Design Flow
+phase1FlowLabel: "Phase I Design Flow"
+phase1FlowTitle: "A Streamlined path from contract to go-live"
+
+# Footer CTA
+footerThankYou: "Thank you for reading"
+footerHeading: "Want to see more of my work?"
+footerButtonText: "Back to Portfolio"
+footerAboutText: "Learn more about my background and experience"
+footerAboutButtonText: "Professional History"
+footerAboutHref: "/about"
+footerButtonHref: "/"
+nextProjectTitle: "Next Project"
+nextProjectHref: "/bolt-abandoned-carts"
+nextProjectImage: "/images/abandoned-carts/ACHero.png"
+nextProjectImageAlt: "Abandoned cart recovery dashboard"
+nextProjectDescription: "Doubling conversion with abandoned cart redesign"
+nextProjectLinkText: "View Case Study"
+
 # Navigation
 backLinkText: "Back to All Work"
 backLinkHref: "/"

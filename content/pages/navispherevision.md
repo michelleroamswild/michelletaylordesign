@@ -1,4 +1,8 @@
 ---
+# Metadata
+metaTitle: "Navisphere Vision — Predictive Logistics Platform"
+metaDescription: "Case study on building a SaaS platform that gives supply chain managers real-time visibility into shipment data and uses predictive analytics to prevent shipping exceptions."
+
 # Hero
 hero_backLink: "Back to all projects"
 hero_backLinkHref: "/#work"

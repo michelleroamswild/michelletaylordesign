@@ -29,11 +29,13 @@ const iconMap: Record<string, any> = {
   CalendarDots,
 };
 
-export const metadata = {
-  title: "Navisphere Vision — Predictive Logistics Platform",
-  description:
-    "Case study on building a SaaS platform that gives supply chain managers real-time visibility into shipment data and uses predictive analytics to prevent shipping exceptions.",
-};
+export function generateMetadata() {
+  const c = getPageContent("navispherevision");
+  return {
+    title: c.metaTitle,
+    description: c.metaDescription,
+  };
+}
 
 export default function NavisphereVisionPage() {
   const content = getPageContent("navispherevision");

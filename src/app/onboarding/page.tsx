@@ -33,13 +33,17 @@ const iconMap: Record<string, Icon> = {
   Gauge,
   UsersThree,
   Rocket,
+  Code,
+  Handshake,
 };
 
-export const metadata = {
-  title: "Bolt Onboarding Case Study — Michelle Taylor",
-  description:
-    "How Michelle Taylor redesigned Bolt's merchant onboarding from a 70+ day manual process to an automated experience completed in minutes.",
-};
+export function generateMetadata() {
+  const content = getPageContent("onboarding");
+  return {
+    title: content.metaTitle,
+    description: content.metaDescription,
+  };
+}
 
 export default function OnboardingCaseStudy() {
   const content = getPageContent("onboarding");
@@ -80,6 +84,31 @@ export default function OnboardingCaseStudy() {
     title: string;
     description: string;
   }>;
+
+  const overviewPartners = content.overviewPartners as Array<{
+    name: string;
+    icon: string;
+  }>;
+
+  const overviewCards = content.overviewCards as Array<{
+    icon: string;
+    title: string;
+    type: string;
+    description?: string;
+    items?: string[];
+  }>;
+
+  const goalsMetrics = content.goalsMetrics as Array<{
+    icon: string;
+    title: string;
+    measure: string;
+    source: string;
+    stretch?: boolean;
+  }>;
+
+  const discoveryBullets = content.discoveryBullets as string[];
+
+  const designGoals = content.designGoals as string[];
 
   return (
     <>
@@ -160,74 +189,49 @@ export default function OnboardingCaseStudy() {
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-wider text-muted mb-2">Partners</p>
                   <div className="flex flex-wrap gap-2">
-                    {[
-                      { name: "Product Manager", icon: UserCircle },
-                      { name: "Engineering Team", icon: Code },
-                      { name: "Implementation Managers", icon: UsersThree },
-                      { name: "Sales Partners", icon: Handshake },
-                      { name: "Payments Team", icon: CreditCard },
-                    ].map((partner) => (
-                      <span
-                        key={partner.name}
-                        className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider border border-sand bg-white text-charcoal"
-                      >
-                        <partner.icon size={14} weight="duotone" className="text-muted" />
-                        {partner.name}
-                      </span>
-                    ))}
+                    {overviewPartners.map((partner) => {
+                      const PartnerIcon = iconMap[partner.icon];
+                      return (
+                        <span
+                          key={partner.name}
+                          className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider border border-sand bg-white text-charcoal"
+                        >
+                          {PartnerIcon && <PartnerIcon size={14} weight="duotone" className="text-muted" />}
+                          {partner.name}
+                        </span>
+                      );
+                    })}
                   </div>
                 </div>
               </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 pt-12 border-t border-sand">
-              <div className="bg-white rounded-xl p-6">
-                <div className="flex items-center gap-2 mb-4">
-                  <div className="p-2 rounded-lg" style={{ backgroundColor: "hsl(67, 100%, 85%)" }}>
-                    <ClockCountdown size={20} weight="duotone" style={{ color: "hsl(67, 60%, 30%)" }} />
+              {overviewCards.map((card, i) => {
+                const CardIcon = iconMap[card.icon];
+                return (
+                  <div key={i} className="bg-white rounded-xl p-6">
+                    <div className="flex items-center gap-2 mb-4">
+                      <div className="p-2 rounded-lg" style={{ backgroundColor: "hsl(67, 100%, 85%)" }}>
+                        {CardIcon && <CardIcon size={20} weight="duotone" style={{ color: "hsl(67, 60%, 30%)" }} />}
+                      </div>
+                      <h3 className="text-sm font-bold uppercase tracking-wider text-charcoal">{card.title}</h3>
+                    </div>
+                    {card.type === "paragraph" ? (
+                      <p className="body-md text-muted">{card.description}</p>
+                    ) : (
+                      <ul className="space-y-2">
+                        {card.items?.map((item, j) => (
+                          <li key={j} className="body-md text-muted flex items-start gap-2">
+                            <span className="mt-2 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: "hsl(67, 80%, 45%)" }} />
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                   </div>
-                  <h3 className="text-sm font-bold uppercase tracking-wider text-charcoal">Background</h3>
-                </div>
-                <p className="body-md text-muted">
-                  Bolt historically was a single-product company and so onboarding was handled internally, which meant a lot of manual processes. With new products coming into existence fast and frequently, this process had become outdated and a bottleneck to merchants getting online.
-                </p>
-              </div>
-              <div className="bg-white rounded-xl p-6">
-                <div className="flex items-center gap-2 mb-4">
-                  <div className="p-2 rounded-lg" style={{ backgroundColor: "hsl(67, 100%, 85%)" }}>
-                    <Rocket size={20} weight="duotone" style={{ color: "hsl(67, 60%, 30%)" }} />
-                  </div>
-                  <h3 className="text-sm font-bold uppercase tracking-wider text-charcoal">Goal</h3>
-                </div>
-                <ul className="space-y-2">
-                  <li className="body-md text-muted flex items-start gap-2">
-                    <span className="mt-2 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: "hsl(67, 80%, 45%)" }} />
-                    Increase merchant self-service experiences, reduce internal touch points and manual work to get merchants live faster.
-                  </li>
-                  <li className="body-md text-muted flex items-start gap-2">
-                    <span className="mt-2 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: "hsl(67, 80%, 45%)" }} />
-                    Cut down time to go live to act on potential revenue lying in open opportunities.
-                  </li>
-                </ul>
-              </div>
-              <div className="bg-white rounded-xl p-6">
-                <div className="flex items-center gap-2 mb-4">
-                  <div className="p-2 rounded-lg" style={{ backgroundColor: "hsl(67, 100%, 85%)" }}>
-                    <Warning size={20} weight="duotone" style={{ color: "hsl(67, 60%, 30%)" }} />
-                  </div>
-                  <h3 className="text-sm font-bold uppercase tracking-wider text-charcoal">Challenges</h3>
-                </div>
-                <ul className="space-y-2">
-                  <li className="body-md text-muted flex items-start gap-2">
-                    <span className="mt-2 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: "hsl(67, 80%, 45%)" }} />
-                    Hunting down the need for specific data points from multiple cross-disciplinary teams to determine what actual data we needed from merchants.
-                  </li>
-                  <li className="body-md text-muted flex items-start gap-2">
-                    <span className="mt-2 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: "hsl(67, 80%, 45%)" }} />
-                    Change is hard, so getting Implementation Managers to start using the new form took a bit longer than it should have.
-                  </li>
-                </ul>
-              </div>
+                );
+              })}
             </div>
           </div>
         </div>
@@ -353,44 +357,42 @@ export default function OnboardingCaseStudy() {
         <div className="container-site">
           <div className="case-study-section">
             <p className="text-sm font-semibold uppercase tracking-wider text-bolt-green mb-3">
-              Goals &amp; Metrics
+              {content.goalsLabel}
             </p>
             <h2 className="heading-lg mb-8">
-              Goals &amp; Metrics
+              {content.goalsTitle}
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
               <div>
                 <p className="body-lg mb-6">
-                  Creating a streamlined onboarding flow across Bolts product offerings and enabling faster time to live would give the sales team greater flexibility with how they engage prospects. By lowering the duration and effort required to stand up a sandbox the sales team could potentially close deals faster by proving a simple/streamlined onboarding process, and allowing merchants to experience Bolt on their own website with little effort.
+                  {content.goalsDescription1}
                 </p>
                 <p className="body-lg">
-                  Ultimately, the redesigned flow aimed to reduce Merchant and Bolt communication cycles from five interactions down to one while automating tasks previously handled manually by the Professional services team.
+                  {content.goalsDescription2}
                 </p>
               </div>
 
               <div className="bg-cream overflow-hidden">
                 <table className="w-full text-left">
                   <tbody>
-                    {[
-                      { icon: Gauge, title: "Increased Onboarding Efficiency", measure: "As measured by PS metrics", source: "Surveys" },
-                      { icon: Rocket, title: "Reduced Time to Launch", measure: "As measured by PS metrics", source: "Financial Force" },
-                      { icon: Handshake, title: "Increase SI Deals", measure: "More SIs using Bolt", source: "Provided by partnerships" },
-                      { icon: Lightning, title: "Increased Deal Velocity", measure: "More M2 managed checkout deals signed", source: "Salesforce", stretch: true },
-                    ].map((metric, i) => (
-                      <tr key={metric.title} className={i < 3 ? "border-b border-sand/50" : ""}>
-                        <td className="py-4 pl-5 pr-3 w-10">
-                          <metric.icon size={20} weight="duotone" style={{ color: "#FF9AF1" }} />
-                        </td>
-                        <td className="py-4 pr-4">
-                          <p className="font-semibold text-charcoal text-sm">
-                            {metric.title}
-                            {metric.stretch && <span className="ml-1 font-normal text-muted">(Stretch)</span>}
-                          </p>
-                        </td>
-                        <td className="py-4 pr-5 text-sm text-muted">{metric.measure}</td>
-                      </tr>
-                    ))}
+                    {goalsMetrics.map((metric, i) => {
+                      const MetricIcon = iconMap[metric.icon];
+                      return (
+                        <tr key={metric.title} className={i < goalsMetrics.length - 1 ? "border-b border-sand/50" : ""}>
+                          <td className="py-4 pl-5 pr-3 w-10">
+                            {MetricIcon && <MetricIcon size={20} weight="duotone" style={{ color: "#FF9AF1" }} />}
+                          </td>
+                          <td className="py-4 pr-4">
+                            <p className="font-semibold text-charcoal text-sm">
+                              {metric.title}
+                              {metric.stretch && <span className="ml-1 font-normal text-muted">(Stretch)</span>}
+                            </p>
+                          </td>
+                          <td className="py-4 pr-5 text-sm text-muted">{metric.measure}</td>
+                        </tr>
+                      );
+                    })}
                   </tbody>
                 </table>
               </div>
@@ -406,7 +408,7 @@ export default function OnboardingCaseStudy() {
                   className="w-full h-auto"
                 />
               </div>
-              <p className="text-sm text-muted text-center mt-3">Current state onboarding flow — a complex, multi-step process with numerous manual touchpoints and handoffs between teams.</p>
+              <p className="text-sm text-muted text-center mt-3">{content.goalsImageCaption}</p>
             </ScrollReveal>
           </div>
         </div>
@@ -427,24 +429,18 @@ export default function OnboardingCaseStudy() {
                 {content.discoveryDescription}
               </p>
               <p className="body-lg mb-6">
-                We created a detailed spreadsheet to map every input and included:
+                {content.discoveryDescription2}
               </p>
               <ul className="space-y-2 mb-6">
-                <li className="body-lg flex items-start gap-2">
-                  <span className="mt-2 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: "#FF9AF1" }} />
-                  What the information was used for internally (i.e. payment setup, sandbox experience, etc.)
-                </li>
-                <li className="body-lg flex items-start gap-2">
-                  <span className="mt-2 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: "#FF9AF1" }} />
-                  Whether it was necessary to set up a merchant account (i.e. get them access to the merchant dashboard)
-                </li>
-                <li className="body-lg flex items-start gap-2">
-                  <span className="mt-2 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: "#FF9AF1" }} />
-                  Which user role was expected to provide it (engineer, owner, etc.)
-                </li>
+                {discoveryBullets.map((bullet, i) => (
+                  <li key={i} className="body-lg flex items-start gap-2">
+                    <span className="mt-2 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: "#FF9AF1" }} />
+                    {bullet}
+                  </li>
+                ))}
               </ul>
               <p className="body-lg">
-                All of this data was then translated into the desired end-to-end flow, clarifying what surface the user was on at each step, what inputs were required, and how the experience should adapt if steps were completed out of sequence.
+                {content.discoveryDescription3}
               </p>
             </div>
 
@@ -486,18 +482,13 @@ export default function OnboardingCaseStudy() {
                   {content.explorationsTitle}
                 </h2>
                 <p className="body-lg">
-                  Because this work was driven primarily by data analysis and product strategy, the UI was intentionally kept as simple as possible. I leveraged existing components from our design system and explored a few iterations of the onboarding screens, progressing from simple, wireframe-like concepts to a more polished, branded Bolt experience.
+                  {content.explorationsFullDescription}
                 </p>
               </div>
 
               <div className="space-y-4">
                 <p className="text-xs font-bold uppercase tracking-wider text-muted mb-3">Design Goals</p>
-                {[
-                  "Create a simple, scalable UI that could support future products and features",
-                  "Enable merchants to set up a Bolt account with as little friction as possible",
-                  "Communicate progress and completion to reduce uncertainty and abandonment",
-                  "Align with new branding while feeling lightweight, straightforward, and modern",
-                ].map((goal, i) => (
+                {designGoals.map((goal, i) => (
                   <div key={i} className="flex items-start gap-3">
                     <CheckCircle size={18} weight="duotone" style={{ color: "#FF9AF1" }} className="flex-shrink-0 mt-0.5" />
                     <p className="text-sm text-charcoal">{goal}</p>
@@ -531,10 +522,10 @@ export default function OnboardingCaseStudy() {
           <div className="case-study-section">
             <div className="max-w-3xl mb-10">
               <p className="text-sm font-semibold uppercase tracking-wider text-white/60 mb-3">
-                Phase I Design Flow
+                {content.phase1FlowLabel}
               </p>
               <h2 className="heading-lg !text-white mb-6">
-                A Streamlined path from contract to go-live
+                {content.phase1FlowTitle}
               </h2>
             </div>
 
@@ -666,43 +657,54 @@ export default function OnboardingCaseStudy() {
             <div className="hidden lg:block absolute top-0 bottom-0 w-px bg-white/15" style={{ left: "55%" }} />
             <div className="grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-12 lg:gap-16 items-center">
             <div className="max-w-xl">
-              <p className="text-xs font-semibold uppercase tracking-widest text-white/60 mb-3">
-                Thank you for reading
-              </p>
-              <h2 className="heading-md text-white mb-4">
-                Want to see more of my work?
+              <h2 className="heading-md text-white mb-6">
+                {content.footerHeading}
               </h2>
-              <p className="body-lg !text-white/70 mb-8">
-                Check out my other case studies or head back to the portfolio.
-              </p>
-              <Link
-                href="/"
-                className="btn-primary inline-flex items-center gap-2 hover:opacity-85 hover:-translate-y-0.5 transition-all"
-                style={{ backgroundColor: "hsl(249, 80%, 60%)" }}
-              >
-                <ArrowLeft size={18} weight="bold" />
-                Back to Portfolio
-              </Link>
+              <div className="space-y-12">
+                <div>
+                  <Link
+                    href={content.footerButtonHref}
+                    className="btn-primary inline-flex items-center gap-2 hover:opacity-85 hover:-translate-y-0.5 transition-all"
+                    style={{ backgroundColor: "hsl(249, 80%, 60%)" }}
+                  >
+                    <ArrowLeft size={18} weight="bold" />
+                    {content.footerButtonText}
+                  </Link>
+                </div>
+                <div>
+                  <h2 className="heading-md text-white mb-3">
+                    {content.footerAboutText}
+                  </h2>
+                  <Link
+                    href={content.footerAboutHref}
+                    className="btn-primary inline-flex items-center gap-2 hover:opacity-85 hover:-translate-y-0.5 transition-all"
+                    style={{ backgroundColor: "hsl(249, 80%, 60%)" }}
+                  >
+                    {content.footerAboutButtonText}
+                    <ArrowRight size={14} weight="bold" />
+                  </Link>
+                </div>
+              </div>
             </div>
 
-            <Link href="/bolt-abandoned-carts" className="group block">
-              <h2 className="heading-xl text-white mb-6">
-                Next Project
+            <Link href={content.nextProjectHref} className="group block">
+              <h2 className="heading-xl text-white mb-6 text-center">
+                {content.nextProjectTitle}
               </h2>
               <div className="mb-4">
                 <Image
-                  src="/images/abandoned-carts/ACHero.png"
-                  alt="Abandoned cart recovery dashboard"
+                  src={content.nextProjectImage}
+                  alt={content.nextProjectImageAlt}
                   width={600}
                   height={400}
                   className="w-full h-auto group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
               <p className="text-white font-semibold group-hover:text-white/80 transition-colors">
-                Doubling conversion with abandoned cart redesign
+                {content.nextProjectDescription}
               </p>
               <span className="inline-flex items-center gap-1.5 text-sm text-white/50 group-hover:text-white/70 transition-colors mt-2">
-                View Case Study <ArrowRight size={14} weight="bold" />
+                {content.nextProjectLinkText} <ArrowRight size={14} weight="bold" />
               </span>
             </Link>
             </div>

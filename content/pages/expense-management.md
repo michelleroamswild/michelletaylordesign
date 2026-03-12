@@ -146,6 +146,21 @@ outcome_metrics:
 outcome_image_src: "/images/expense-management/Home.png"
 outcome_image_alt: "Expense management home screen"
 
+# Footer CTA
+footerCtaLabel: "Thank you for reading"
+footerCtaTitle: "Want to see more of my work?"
+footerCtaButtonText: "Back to Portfolio"
+footerAboutText: "Learn more about my background and experience"
+footerAboutButtonText: "Professional History"
+footerAboutHref: "/about"
+footerCtaButtonHref: "/"
+nextProjectHref: "/roamswild"
+nextProjectTitle: "Next Project"
+nextProjectImage: "/images/roamswild/mockup.png"
+nextProjectImageAlt: "RoamsWild app mockup"
+nextProjectDescription: "An AI-assisted exploration tool for finding better campsites, routes, and light"
+nextProjectLinkText: "View Project"
+
 # Navigation
 back_link_text: "Back to Work"
 back_link_href: "/"

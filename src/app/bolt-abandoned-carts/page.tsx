@@ -27,6 +27,13 @@ const iconMap: Record<string, any> = {
   ClockCountdown,
   Lightbulb,
   ChartLineUp,
+  UserCircle,
+  Code,
+  Megaphone,
+  ShieldCheck,
+  ShoppingCartSimple,
+  Target,
+  MagnifyingGlass,
 };
 
 const futureVisionIcons = [
@@ -65,6 +72,24 @@ export default function BoltAbandonedCarts() {
     title: string;
     description: string;
   }>;
+
+  const overviewPartners = content.overviewPartners as Array<{
+    name: string;
+    icon: string;
+  }>;
+
+  const overviewMetrics = content.overviewMetrics as Array<{
+    name: string;
+    icon: string;
+  }>;
+
+  const overviewCards = content.overviewCards as Array<{
+    title: string;
+    icon: string;
+    description: string;
+  }>;
+
+  const gtmBullets = content.gtmBullets as Array<string>;
 
   return (
     <>
@@ -110,102 +135,80 @@ export default function BoltAbandonedCarts() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <p className="text-sm font-semibold uppercase tracking-wider mb-3" style={{ color: "hsl(214, 100%, 50%)" }}>
-                  Overview
+                  {content.overviewLabel}
                 </p>
                 <h2 className="heading-lg mb-6">
-                  Recovering lost revenue through smarter cart recovery
+                  {content.overviewTitle}
                 </h2>
-                <p className="body-lg mb-4">
-                  Despite Bolt Checkout&apos;s streamlined and efficient purchasing process, the current abandoned cart feature lacked sophistication and efficacy. Checkout abandonment was anywhere from 45%-70% so by failing to effectively re-engage customers led to <strong>missed opportunities in recovering potentially lost sales</strong>.
-                </p>
-                <p className="body-lg">
-                  The primary issues include inadequate retainment of items in the cart, lack of personalization in recovery emails, and insufficient incentives to motivate customers to complete their purchases. Additionally, the current analytics did not provide detailed insights into cart abandonment data for our merchants.
-                </p>
+                <p className="body-lg mb-4" dangerouslySetInnerHTML={{ __html: content.overviewDescription1 }} />
+                <p className="body-lg" dangerouslySetInnerHTML={{ __html: content.overviewDescription2 }} />
               </div>
 
-              <div className="space-y-8">
+              <div className="space-y-12">
                 <div>
                   <p className="text-xs font-bold uppercase tracking-wider text-muted mb-3">Role</p>
                   <span className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider text-white" style={{ backgroundColor: "hsl(214, 100%, 50%)" }}>
                     <UserCircle size={14} weight="duotone" />
-                    Lead Product Designer
+                    {content.overviewRole}
                   </span>
                 </div>
 
                 <div>
                   <p className="text-xs font-bold uppercase tracking-wider text-muted mb-3">Partners</p>
                   <div className="flex flex-wrap gap-2">
-                    {[
-                      { name: "Product Manager", icon: UserCircle },
-                      { name: "Engineering Lead & Team", icon: Code },
-                      { name: "Go-to-Market", icon: Megaphone },
-                      { name: "Legal", icon: ShieldCheck },
-                    ].map((partner) => (
-                      <span key={partner.name} className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider" style={{ backgroundColor: "hsl(214, 90%, 92%)", color: "hsl(214, 100%, 35%)" }}>
-                        <partner.icon size={14} weight="duotone" />
-                        {partner.name}
-                      </span>
-                    ))}
+                    {overviewPartners.map((partner) => {
+                      const PartnerIcon = iconMap[partner.icon];
+                      return (
+                        <span key={partner.name} className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider" style={{ backgroundColor: "hsl(214, 90%, 92%)", color: "hsl(214, 100%, 35%)" }}>
+                          {PartnerIcon && <PartnerIcon size={14} weight="duotone" />}
+                          {partner.name}
+                        </span>
+                      );
+                    })}
                   </div>
                 </div>
 
                 <div>
                   <p className="text-xs font-bold uppercase tracking-wider text-muted mb-3">Targeted Business Metrics</p>
                   <div className="flex flex-wrap gap-2">
-                    <span className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider" style={{ backgroundColor: "hsl(214, 90%, 92%)", color: "hsl(214, 100%, 35%)" }}>
-                      <ChartLineUp size={14} weight="duotone" />
-                      Merchant Recovered Amount
-                    </span>
-                    <span className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider" style={{ backgroundColor: "hsl(214, 90%, 92%)", color: "hsl(214, 100%, 35%)" }}>
-                      <Target size={14} weight="duotone" />
-                      Abandon Rate
-                    </span>
+                    {overviewMetrics.map((metric) => {
+                      const MetricIcon = iconMap[metric.icon];
+                      return (
+                        <span key={metric.name} className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider" style={{ backgroundColor: "hsl(214, 90%, 92%)", color: "hsl(214, 100%, 35%)" }}>
+                          {MetricIcon && <MetricIcon size={14} weight="duotone" />}
+                          {metric.name}
+                        </span>
+                      );
+                    })}
                   </div>
                 </div>
 
                 <div>
                   <p className="text-xs font-bold uppercase tracking-wider text-muted mb-3">Research</p>
                   <p className="body-md">
-                    Our team looked at competitive product features, abandonment by industry, peak months, and benchmark performance metrics.
+                    {content.overviewResearch}
                   </p>
                 </div>
               </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-12">
-              <div className="bg-white rounded-xl p-6">
-                <div className="flex items-center gap-2 mb-4">
-                  <div className="p-2 rounded-lg" style={{ backgroundColor: "hsl(214, 90%, 92%)" }}>
-                    <ShoppingCartSimple size={20} weight="duotone" style={{ color: "hsl(214, 100%, 40%)" }} />
+              {overviewCards.map((card) => {
+                const CardIcon = iconMap[card.icon];
+                return (
+                  <div key={card.title} className="bg-white rounded-xl p-6">
+                    <div className="flex items-center gap-2 mb-4">
+                      <div className="p-2 rounded-lg" style={{ backgroundColor: "hsl(214, 90%, 92%)" }}>
+                        {CardIcon && <CardIcon size={20} weight="duotone" style={{ color: "hsl(214, 100%, 40%)" }} />}
+                      </div>
+                      <h3 className="text-sm font-bold uppercase tracking-wider text-charcoal">{card.title}</h3>
+                    </div>
+                    <p className="body-md text-muted">
+                      {card.description}
+                    </p>
                   </div>
-                  <h3 className="text-sm font-bold uppercase tracking-wider text-charcoal">The Problem</h3>
-                </div>
-                <p className="body-md text-muted">
-                  Across industries, 45-70% of shopping carts are abandoned before checkout. For Bolt&apos;s merchants, this represented millions in potentially lost revenue every month.
-                </p>
-              </div>
-              <div className="bg-white rounded-xl p-6">
-                <div className="flex items-center gap-2 mb-4">
-                  <div className="p-2 rounded-lg" style={{ backgroundColor: "hsl(214, 90%, 92%)" }}>
-                    <Target size={20} weight="duotone" style={{ color: "hsl(214, 100%, 40%)" }} />
-                  </div>
-                  <h3 className="text-sm font-bold uppercase tracking-wider text-charcoal">Objective</h3>
-                </div>
-                <p className="body-md text-muted">
-                  Improve cart recovery rates through better email personalization, smarter notification timing, and actionable merchant analytics.
-                </p>
-              </div>
-              <div className="bg-white rounded-xl p-6">
-                <div className="flex items-center gap-2 mb-4">
-                  <div className="p-2 rounded-lg" style={{ backgroundColor: "hsl(214, 90%, 92%)" }}>
-                    <MagnifyingGlass size={20} weight="duotone" style={{ color: "hsl(214, 100%, 40%)" }} />
-                  </div>
-                  <h3 className="text-sm font-bold uppercase tracking-wider text-charcoal">Approach</h3>
-                </div>
-                <p className="body-md text-muted">
-                  Recovery emails were generic, poorly timed, and directed shoppers back to merchant homepages rather than their saved carts — losing all cart context and requiring shoppers to start over.
-                </p>
-              </div>
+                );
+              })}
             </div>
             <ScrollReveal className="img-rounded mt-12">
               <Image
@@ -226,13 +229,13 @@ export default function BoltAbandonedCarts() {
           <div className="case-study-section">
             <div className="max-w-3xl mb-16">
               <p className="text-sm font-semibold uppercase tracking-wider mb-3" style={{ color: "hsl(214, 100%, 50%)" }}>
-                Design Process
+                {content.requirementsLabel}
               </p>
               <h1 className="heading-hero mb-4">
-                Requirements Definition
+                {content.requirementsTitle}
               </h1>
               <p className="body-lg">
-                Breaking down the key areas of improvement — from notification timing and email design to merchant-facing analytics — that would drive higher cart recovery rates.
+                {content.requirementsDescription}
               </p>
             </div>
 
@@ -311,14 +314,12 @@ export default function BoltAbandonedCarts() {
                   </p>
                 </div>
                 <h2 className="heading-md mb-6">
-                  Redesigning the branding and content in abandoned cart emails and SMS
+                  {content.emailRedesignSectionTitle}
                 </h2>
                 <p className="body-md mb-4">
-                  Emails were updated with new Bolt branding and merchant branding. We worked with our tech writer to optimize the subject line and email copy, and included a preview of the email notifications for the merchant within their dashboard.
+                  {content.emailRedesignSectionDescription1}
                 </p>
-                <p className="body-md">
-                  The <strong className="text-charcoal">&ldquo;Checkout Now&rdquo; CTA</strong> in the emails used order tokens to pre-load the cart contents and any of the saved shopper information at the time of abandonment to maintain a <strong className="text-charcoal">one-click checkout</strong> from their email notification.
-                </p>
+                <p className="body-md" dangerouslySetInnerHTML={{ __html: content.emailRedesignSectionDescription2Html }} />
               </div>
             </div>
 
@@ -400,24 +401,22 @@ export default function BoltAbandonedCarts() {
                 <div className="flex items-center gap-3 mb-4">
                   <Megaphone size={22} weight="duotone" style={{ color: "hsl(214, 100%, 50%)" }} />
                   <p className="text-sm font-semibold text-muted uppercase tracking-wide">
-                    Go-to-Market
+                    {content.gtmLabel}
                   </p>
                 </div>
                 <h2 className="heading-md mb-6">
-                  Supporting Go-to-Market &amp; Internal Adoption
+                  {content.gtmTitle}
                 </h2>
                 <p className="body-md mb-4">
-                  I also partnered with Product and Go-to-Market teams to help drive merchant adoption:
+                  {content.gtmDescription}
                 </p>
                 <ul className="space-y-3 body-md">
-                  <li className="flex items-start gap-2">
-                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: "hsl(214, 100%, 50%)" }} />
-                    Designed sales enablement materials, including a product pitch deck and demo visuals.
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: "hsl(214, 100%, 50%)" }} />
-                    Delivered training sessions to Sales &amp; CSM teams on product setup, functionality, and value.
-                  </li>
+                  {gtmBullets.map((bullet, index) => (
+                    <li key={index} className="flex items-start gap-1.5">
+                      <span className="mt-[0.65rem] w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: "hsl(214, 100%, 50%)" }} />
+                      {bullet}
+                    </li>
+                  ))}
                 </ul>
               </div>
               <ScrollReveal>
@@ -475,28 +474,47 @@ export default function BoltAbandonedCarts() {
       {/* Results */}
       <section className="section-spacing" style={{ backgroundColor: "#68D8FC" }}>
         <div className="container-site">
-          <div className="text-center max-w-2xl mx-auto mb-12">
-            <p className="text-sm font-semibold uppercase tracking-wider mb-3" style={{ color: "rgba(0,0,0,0.4)" }}>
-              {content.resultsLabel}
-            </p>
-            <h2 className="heading-lg mb-4">{content.resultsTitle}</h2>
-            <p className="body-md">{content.resultsDescription}</p>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-12">
-            {resultsMetrics.map((metric, index) => (
-              <div key={index} className="rounded-xl p-5 text-center" style={{ backgroundColor: "rgba(255,255,255,0.4)", backdropFilter: "blur(10px)" }}>
-                <p className="text-2xl md:text-3xl font-bold text-charcoal mb-1">
-                  {metric.value}
-                </p>
-                <p className="text-xs text-muted">{metric.label}</p>
+          <div className="grid grid-cols-1 lg:grid-cols-[2fr_3fr] gap-12 items-center">
+            {/* CEO LinkedIn post */}
+            <ScrollReveal>
+              <div className="drop-shadow-xl max-w-sm mx-auto">
+                <Image
+                  src="/images/abandoned-carts/ceo-mention.png"
+                  alt="Bolt CEO Justin Grooms LinkedIn post highlighting Abandoned Carts performance metrics"
+                  width={600}
+                  height={900}
+                  className="w-full h-auto rounded-xl"
+                />
               </div>
-            ))}
-          </div>
+            </ScrollReveal>
 
-          <p className="body-md text-center max-w-3xl mx-auto">
-            {content.resultsOutro}
-          </p>
+            {/* Results content */}
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-wider mb-3" style={{ color: "rgba(0,0,0,0.4)" }}>
+                {content.resultsLabel}
+              </p>
+              <h2 className="heading-lg mb-4">{content.resultsTitle}</h2>
+              <p className="body-md mb-8">{content.resultsDescription}</p>
+
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
+                {resultsMetrics.map((metric, index) => (
+                  <div key={index} className="rounded-xl p-4 text-center" style={{ backgroundColor: "rgba(255,255,255,0.4)", backdropFilter: "blur(10px)" }}>
+                    <p className="text-xl md:text-2xl font-bold text-charcoal mb-1">
+                      {metric.value}
+                    </p>
+                    <p className="text-xs text-muted">{metric.label}</p>
+                  </div>
+                ))}
+              </div>
+
+              <p className="body-md">
+                {content.resultsOutro}
+              </p>
+              <p className="text-xs text-charcoal/70 mt-4">
+                {content.resultsFootnote}
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -556,43 +574,54 @@ export default function BoltAbandonedCarts() {
             <div className="hidden lg:block absolute top-0 bottom-0 w-px bg-white/15" style={{ left: "55%" }} />
             <div className="grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-12 lg:gap-16 items-center">
             <div className="max-w-xl">
-              <p className="text-xs font-semibold uppercase tracking-widest text-white/60 mb-3">
-                Thank you for reading
-              </p>
-              <h2 className="heading-md text-white mb-4">
-                Want to see more of my work?
+              <h2 className="heading-md text-white mb-6">
+                {content.footerCtaTitle}
               </h2>
-              <p className="body-lg !text-white/70 mb-8">
-                Check out my other case studies or head back to the portfolio.
-              </p>
-              <Link
-                href="/"
-                className="btn-primary inline-flex items-center gap-2 hover:opacity-85 hover:-translate-y-0.5 transition-all"
-                style={{ backgroundColor: "hsl(249, 80%, 60%)" }}
-              >
-                <ArrowLeft size={18} weight="bold" />
-                Back to Portfolio
-              </Link>
+              <div className="space-y-12">
+                <div>
+                  <Link
+                    href="/"
+                    className="btn-primary inline-flex items-center gap-2 hover:opacity-85 hover:-translate-y-0.5 transition-all"
+                    style={{ backgroundColor: "hsl(249, 80%, 60%)" }}
+                  >
+                    <ArrowLeft size={18} weight="bold" />
+                    {content.footerCtaButtonText}
+                  </Link>
+                </div>
+                <div>
+                  <h2 className="heading-md text-white mb-3">
+                    {content.footerAboutText}
+                  </h2>
+                  <Link
+                    href={content.footerAboutHref}
+                    className="btn-primary inline-flex items-center gap-2 hover:opacity-85 hover:-translate-y-0.5 transition-all"
+                    style={{ backgroundColor: "hsl(249, 80%, 60%)" }}
+                  >
+                    {content.footerAboutButtonText}
+                    <ArrowRight size={14} weight="bold" />
+                  </Link>
+                </div>
+              </div>
             </div>
 
-            <Link href="/expense-management" className="group block">
-              <h2 className="heading-xl text-white mb-6">
-                Next Project
+            <Link href={content.footerNextProjectHref} className="group block">
+              <h2 className="heading-xl text-white mb-6 text-center">
+                {content.footerNextProjectTitle}
               </h2>
               <div className="mb-4">
                 <Image
-                  src="/images/expense-management/ExpenseManagementMobile.png"
-                  alt="Capital One expense management screens"
+                  src={content.footerNextProjectImage.src}
+                  alt={content.footerNextProjectImage.alt}
                   width={600}
                   height={400}
                   className="w-full h-auto group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
               <p className="text-white font-semibold group-hover:text-white/80 transition-colors">
-                Automating admin workflows and simplifying expense reporting
+                {content.footerNextProjectDescription}
               </p>
               <span className="inline-flex items-center gap-1.5 text-sm text-white/50 group-hover:text-white/70 transition-colors mt-2">
-                View Case Study <ArrowRight size={14} weight="bold" />
+                {content.footerNextProjectLinkText} <ArrowRight size={14} weight="bold" />
               </span>
             </Link>
             </div>

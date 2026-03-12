@@ -347,7 +347,7 @@ export default function ExpenseManagementPage() {
               ))}
             </div>
 
-            <div className="space-y-8">
+            <div className="space-y-12">
               <ScrollReveal className="img-rounded">
                 <Image
                   src={solution1Images[0].src}
@@ -518,43 +518,54 @@ export default function ExpenseManagementPage() {
             <div className="hidden lg:block absolute top-0 bottom-0 w-px bg-white/15" style={{ left: "55%" }} />
             <div className="grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-12 lg:gap-16 items-center">
             <div className="max-w-xl">
-              <p className="text-xs font-semibold uppercase tracking-widest text-white/60 mb-3">
-                Thank you for reading
-              </p>
-              <h2 className="heading-md text-white mb-4">
-                Want to see more of my work?
+              <h2 className="heading-md text-white mb-6">
+                {content.footerCtaTitle}
               </h2>
-              <p className="body-lg !text-white/70 mb-8">
-                Check out my other case studies or head back to the portfolio.
-              </p>
-              <Link
-                href="/"
-                className="btn-primary inline-flex items-center gap-2 hover:opacity-85 hover:-translate-y-0.5 transition-all"
-                style={{ backgroundColor: "hsl(249, 80%, 60%)" }}
-              >
-                <ArrowLeft size={18} weight="bold" />
-                Back to Portfolio
-              </Link>
+              <div className="space-y-12">
+                <div>
+                  <Link
+                    href={content.footerCtaButtonHref}
+                    className="btn-primary inline-flex items-center gap-2 hover:opacity-85 hover:-translate-y-0.5 transition-all"
+                    style={{ backgroundColor: "hsl(249, 80%, 60%)" }}
+                  >
+                    <ArrowLeft size={18} weight="bold" />
+                    {content.footerCtaButtonText}
+                  </Link>
+                </div>
+                <div>
+                  <h2 className="heading-md text-white mb-3">
+                    {content.footerAboutText}
+                  </h2>
+                  <Link
+                    href={content.footerAboutHref}
+                    className="btn-primary inline-flex items-center gap-2 hover:opacity-85 hover:-translate-y-0.5 transition-all"
+                    style={{ backgroundColor: "hsl(249, 80%, 60%)" }}
+                  >
+                    {content.footerAboutButtonText}
+                    <ArrowRight size={14} weight="bold" />
+                  </Link>
+                </div>
+              </div>
             </div>
 
-            <Link href="/roamswild" className="group block">
-              <h2 className="heading-xl text-white mb-6">
-                Next Project
+            <Link href={content.nextProjectHref} className="group block">
+              <h2 className="heading-xl text-white mb-6 text-center">
+                {content.nextProjectTitle}
               </h2>
               <div className="mb-4">
                 <Image
-                  src="/images/roamswild/mockup.png"
-                  alt="RoamsWild app mockup"
+                  src={content.nextProjectImage}
+                  alt={content.nextProjectImageAlt}
                   width={600}
                   height={400}
                   className="w-full h-auto group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
               <p className="text-white font-semibold group-hover:text-white/80 transition-colors">
-                An AI-assisted exploration tool for finding better campsites, routes, and light
+                {content.nextProjectDescription}
               </p>
               <span className="inline-flex items-center gap-1.5 text-sm text-white/50 group-hover:text-white/70 transition-colors mt-2">
-                View Project <ArrowRight size={14} weight="bold" />
+                {content.nextProjectLinkText} <ArrowRight size={14} weight="bold" />
               </span>
             </Link>
             </div>

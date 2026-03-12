@@ -54,11 +54,13 @@ const toolIconMap: Record<string, any> = {
   "Notion": Notepad,
 };
 
-export const metadata = {
-  title: "RoamsWild — Data-Driven Campsite Discovery Tool",
-  description:
-    "A passion project exploring how terrain data, road networks, and weather signals can surface high-potential campsites and photo locations for outdoor travel.",
-};
+export function generateMetadata() {
+  const c = getPageContent("roamswild");
+  return {
+    title: c.metaTitle,
+    description: c.metaDescription,
+  };
+}
 
 export default function RoamsWild() {
   const content = getPageContent("roamswild");
@@ -582,39 +584,14 @@ export default function RoamsWild() {
       <section className="py-24 md:py-32" style={{ backgroundColor: "hsl(36, 23%, 97%)" }}>
         <div className="container-site">
           <div className="max-w-2xl mx-auto text-center mb-16">
-            <h2 className="heading-xl mb-10">Key Product Experiences</h2>
+            <h2 className="heading-xl mb-10">{content.keyExperiencesTitle}</h2>
             <p className="body-lg text-muted">
-              The biggest pain point I wanted to solve was decision overload. When traveling, the problem isn&apos;t a lack of options—it&apos;s evaluating which ones are actually worth it.
+              {content.keyExperiencesDescription}
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
-            {[
-              {
-                image: "/images/roamswild/photoweather-ns.png",
-                alt: "Photo Weather Conditions feature",
-                title: "Photo Weather Conditions",
-                description: "Standard weather apps show data; photographers need timing insight. This service evaluates cloud cover, cloud level, and wind during sunrise and sunset windows to determine whether conditions are promising. The result is a simplified signal with brief reasoning, helping users decide if the sky is likely to be clear, dramatic, or somewhere in between.",
-              },
-              {
-                image: "/images/roamswild/besthikestoday-ns.png",
-                alt: "Best Hikes Today feature",
-                title: "Best Hikes Today",
-                description: "Finds nearby hiking trails via Google Places and ranks them for right now using real-time weather from NOAA, sun position, crowd levels, and trail effort to surface the best hikes for today\u2019s conditions.",
-              },
-              {
-                image: "/images/roamswild/surprisemesmall-ns.png",
-                alt: "Surprise Me feature",
-                title: "Surprise Me",
-                description: "Picks a random outdoor region for you based on your location, scoring candidates by public land access, trail density, campsites, and biome diversity, then enriches the result with a scenic drive anchor from Overpass API.",
-              },
-              {
-                image: "/images/roamswild/photoscout-ns.png",
-                alt: "Photo Scout feature",
-                title: "Photo Scout",
-                description: "Analyzes terrain elevation data around a location to find optimal sunrise/sunset photography spots, identifying dramatic terrain features, calculating sun-terrain lighting geometry, verifying shadow-free sightlines to determine shooting locations.",
-              },
-            ].map((card) => (
+            {(content.keyExperiencesCards as Array<{ image: string; alt: string; title: string; description: string }>).map((card) => (
               <div key={card.title} className="rounded-xl overflow-hidden flex flex-col bg-white" style={{ boxShadow: "0 8px 40px -8px rgba(0, 0, 0, 0.25)" }}>
                 <Image
                   src={card.image}
@@ -872,44 +849,44 @@ export default function RoamsWild() {
               </p>
               <div className="flex flex-col sm:flex-row items-start gap-4">
                 <a
-                  href="https://roamswild.com"
+                  href={content.ctaLink}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-primary inline-flex items-center gap-2 hover:opacity-85 hover:-translate-y-0.5 transition-all"
                   style={{ backgroundColor: "hsl(249, 80%, 60%)" }}
                 >
-                  View the App
+                  {content.ctaViewAppText}
                   <ArrowSquareOut size={18} weight="bold" />
                 </a>
                 <Link
-                  href="/"
+                  href={content.ctaBackHref}
                   className="btn-primary !bg-black/10 !text-charcoal hover:!bg-black/20 inline-flex items-center gap-2"
                 >
                   <ArrowLeft size={18} weight="bold" />
-                  Back to Portfolio
+                  {content.ctaBackText}
                 </Link>
               </div>
             </div>
 
             {/* Right - Next Project */}
-            <Link href="/onboarding" className="group block">
+            <Link href={content.nextProjectHref} className="group block">
               <h2 className="heading-xl text-charcoal mb-6">
-                Next Project
+                {content.nextProjectTitle}
               </h2>
               <div className="mb-4">
                 <Image
-                  src="/images/onboarding/OnboardingHighlight.png"
-                  alt="Bolt onboarding interface"
+                  src={content.nextProjectImage}
+                  alt={content.nextProjectImageAlt}
                   width={600}
                   height={400}
                   className="w-full h-auto group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
               <p className="text-charcoal font-semibold group-hover:text-charcoal/80 transition-colors">
-                Reducing merchant account creation from weeks to minutes
+                {content.nextProjectDescription}
               </p>
               <span className="inline-flex items-center gap-1.5 text-sm text-charcoal/50 group-hover:text-charcoal/70 transition-colors mt-2">
-                View Case Study <ArrowRight size={14} weight="bold" />
+                {content.nextProjectLinkText} <ArrowRight size={14} weight="bold" />
               </span>
             </Link>
             </div>

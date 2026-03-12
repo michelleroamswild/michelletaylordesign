@@ -1,4 +1,8 @@
 ---
+# Metadata
+metaTitle: "RoamsWild — Data-Driven Campsite Discovery Tool"
+metaDescription: "A passion project exploring how terrain data, road networks, and weather signals can surface high-potential campsites and photo locations for outdoor travel."
+
 # Hero
 heroTitle: "Learning AI by Building"
 heroDescription: "Creating a location intelligence platform for discovering dispersed campsites using terrain data, AI-assisted scoring, and calibrated heuristics to help travelers make smarter decisions."
@@ -178,8 +182,40 @@ whatsNextItems:
     description: "to give a holistic experience to help reduce uncertainty"
 whatsNextClosing: "After a bumpy start with too many ideas, the next steps are to create solid experiences for the existing features and documenting new ideas or feature enhancements in an actual roadmap."
 
+# Key Product Experiences
+keyExperiencesTitle: "Key Product Experiences"
+keyExperiencesDescription: "The biggest pain point I wanted to solve was decision overload. When traveling, the problem isn't a lack of options—it's evaluating which ones are actually worth it."
+keyExperiencesCards:
+  - image: "/images/roamswild/photoweather-ns.png"
+    alt: "Photo Weather Conditions feature"
+    title: "Photo Weather Conditions"
+    description: "Standard weather apps show data; photographers need timing insight. This service evaluates cloud cover, cloud level, and wind during sunrise and sunset windows to determine whether conditions are promising. The result is a simplified signal with brief reasoning, helping users decide if the sky is likely to be clear, dramatic, or somewhere in between."
+  - image: "/images/roamswild/besthikestoday-ns.png"
+    alt: "Best Hikes Today feature"
+    title: "Best Hikes Today"
+    description: "Finds nearby hiking trails via Google Places and ranks them for right now using real-time weather from NOAA, sun position, crowd levels, and trail effort to surface the best hikes for today's conditions."
+  - image: "/images/roamswild/surprisemesmall-ns.png"
+    alt: "Surprise Me feature"
+    title: "Surprise Me"
+    description: "Picks a random outdoor region for you based on your location, scoring candidates by public land access, trail density, campsites, and biome diversity, then enriches the result with a scenic drive anchor from Overpass API."
+  - image: "/images/roamswild/photoscout-ns.png"
+    alt: "Photo Scout feature"
+    title: "Photo Scout"
+    description: "Analyzes terrain elevation data around a location to find optimal sunrise/sunset photography spots, identifying dramatic terrain features, calculating sun-terrain lighting geometry, verifying shadow-free sightlines to determine shooting locations."
+
 # CTA
 ctaTitle: "See RoamsWild in action"
 ctaDescription: "Explore the live product and see how terrain data, weather signals, and AI-assisted scoring come together to help travelers discover better campsites."
 ctaLink: "https://roamswild.com"
+ctaViewAppText: "View the App"
+ctaBackText: "Back to Portfolio"
+ctaBackHref: "/"
+
+# Footer Next Project
+nextProjectHref: "/onboarding"
+nextProjectTitle: "Next Project"
+nextProjectImage: "/images/onboarding/OnboardingHighlight.png"
+nextProjectImageAlt: "Bolt onboarding interface"
+nextProjectDescription: "Reducing merchant account creation from weeks to minutes"
+nextProjectLinkText: "View Case Study"
 ---
