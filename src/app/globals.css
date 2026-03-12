@@ -379,3 +379,168 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 0.75rem;
   overflow: hidden;
 }
+
+/* ========== Dark Mode ========== */
+html.dark {
+  color-scheme: dark;
+}
+
+html.dark body {
+  background-color: #0f0f0f;
+  color: #e0e0e0;
+}
+
+/* Headings */
+html.dark .heading-hero,
+html.dark .heading-xl,
+html.dark .heading-lg,
+html.dark .heading-md,
+html.dark h1, html.dark h2, html.dark h3, html.dark h4 {
+  color: #f0f0f0;
+}
+
+/* Text colors */
+html.dark .text-charcoal { color: #e0e0e0; }
+html.dark .text-muted { color: #999999; }
+html.dark .text-muted-light { color: #777777; }
+
+/* Background overrides — general surfaces */
+html.dark .bg-white { background-color: #1a1a1a; }
+html.dark .bg-cream { background-color: #141414; }
+html.dark .bg-light-gray { background-color: #141414; }
+html.dark .bg-light-blue { background-color: #111820; }
+html.dark .bg-c1-gray { background-color: #151515; }
+html.dark .bg-chr-bg { background-color: #18140f; }
+html.dark .bg-rw-sand { background-color: #1a1710; }
+html.dark .bg-rw-cream { background-color: #171510; }
+
+/* Inline bg-[#F7F7F8] used on C1 case study */
+html.dark .bg-\[\#F7F7F8\] { background-color: #141414; }
+
+/* Header */
+html.dark header {
+  background-color: rgba(15, 15, 15, 0.9) !important;
+}
+
+html.dark header .text-charcoal {
+  color: #e0e0e0;
+}
+
+/* Mobile menu */
+html.dark header .bg-white {
+  background-color: #1a1a1a;
+}
+
+html.dark header .border-gray-100 {
+  border-color: #2a2a2a;
+}
+
+/* Cards and elevated surfaces */
+html.dark .card {
+  box-shadow: 0 8px 50px rgba(0, 0, 0, 0.3);
+}
+
+html.dark .metric-card {
+  background: #1e1e1e;
+}
+
+html.dark .metric-value {
+  color: #f0f0f0;
+}
+
+/* Buttons */
+html.dark .btn-case-study {
+  background: #f0f0f0;
+  color: #1a1a1a;
+}
+
+html.dark .btn-case-study:hover {
+  background: #ffffff;
+}
+
+html.dark .btn-primary {
+  background: #f0f0f0;
+  color: #1a1a1a;
+}
+
+html.dark .btn-primary:hover {
+  background: #ffffff;
+}
+
+/* Borders */
+html.dark .border-sand,
+html.dark .case-study-section + .case-study-section {
+  border-color: #2a2a2a;
+}
+
+/* Selection */
+html.dark ::selection {
+  background-color: var(--color-purple);
+  color: #ffffff;
+}
+
+/* Hero blobs — brighter in dark mode */
+html.dark .hero-blob {
+  opacity: 0.08;
+}
+
+/* How I Work border */
+html.dark .border {
+  border-color: #2a2a2a;
+}
+
+/* About page purple-light sections */
+html.dark [style*="--color-purple-light"] {
+  background-color: #16142a !important;
+}
+
+/* Rounded cards in dark mode (bg-white used within dark sections) */
+html.dark .rounded-xl.bg-white,
+html.dark .rounded-lg.bg-white {
+  background-color: #1e1e1e;
+}
+
+/* Blockquote / quote cards */
+html.dark .rounded-xl.bg-\[\#F7F7F8\] {
+  background-color: #1e1e1e;
+}
+
+html.dark .rounded-xl.p-8,
+html.dark .rounded-xl.p-6 {
+  border: 1px solid #2a2a2a;
+}
+
+/* Footer */
+html.dark footer {
+  background-color: #0f0f0f;
+}
+
+/* Popover cards from hero highlights */
+html.dark .animate-fade-up [style*="background: white"],
+html.dark .animate-fade-up {
+  background: #1e1e1e !important;
+}
+
+/* Smooth transition for theme changes */
+body, header, main, footer, .card, .btn-primary, .btn-case-study {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Strong text in dark mode */
+html.dark strong.text-charcoal {
+  color: #f0f0f0;
+}
+
+/* Links in dark body text */
+html.dark a.text-charcoal {
+  color: #e0e0e0;
+}
+
+/* Underline decorations */
+html.dark .underline {
+  text-decoration-color: #444444;
+}
+
+html.dark a.underline:hover {
+  text-decoration-color: #666666;
+}
