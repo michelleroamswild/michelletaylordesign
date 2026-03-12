@@ -78,12 +78,12 @@ export default function Header() {
       </div>
 
       {menuOpen && (
-        <div className="md:hidden bg-white border-t border-gray-100 px-6 py-4 space-y-4">
+        <div className="md:hidden bg-white border-t border-gray-100 px-6 py-6 space-y-2">
           {navLinks.map((link) => (
             <Link
               key={link.label}
               href={link.href}
-              className="block text-xs font-semibold uppercase tracking-wider"
+              className="block text-base font-semibold uppercase tracking-wider py-3"
               style={link.isActive ? {
                 color: "var(--color-purple)",
                 textDecoration: "underline",
@@ -101,15 +101,15 @@ export default function Header() {
             href="https://www.linkedin.com/in/michelletaylor/"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-sm text-charcoal"
+            className="flex items-center gap-2 text-base text-charcoal py-3"
           >
-            <LinkedinLogo size={18} weight="bold" />
+            <LinkedinLogo size={22} weight="bold" />
             LinkedIn
           </a>
           <a
             href="/michelletaylorresume2026.pdf"
             target="_blank"
-            className="inline-flex items-center px-4 py-2 text-white text-xs font-medium rounded-full"
+            className="inline-flex items-center px-5 py-3 text-white text-sm font-medium rounded-full mt-2"
             style={{ backgroundColor: "var(--color-purple)" }}
           >
             Download Resum&eacute;

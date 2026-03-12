@@ -40,17 +40,9 @@ export const metadata: Metadata = {
     description:
       "Product designer with 10+ years of experience in e-commerce, fintech, and enterprise SaaS. Designing products that turn complexity into clarity.",
     siteName: "Michelle Taylor Design",
-    images: [
-      {
-        url: "/images/logos/LogoMark.png",
-        width: 512,
-        height: 512,
-        alt: "Michelle Taylor Design",
-      },
-    ],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "Michelle Taylor — Product Designer",
     description:
       "Product designer with 10+ years of experience in e-commerce, fintech, and enterprise SaaS.",

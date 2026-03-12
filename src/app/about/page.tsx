@@ -101,7 +101,7 @@ export default function AboutPage() {
         <div className="container-site">
           <div className="max-w-7xl mx-auto text-center">
             <p className="text-sm font-bold uppercase tracking-wider text-muted mb-4">About Me</p>
-            <h1 className="heading-lg mb-20">
+            <h1 className="heading-lg mb-20" style={{ fontSize: "clamp(1.4rem, 5vw, 3.25rem)" }}>
               {heroParts.map((part, i) =>
                 part.highlighted ? (
                   <span key={i} className="highlight">{part.text}</span>
@@ -244,14 +244,13 @@ export default function AboutPage() {
       <section className="section-spacing" style={{ backgroundColor: "var(--color-purple-light)" }}>
         <div className="container-site" style={{ maxWidth: "72rem" }}>
           <h2 className="heading-md mb-10 text-center">{content.personalTitle}</h2>
-          <div className="flex flex-wrap justify-center gap-3">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
             {personalCards.map((card) => {
               const CardIcon = iconMap[card.icon];
               return (
                 <div
                   key={card.text}
-                  className="rounded-lg px-4 py-3 flex items-center gap-3"
-                  style={{ backgroundColor: "white", flex: "0 1 calc(33.333% - 0.75rem)" }}
+                  className="rounded-lg px-4 py-3 flex items-center gap-3 bg-white"
                 >
                   {CardIcon && <CardIcon size={20} weight="duotone" className="shrink-0" style={{ color: "var(--color-purple)" }} />}
                   <p className="text-sm font-medium text-charcoal">{card.text}</p>
