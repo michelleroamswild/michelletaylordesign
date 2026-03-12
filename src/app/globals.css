@@ -80,6 +80,10 @@ h1, h2, h3, h4, h5, h6 {
 .hero-highlight {
   color: hsl(249, 80%, 60%);
   position: relative;
+  text-decoration: underline;
+  text-decoration-color: hsla(249, 80%, 60%, 0.25);
+  text-decoration-thickness: 0.12em;
+  text-underline-offset: 0.15em;
 }
 
 @keyframes fade-up {
@@ -121,17 +125,6 @@ h1, h2, h3, h4, h5, h6 {
   100% { transform: translateX(-60%); }
 }
 
-.hero-highlight::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0.05em;
-  height: 0.12em;
-  background: hsl(249, 80%, 60%);
-  opacity: 0.25;
-  border-radius: 2px;
-}
 
 .heading-xl {
   font-family: var(--font-heading), sans-serif;
@@ -320,7 +313,12 @@ h1, h2, h3, h4, h5, h6 {
   text-decoration: underline;
   text-decoration-color: var(--color-accent);
   text-underline-offset: 3px;
-  text-decoration-thickness: 2px;
+  text-decoration-thickness: 4px;
+  transition: color 0.2s ease;
+}
+
+.highlight:hover {
+  color: var(--color-accent-dark);
 }
 
 .case-study-section {

@@ -42,7 +42,7 @@ export default function Header() {
           <a
             href="/michelletaylorresume2026.pdf"
             target="_blank"
-            className="inline-flex items-center px-4 py-2 text-white text-xs font-medium rounded-full transition-all hover:opacity-85 hover:-translate-y-0.5"
+            className="btn-primary transition-all hover:opacity-85 hover:-translate-y-0.5"
             style={{ backgroundColor: "hsl(249, 80%, 60%)" }}
           >
             Download Resum&eacute;

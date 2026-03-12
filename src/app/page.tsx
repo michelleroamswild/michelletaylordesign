@@ -60,7 +60,7 @@ export default function Home() {
               <p className="text-sm font-bold uppercase tracking-wider text-center mb-4" style={{ color: "hsl(249, 80%, 60%)" }}>
                 How I work
               </p>
-              <h2 className="heading-lg text-center text-charcoal max-w-4xl mx-auto mb-16">
+              <h2 className="heading-md text-center text-charcoal max-w-4xl mx-auto mb-16">
                 {home.howIWorkHeadline}
               </h2>
 

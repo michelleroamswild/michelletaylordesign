@@ -1,6 +1,6 @@
 ---
 greeting: "Hi, I'm Michelle"
-description: "I helped increase abandoned cart recovery by **up to 13%**, reduced sales bottlenecks by decreasing merchant account creation from **70+ days to minutes,** and streamlined business expense reconciliation - **eliminating weeks of manual work** from financial workflows."
+description: "I helped increase abandoned cart recovery by **up to 13%**, reduced sales bottlenecks by decreasing merchant account creation time from **70+ days to minutes,** and streamlined business expense reconciliation, **eliminating weeks of manual work** from financial workflows."
 traits:
   - "10+ years experience"
   - "E-commerce, Fintech, & Logistics"
