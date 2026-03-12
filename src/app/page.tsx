@@ -102,7 +102,7 @@ export default function Home() {
       </section>
 
       {/* Case Studies */}
-      <section className="pb-16 md:pb-24">
+      <section id="work" className="pb-16 md:pb-24">
         <div className="container-site space-y-10 max-md:!px-0">
           {projects.map((project) => (
             <CaseStudyCard

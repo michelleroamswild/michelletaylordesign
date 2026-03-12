@@ -12,6 +12,8 @@
   --color-accent-dark: #5bb8d0;
   --color-muted: #555555;
   --color-muted-light: #888888;
+  --color-purple: hsl(249, 80%, 60%);
+  --color-purple-light: hsl(249, 80%, 96%);
   --color-bolt-green: #a4c639;
   --color-bolt-dark: #1a1a1a;
   --color-c1-blue: #004977;
@@ -37,6 +39,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
 }
 
 body {
@@ -78,10 +81,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-highlight {
-  color: hsl(249, 80%, 60%);
+  color: var(--color-purple);
   position: relative;
   text-decoration: underline;
-  text-decoration-color: hsla(249, 80%, 60%, 0.25);
+  text-decoration-color: color-mix(in srgb, var(--color-purple) 25%, transparent);
   text-decoration-thickness: 0.12em;
   text-underline-offset: 0.15em;
 }
@@ -275,7 +278,7 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   gap: 0.5rem;
   padding: 1.15rem 2.75rem;
-  background: var(--accent-color);
+  background: var(--color-accent);
   color: white;
   border-radius: 9999px;
   font-size: 0.8rem;
@@ -321,6 +324,11 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-accent-dark);
 }
 
+.case-study-spacing {
+  padding-top: clamp(5rem, 12vw, 10rem);
+  padding-bottom: clamp(5rem, 12vw, 10rem);
+}
+
 .case-study-section {
   padding-top: clamp(2rem, 5vw, 4rem);
   padding-bottom: clamp(2rem, 5vw, 4rem);
@@ -348,6 +356,15 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 0.875rem;
   color: var(--color-muted);
   margin-top: 0.25rem;
+}
+
+.about-hero-photo {
+  animation: photo-float 6s ease-in-out infinite;
+}
+
+@keyframes photo-float {
+  0%, 100% { transform: rotate(-3deg) translateY(0); }
+  50% { transform: rotate(-2deg) translateY(-8px); }
 }
 
 .img-rounded {

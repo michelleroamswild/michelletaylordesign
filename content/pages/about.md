@@ -9,11 +9,9 @@ heroImage:
   src: "/images/about/michelle-faroe-islands.jpg"
   alt: "Michelle Taylor at Gásadalur waterfall in the Faroe Islands"
 heroDescription: "I'm a builder at heart — drawn to design not because I wanted to make things pretty, but because I wanted to understand how things work. I focus on spotting what's broken and making things better through thoughtful iteration. That curiosity is what keeps me digging deeper, asking harder questions, and designing with more intention."
-heroOverviewTitle: "Overview"
-heroOverview: "Lead Product Designer with 10+ years of experience leading complex B2B and B2B2C products across e-commerce, fintech, and enterprise platforms. Known for translating ambiguous business problems into scalable design solutions that drive measurable outcomes, including revenue growth, operational efficiency, and customer adoption. Partner closely with Product, Engineering, and Research to define strategy, align stakeholders, and deliver high-impact work under real-world constraints. Experienced in platform design, design systems, and end-to-end product execution from early discovery through launch and iteration."
 heroCtaTitle: "Get In Touch"
 
-# Professional Summary
+# Overview
 professionalSummaryTitle: "Overview"
 professionalSummaryDescription: "Lead Product Designer with 10+ years of experience in complex B2B and B2B2C products spanning e-commerce, fintech, and enterprise. Known for translating business problems into scalable design solutions that drive revenue growth, operational efficiency, and customer adoption."
 professionalBadges:
@@ -78,7 +76,7 @@ experienceTitle: "Experience"
 timeline:
   - company: "Bolt"
     companyUrl: "https://www.bolt.com"
-    dates: "April 2022 - June 2024"
+    dates: "Apr 2022 - Jun 2024"
     role: "Sr. Product Designer"
     domain: "E-commerce, B2B & Consumer Platforms"
     achievements:
@@ -90,7 +88,7 @@ timeline:
   - company: "Capital One"
     companyUrl: "https://www.capitalone.com"
     dates: "Mar 2019 - Nov 2021"
-    role: "Principle Experience Designer"
+    role: "Principal Experience Designer"
     domain: "Commercial Banking Platforms"
     achievements:
       - "Led design for a unified expense management platform serving commercial card administrators and cardholders, consolidating fragmented workflows and reducing manual processes across multiple products."
