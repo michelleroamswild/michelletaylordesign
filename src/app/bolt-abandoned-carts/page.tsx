@@ -451,7 +451,7 @@ export default function BoltAbandonedCarts() {
         style={{ height: "clamp(400px, 50vh, 600px)" }}
       >
         <div
-          className="absolute inset-0 bg-cover bg-center bg-fixed"
+          className="absolute inset-0 bg-cover bg-center md:bg-fixed"
           style={{ backgroundImage: "url('/images/abandoned-carts/AbandonedCartEmail.png')" }}
         />
       </section>
@@ -573,7 +573,7 @@ export default function BoltAbandonedCarts() {
           <div className="relative overflow-hidden p-10 md:p-16" style={{ backgroundColor: "hsl(209, 100%, 25%)" }}>
             <div className="hidden lg:block absolute top-0 bottom-0 w-px bg-white/15" style={{ left: "55%" }} />
             <div className="grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-12 lg:gap-16 items-center">
-            <div className="max-w-xl">
+            <div className="max-w-xl order-2 lg:order-1">
               <h2 className="heading-md text-white mb-6">
                 {content.footerCtaTitle}
               </h2>
@@ -604,7 +604,7 @@ export default function BoltAbandonedCarts() {
               </div>
             </div>
 
-            <Link href={content.footerNextProjectHref} className="group block">
+            <Link href={content.footerNextProjectHref} className="group block order-1 lg:order-2">
               <h2 className="heading-xl text-white mb-6 text-center">
                 {content.footerNextProjectTitle}
               </h2>

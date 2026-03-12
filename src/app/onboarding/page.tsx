@@ -113,8 +113,8 @@ export default function OnboardingCaseStudy() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-bolt-dark text-white overflow-hidden relative flex items-center" style={{ height: "calc(100vh - 5rem)" }}>
-        <div className="container-site py-16">
+      <section className="bg-bolt-dark text-white overflow-hidden relative flex items-center" style={{ minHeight: "calc(100vh - 5rem)" }}>
+        <div className="container-site pt-24 pb-16 md:py-16">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-12 items-center">
             <div>
               <div className="flex items-center gap-3 mb-8">
@@ -656,7 +656,7 @@ export default function OnboardingCaseStudy() {
           <div className="relative overflow-hidden p-10 md:p-16" style={{ backgroundColor: "hsl(214, 100%, 50%)" }}>
             <div className="hidden lg:block absolute top-0 bottom-0 w-px bg-white/15" style={{ left: "55%" }} />
             <div className="grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-12 lg:gap-16 items-center">
-            <div className="max-w-xl">
+            <div className="max-w-xl order-2 lg:order-1">
               <h2 className="heading-md text-white mb-6">
                 {content.footerHeading}
               </h2>
@@ -687,7 +687,7 @@ export default function OnboardingCaseStudy() {
               </div>
             </div>
 
-            <Link href={content.nextProjectHref} className="group block">
+            <Link href={content.nextProjectHref} className="group block order-1 lg:order-2">
               <h2 className="heading-xl text-white mb-6 text-center">
                 {content.nextProjectTitle}
               </h2>

@@ -171,6 +171,14 @@ h1, h2, h3, h4, h5, h6 {
   will-change: transform, background-color, border-radius;
 }
 
+@media (max-width: 768px) {
+  .hero-blob {
+    opacity: 0.25;
+    filter: blur(40px);
+    top: -50% !important;
+  }
+}
+
 .hero-blob-1 {
   width: 55vw;
   height: 55vw;

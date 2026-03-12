@@ -117,13 +117,13 @@ export default function RoamsWild() {
                 <ArrowSquareOut size={16} weight="bold" />
               </a>
             </div>
-            <div className="mb-[-450px] lg:mb-[-600px]">
+            <div className="mb-0 lg:mb-[-600px]">
               <Image
                 src="/images/roamswild/features.png"
                 alt="RoamsWild feature cards showing Smart Route Planning, Campsite Database, Trail Discovery, Trip Collaboration, Day-by-Day Itinerary, and Photography Conditions"
                 width={1200}
                 height={1300}
-                className="w-[120%] max-w-none h-auto"
+                className="w-full lg:w-[120%] max-w-none h-auto"
               />
             </div>
           </div>
@@ -840,7 +840,7 @@ export default function RoamsWild() {
             <div className="hidden lg:block absolute top-0 bottom-0 w-px bg-black/10" style={{ left: "55%" }} />
             <div className="grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-12 lg:gap-16 items-center">
             {/* Left */}
-            <div className="max-w-xl">
+            <div className="max-w-xl order-2 lg:order-1">
               <h2 className="heading-md text-charcoal mb-4">
                 {content.ctaTitle}
               </h2>
@@ -869,7 +869,7 @@ export default function RoamsWild() {
             </div>
 
             {/* Right - Next Project */}
-            <Link href={content.nextProjectHref} className="group block">
+            <Link href={content.nextProjectHref} className="group block order-1 lg:order-2">
               <h2 className="heading-xl text-charcoal mb-6">
                 {content.nextProjectTitle}
               </h2>

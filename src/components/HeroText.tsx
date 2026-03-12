@@ -74,7 +74,7 @@ export default function HeroText({ description }: { description: string }) {
   return (
     <h1
       className="heading-hero"
-      style={{ fontSize: "clamp(1.85rem, 3.8vw, 3rem)", lineHeight: 1.3 }}
+      style={{ fontSize: "clamp(1.4rem, 3.8vw, 3rem)", lineHeight: 1.3 }}
     >
       {parts.map((part, i) =>
         part.highlight ? (

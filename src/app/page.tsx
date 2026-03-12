@@ -19,7 +19,7 @@ export default function Home() {
       <div className="relative overflow-x-clip">
 
       {/* Hero */}
-      <section className="pt-20 pb-16 md:pt-28 md:pb-24 relative">
+      <section className="pt-10 pb-16 md:pt-28 md:pb-24 relative">
         <div className="hero-blob hero-blob-1" />
         <div className="hero-blob hero-blob-2" />
         <div className="hero-blob hero-blob-3" />
@@ -56,7 +56,7 @@ export default function Home() {
 
           {/* How I Work */}
           <div className="mt-16 md:mt-24">
-            <div className="border bg-white p-10 md:p-14" style={{ borderColor: "hsl(249, 60%, 88%)" }}>
+            <div className="border bg-white p-4 md:p-14" style={{ borderColor: "hsl(249, 60%, 88%)" }}>
               <p className="text-sm font-bold uppercase tracking-wider text-center mb-4" style={{ color: "hsl(249, 80%, 60%)" }}>
                 How I work
               </p>
@@ -81,7 +81,7 @@ export default function Home() {
                         className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                         style={{ background: color.hover }}
                       />
-                      <div className="relative p-8">
+                      <div className="relative p-4 md:p-8">
                         <div
                           className="w-14 h-14 rounded-xl flex items-center justify-center mb-5"
                           style={{ backgroundColor: color.bg }}
