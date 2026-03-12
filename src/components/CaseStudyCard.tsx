@@ -191,7 +191,7 @@ export default function CaseStudyCard({
             <Link
               href={href}
               className={accent ? "btn-accent" : btnClass}
-              style={accent ? { ["--accent-color" as string]: accent, ...(lightAccent ? { color: "#1a1a1a" } : {}) } : undefined}
+              style={accent ? { backgroundColor: accent, ...(lightAccent ? { color: "#1a1a1a" } : {}) } : undefined}
             >
               {cta} <ArrowRight size={16} weight="bold" />
             </Link>
