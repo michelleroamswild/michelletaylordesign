@@ -379,3 +379,403 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 0.75rem;
   overflow: hidden;
 }
+
+/* ========== Dark Mode ========== */
+html.dark {
+  color-scheme: dark;
+}
+
+html.dark body {
+  background-color: #0f0f0f;
+  color: #e0e0e0;
+}
+
+/* Headings */
+html.dark .heading-hero,
+html.dark .heading-xl,
+html.dark .heading-lg,
+html.dark .heading-md,
+html.dark h1, html.dark h2, html.dark h3, html.dark h4 {
+  color: #f0f0f0;
+}
+
+html.dark .hero-highlight {
+  color: hsl(249, 80%, 72%);
+}
+
+html.dark {
+  --color-purple: hsl(249, 80%, 72%);
+}
+
+/* Text colors */
+html.dark .text-charcoal { color: #e0e0e0; }
+html.dark .text-muted { color: #aaaaaa; }
+html.dark .text-muted-light { color: #999999; }
+
+/* Body text classes */
+html.dark .body-lg,
+html.dark .body-md {
+  color: #bbbbbb;
+}
+
+/* General dark mode text */
+html.dark p,
+html.dark li,
+html.dark span {
+  color: inherit;
+}
+
+html.dark .text-sm,
+html.dark .text-xs {
+  color: inherit;
+}
+
+/* Background overrides — general surfaces */
+html.dark .bg-white { background-color: #1a1a1a; }
+html.dark .bg-cream { background-color: #141414; }
+html.dark .bg-light-gray { background-color: #141414; }
+html.dark .bg-light-blue { background-color: #111820; }
+html.dark .bg-c1-gray { background-color: #1e2530; }
+html.dark .bg-chr-bg { background-color: #18140f; }
+html.dark .bg-rw-sand { background-color: #1a1710; }
+html.dark .bg-rw-cream { background-color: #171510; }
+
+/* Inline bg-[#F7F7F8] used on C1 case study */
+html.dark .bg-\[\#F7F7F8\] { background-color: #141414; }
+
+/* Header */
+html.dark header {
+  background-color: rgba(15, 15, 15, 0.9) !important;
+  --color-charcoal: #e0e0e0;
+}
+
+/* Mobile menu */
+html.dark header .bg-white {
+  background-color: #1a1a1a;
+}
+
+html.dark header .border-gray-100 {
+  border-color: #2a2a2a;
+}
+
+/* Cards and elevated surfaces */
+html.dark .card {
+  box-shadow: 0 8px 50px rgba(0, 0, 0, 0.3);
+}
+
+html.dark .metric-card {
+  background: #1e1e1e;
+}
+
+html.dark .metric-value {
+  color: #f0f0f0;
+}
+
+/* Buttons */
+html.dark .btn-case-study {
+  background: #f0f0f0;
+  color: #1a1a1a;
+}
+
+html.dark .btn-case-study:hover {
+  background: #ffffff;
+}
+
+html.dark .btn-primary {
+  background: #f0f0f0;
+  color: #1a1a1a;
+}
+
+html.dark .btn-primary:hover {
+  background: #ffffff;
+  transform: translateY(-1px);
+}
+
+/* Purple buttons → white/black in dark mode (override inline purple bg) */
+html.dark .btn-primary[style*="--color-purple"],
+html.dark .btn-primary[style*="hsl(249"] {
+  background: #f0f0f0 !important;
+  color: #1a1a1a !important;
+}
+
+html.dark .btn-primary[style*="--color-purple"]:hover,
+html.dark .btn-primary[style*="hsl(249"]:hover {
+  background: #ffffff !important;
+  transform: translateY(-1px);
+}
+
+/* Nav resume button stays purple in dark mode */
+html.dark header .btn-primary[style*="--color-purple"] {
+  background: hsl(249, 80%, 60%) !important;
+  color: white !important;
+}
+html.dark header .btn-primary[style*="--color-purple"]:hover {
+  background: hsl(249, 80%, 55%) !important;
+  color: white !important;
+  opacity: 0.85;
+}
+
+/* Borders */
+html.dark .border-sand,
+html.dark .case-study-section + .case-study-section {
+  border-color: #2a2a2a;
+}
+
+/* Selection */
+html.dark ::selection {
+  background-color: var(--color-purple);
+  color: #ffffff;
+}
+
+/* Hero blobs — brighter in dark mode */
+html.dark .hero-blob {
+  opacity: 0.08;
+}
+
+/* How I Work border */
+html.dark .border {
+  border-color: #2a2a2a;
+}
+
+/* About page purple-light sections — dark purple in dark mode */
+html.dark [style*="--color-purple-light"] {
+  background-color: hsl(249, 40%, 12%) !important;
+}
+
+/* Personal cards in About — transparent white in dark mode */
+html.dark [style*="--color-purple-light"] .bg-white {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Rounded cards in dark mode (bg-white used within dark sections) */
+html.dark .rounded-xl.bg-white,
+html.dark .rounded-lg.bg-white {
+  background-color: #1e1e1e;
+}
+
+/* Blockquote / quote cards */
+html.dark .rounded-xl.bg-\[\#F7F7F8\] {
+  background-color: #1e1e1e;
+}
+
+html.dark .rounded-xl.p-8,
+html.dark .rounded-xl.p-6 {
+  border: 1px solid #2a2a2a;
+}
+
+/* Footer */
+html.dark footer {
+  background-color: #0f0f0f;
+}
+
+/* Popover cards from hero highlights */
+html.dark .animate-fade-up [style*="background: white"],
+html.dark .animate-fade-up {
+  background: #1e1e1e !important;
+}
+
+/* Smooth transition for theme changes */
+body, header, main, footer, .card {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Strong text in dark mode */
+html.dark strong.text-charcoal {
+  color: #f0f0f0;
+}
+
+/* Links in dark body text */
+html.dark a.text-charcoal {
+  color: #e0e0e0;
+}
+
+/* Underline decorations */
+html.dark .underline {
+  text-decoration-color: #444444;
+}
+
+html.dark a.underline:hover {
+  text-decoration-color: #666666;
+}
+
+/* Key result cards in project cards — transparent white bg in dark mode */
+html.dark .key-result-light {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Lighten accent-colored text/icons in key results for dark mode */
+html.dark .key-result-accent {
+  color: #ffffff !important;
+}
+
+/* Make RoamsWild logo white in dark mode */
+html.dark .card.bg-cream img[alt="RoamsWild"] {
+  filter: brightness(0) invert(1);
+}
+
+/* RoamsWild card — dark green background */
+html.dark .bg-cream.card {
+  background-color: #1a2a12;
+}
+
+/* Light blue card (also RoamsWild sometimes) */
+html.dark .bg-light-blue.card {
+  background-color: #111820;
+}
+
+/* ── Abandoned Carts case study dark mode ── */
+
+/* Light warm gray sections: rgb(240, 240, 234) */
+html.dark [style*="rgb(240, 240, 234)"] {
+  background-color: #141414 !important;
+}
+
+/* Light blue badges/icon containers: hsl(214, 90%, 92%) */
+html.dark [style*="hsl(214, 90%, 92%)"] {
+  background-color: rgba(0, 105, 255, 0.15) !important;
+}
+
+/* Light blue badge text: hsl(214, 100%, 35%) */
+html.dark [style*="hsl(214, 100%, 35%)"] {
+  color: hsl(214, 80%, 70%) !important;
+}
+
+/* Cyan results section: #68D8FC */
+html.dark [style*="#68D8FC"] {
+  background-color: #1e1e1e !important;
+}
+html.dark [style*="#68D8FC"] h2,
+html.dark [style*="#68D8FC"] .heading-lg {
+  color: #f0f0f0 !important;
+}
+html.dark [style*="#68D8FC"] .body-md {
+  color: #bbbbbb !important;
+}
+html.dark [style*="#68D8FC"] .text-charcoal {
+  color: #e0e0e0 !important;
+}
+html.dark [style*="#68D8FC"] .text-charcoal\/70 {
+  color: #888888 !important;
+}
+
+/* Metric cards on results section */
+html.dark [style*="rgba(255,255,255,0.4)"] {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Blue accent labels: hsl(214, 100%, 50%) — lighten text only, not bg elements */
+html.dark p[style*="hsl(214, 100%, 50%)"],
+html.dark span[style*="color: hsl(214"] {
+  color: hsl(214, 90%, 70%) !important;
+}
+
+/* Results label: rgba(0,0,0,0.4) */
+html.dark [style*="rgba(0,0,0,0.4)"] {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* Blue icon color in cards: hsl(214, 100%, 40%) — brighten */
+html.dark [style*="hsl(214, 100%, 40%)"] {
+  color: hsl(214, 90%, 65%) !important;
+}
+
+/* Dark blue footer CTA: hsl(209, 100%, 25%) */
+html.dark [style*="hsl(209, 100%, 25%)"] {
+  background-color: #0a1520 !important;
+}
+
+/* Yellow highlight text in hero: #E1FF00 — keep as-is, good contrast on dark */
+
+/* ── RoamsWild case study dark mode ── */
+
+/* Light gray sections: rgb(242,242,241), #F2F2F1 */
+html.dark [style*="rgb(242, 242, 241)"],
+html.dark [style*="#F2F2F1"] {
+  background-color: #141414 !important;
+}
+
+/* Warm beige problem statement: #e9e5d4 */
+html.dark [style*="#e9e5d4"] {
+  background-color: #1a1810 !important;
+  color: #e0e0e0 !important;
+}
+html.dark [style*="#e9e5d4"] p,
+html.dark [style*="#e9e5d4"] span {
+  color: #e0e0e0 !important;
+}
+html.dark [style*="#e9e5d4"] .heading-hero {
+  color: #f0f0f0 !important;
+}
+html.dark [style*="#3f3e2c"] {
+  color: #f0f0f0 !important;
+}
+html.dark [style*="#6b8a1d"] {
+  color: #8aad2a !important;
+}
+html.dark [style*="#3c8a79"] {
+  color: #5cb8a4 !important;
+}
+
+/* Green takeaway sections: hsl(74, 68%, 56%, 0.12) */
+html.dark [style*="hsl(74, 68%, 56%"] {
+  background-color: #141a0e !important;
+}
+
+/* Warm off-white intelligence layer: hsla(60, 16.67%, 92.94%, 1) */
+html.dark [style*="hsla(60"] {
+  background-color: #141410 !important;
+}
+
+/* Warm light gray key experiences: hsl(36, 23%, 97%) */
+html.dark [style*="hsl(36, 23%, 97%)"] {
+  background-color: #161412 !important;
+}
+
+/* Tool badges (bg-white on dark bg) */
+html.dark .bg-white.rounded-full {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Beginning cards with inline bg #f9f8f6 */
+html.dark [style*="#f9f8f6"],
+html.dark [style*="f9f8f6"] {
+  background-color: #1e1e1e !important;
+}
+
+/* Choosing a Problem domain cards with rgba backgrounds */
+html.dark .rounded-xl[style*="rgba(60, 138"],
+html.dark .rounded-xl[style*="rgba(205, 106"],
+html.dark .rounded-xl[style*="rgba(234, 155"] {
+  background-color: rgba(255, 255, 255, 0.06) !important;
+}
+
+/* Icon containers with bg-white/60 */
+html.dark .bg-white\/60 {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Footer CTA yellow: hsl(67, 100%, 50%) → dark muted green */
+html.dark [style*="hsl(67, 100%, 50%)"] {
+  background-color: #1a2a12 !important;
+}
+html.dark [style*="hsl(67, 100%, 50%)"] .text-charcoal,
+html.dark [style*="hsl(67, 100%, 50%)"] h2,
+html.dark [style*="hsl(67, 100%, 50%)"] p {
+  color: #e0e0e0 !important;
+}
+html.dark [style*="hsl(67, 100%, 50%)"] .text-charcoal\/70 {
+  color: #aaaaaa !important;
+}
+html.dark [style*="hsl(67, 100%, 50%)"] .text-charcoal\/50 {
+  color: #888888 !important;
+}
+
+/* Initial Output white overlay card on dark-green section */
+html.dark .bg-rw-forest-dark .bg-white {
+  background-color: #1e1e1e !important;
+}
+
+/* Identimelapse bg-white section */
+html.dark section.bg-white video {
+  background-color: #0f0f0f;
+}
