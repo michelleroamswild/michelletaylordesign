@@ -852,16 +852,16 @@ export default function RoamsWild() {
                   href={content.ctaLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-primary inline-flex items-center gap-2 hover:opacity-85 hover:-translate-y-0.5 transition-all"
-                  style={{ backgroundColor: "hsl(249, 80%, 60%)" }}
+                  className="btn-primary inline-flex items-center gap-2"
+                  style={{ backgroundColor: "hsl(152, 56%, 37%)" }}
                 >
                   {content.ctaViewAppText}
                   <ArrowSquareOut size={18} weight="bold" />
                 </a>
                 <Link
                   href={content.ctaBackHref}
-                  className="btn-primary inline-flex items-center gap-2 hover:opacity-85 hover:-translate-y-0.5 transition-all"
-                    style={{ backgroundColor: "hsl(249, 80%, 60%)" }}
+                  className="btn-primary inline-flex items-center gap-2"
+                    style={{ backgroundColor: "hsl(152, 56%, 37%)" }}
                 >
                   <ArrowLeft size={18} weight="bold" />
                   {content.ctaBackText}

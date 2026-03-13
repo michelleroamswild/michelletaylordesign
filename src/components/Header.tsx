@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { LinkedinLogo, List, X } from "@phosphor-icons/react";
-import ThemeToggle from "./ThemeToggle";
+
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -57,20 +57,16 @@ export default function Header() {
           >
             Download Resum&eacute;
           </a>
-          <ThemeToggle />
         </nav>
 
-        <div className="md:hidden flex items-center gap-2">
-          <ThemeToggle />
-          <button
-            className="p-2 text-charcoal"
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Toggle menu"
-            aria-expanded={menuOpen}
-          >
-            {menuOpen ? <X size={22} /> : <List size={22} />}
-          </button>
-        </div>
+        <button
+          className="md:hidden p-2 text-charcoal"
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle menu"
+          aria-expanded={menuOpen}
+        >
+          {menuOpen ? <X size={22} /> : <List size={22} />}
+        </button>
       </div>
 
       {menuOpen && (

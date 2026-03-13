@@ -664,8 +664,8 @@ export default function OnboardingCaseStudy() {
                 <div>
                   <Link
                     href={content.footerButtonHref}
-                    className="btn-primary inline-flex items-center gap-2 hover:opacity-85 hover:-translate-y-0.5 transition-all"
-                    style={{ backgroundColor: "hsl(249, 80%, 60%)" }}
+                    className="btn-primary inline-flex items-center gap-2"
+                    style={{ backgroundColor: "hsl(152, 56%, 37%)" }}
                   >
                     <ArrowLeft size={18} weight="bold" />
                     {content.footerButtonText}
@@ -677,8 +677,8 @@ export default function OnboardingCaseStudy() {
                   </h2>
                   <Link
                     href={content.footerAboutHref}
-                    className="btn-primary inline-flex items-center gap-2 hover:opacity-85 hover:-translate-y-0.5 transition-all"
-                    style={{ backgroundColor: "hsl(249, 80%, 60%)" }}
+                    className="btn-primary inline-flex items-center gap-2"
+                    style={{ backgroundColor: "hsl(152, 56%, 37%)" }}
                   >
                     {content.footerAboutButtonText}
                     <ArrowRight size={14} weight="bold" />

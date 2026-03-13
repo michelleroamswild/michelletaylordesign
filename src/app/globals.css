@@ -12,8 +12,8 @@
   --color-accent-dark: #5bb8d0;
   --color-muted: #555555;
   --color-muted-light: #888888;
-  --color-purple: hsl(249, 80%, 60%);
-  --color-purple-light: hsl(249, 80%, 96%);
+  --color-purple: hsl(152, 56%, 37%);
+  --color-purple-light: hsl(152, 56%, 95%);
   --color-bolt-green: #a4c639;
   --color-bolt-dark: #1a1a1a;
   --color-c1-blue: #004977;
@@ -276,7 +276,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-case-study:hover {
-  background: var(--color-charcoal-light);
+  background: color-mix(in srgb, var(--color-charcoal) 85%, black);
   transform: translateY(-1px);
   box-shadow: 0 8px 36px rgba(0, 0, 0, 0.16);
 }
@@ -298,7 +298,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-accent:hover {
-  opacity: 0.85;
+  background: color-mix(in srgb, var(--color-accent) 80%, black);
   transform: translateY(-1px);
 }
 
@@ -316,7 +316,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary:hover {
-  background: var(--color-charcoal-light);
+  background: color-mix(in srgb, var(--color-purple) 80%, black) !important;
   transform: translateY(-1px);
 }
 
@@ -400,11 +400,11 @@ html.dark h1, html.dark h2, html.dark h3, html.dark h4 {
 }
 
 html.dark .hero-highlight {
-  color: hsl(249, 80%, 72%);
+  color: hsl(152, 56%, 55%);
 }
 
 html.dark {
-  --color-purple: hsl(249, 80%, 72%);
+  --color-purple: hsl(152, 56%, 55%);
 }
 
 /* Text colors */
@@ -478,7 +478,7 @@ html.dark .btn-case-study {
 }
 
 html.dark .btn-case-study:hover {
-  background: #ffffff;
+  background: color-mix(in srgb, #f0f0f0 85%, black);
 }
 
 html.dark .btn-primary {
@@ -487,32 +487,30 @@ html.dark .btn-primary {
 }
 
 html.dark .btn-primary:hover {
-  background: #ffffff;
+  background: color-mix(in srgb, #f0f0f0 85%, black) !important;
   transform: translateY(-1px);
 }
 
 /* Purple buttons → white/black in dark mode (override inline purple bg) */
 html.dark .btn-primary[style*="--color-purple"],
-html.dark .btn-primary[style*="hsl(249"] {
+html.dark .btn-primary[style*="hsl(152"] {
   background: #f0f0f0 !important;
   color: #1a1a1a !important;
 }
 
 html.dark .btn-primary[style*="--color-purple"]:hover,
-html.dark .btn-primary[style*="hsl(249"]:hover {
-  background: #ffffff !important;
+html.dark .btn-primary[style*="hsl(152"]:hover {
+  background: color-mix(in srgb, #f0f0f0 85%, black) !important;
   transform: translateY(-1px);
 }
 
 /* Nav resume button stays purple in dark mode */
 html.dark header .btn-primary[style*="--color-purple"] {
-  background: hsl(249, 80%, 60%) !important;
+  background: hsl(152, 56%, 37%) !important;
   color: white !important;
 }
 html.dark header .btn-primary[style*="--color-purple"]:hover {
-  background: hsl(249, 80%, 55%) !important;
-  color: white !important;
-  opacity: 0.85;
+  background: color-mix(in srgb, var(--color-purple) 80%, black) !important;
 }
 
 /* Borders */
@@ -539,7 +537,7 @@ html.dark .border {
 
 /* About page purple-light sections — dark purple in dark mode */
 html.dark [style*="--color-purple-light"] {
-  background-color: hsl(249, 40%, 12%) !important;
+  background-color: hsl(152, 30%, 10%) !important;
 }
 
 /* Personal cards in About — transparent white in dark mode */

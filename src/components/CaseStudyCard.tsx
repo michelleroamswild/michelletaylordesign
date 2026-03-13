@@ -107,9 +107,9 @@ export default function CaseStudyCard({
               style={{
                 backgroundColor: accent
                   ? lightAccent ? `color-mix(in srgb, ${accent} 8%, white)` : `color-mix(in srgb, ${accent} 15%, white)`
-                  : darkText ? "hsl(249, 80%, 92%)" : "rgba(255,255,255,0.15)",
-                color: lightAccent ? "#1a1a1a" : accent || (darkText ? "hsl(249, 80%, 60%)" : "rgba(255,255,255,0.8)"),
-                borderColor: accent || (darkText ? "hsl(249, 80%, 60%)" : "rgba(255,255,255,0.3)"),
+                  : darkText ? "hsl(152, 56%, 92%)" : "rgba(255,255,255,0.15)",
+                color: lightAccent ? "#1a1a1a" : accent || (darkText ? "hsl(152, 56%, 37%)" : "rgba(255,255,255,0.8)"),
+                borderColor: accent || (darkText ? "hsl(152, 56%, 37%)" : "rgba(255,255,255,0.3)"),
               }}
             >
               {t}
@@ -137,9 +137,9 @@ export default function CaseStudyCard({
                   style={{
                     backgroundColor: accent
                       ? lightAccent ? `color-mix(in srgb, ${accent} 8%, white)` : `color-mix(in srgb, ${accent} 15%, white)`
-                      : darkText ? "hsl(249, 80%, 92%)" : "rgba(255,255,255,0.15)",
-                    color: lightAccent ? "#1a1a1a" : accent || (darkText ? "hsl(249, 80%, 60%)" : "rgba(255,255,255,0.8)"),
-                    borderColor: accent || (darkText ? "hsl(249, 80%, 60%)" : "rgba(255,255,255,0.3)"),
+                      : darkText ? "hsl(152, 56%, 92%)" : "rgba(255,255,255,0.15)",
+                    color: lightAccent ? "#1a1a1a" : accent || (darkText ? "hsl(152, 56%, 37%)" : "rgba(255,255,255,0.8)"),
+                    borderColor: accent || (darkText ? "hsl(152, 56%, 37%)" : "rgba(255,255,255,0.3)"),
                   }}
                 >
                   {t}

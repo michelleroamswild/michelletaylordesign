@@ -557,7 +557,7 @@ export default function ExpenseManagementPage() {
                   <div>
                     <Link
                       href={content.footerCtaButtonHref}
-                      className="btn-primary inline-flex items-center gap-2 hover:opacity-85 hover:-translate-y-0.5 transition-all"
+                      className="btn-primary inline-flex items-center gap-2"
                       style={{ backgroundColor: "var(--color-purple)" }}
                     >
                       <ArrowLeft size={18} weight="bold" />
@@ -568,7 +568,7 @@ export default function ExpenseManagementPage() {
                     <h2 className="heading-md text-white mb-3">{content.footerAboutText}</h2>
                     <Link
                       href={content.footerAboutHref}
-                      className="btn-primary inline-flex items-center gap-2 hover:opacity-85 hover:-translate-y-0.5 transition-all"
+                      className="btn-primary inline-flex items-center gap-2"
                       style={{ backgroundColor: "var(--color-purple)" }}
                     >
                       {content.footerAboutButtonText}

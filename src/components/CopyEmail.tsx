@@ -15,7 +15,7 @@ export default function CopyEmail({ email }: { email: string }) {
   return (
     <div className="mt-8 pt-6" style={{ borderTop: "1px solid var(--color-sand)" }}>
     <div className="flex items-start gap-4">
-      <Envelope size={20} weight="duotone" className="shrink-0 mt-0.5" style={{ color: "hsl(249, 80%, 60%)" }} />
+      <Envelope size={20} weight="duotone" className="shrink-0 mt-0.5" style={{ color: "hsl(152, 56%, 37%)" }} />
       <div className="flex items-center gap-3">
         <a
           href={`mailto:${email}`}
@@ -27,8 +27,8 @@ export default function CopyEmail({ email }: { email: string }) {
           onClick={handleCopy}
           className="flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full transition-all cursor-pointer"
           style={{
-            backgroundColor: copied ? "hsl(249, 80%, 60%)" : "hsl(249, 80%, 96%)",
-            color: copied ? "#ffffff" : "hsl(249, 60%, 45%)",
+            backgroundColor: copied ? "hsl(152, 56%, 37%)" : "hsl(152, 56%, 95%)",
+            color: copied ? "#ffffff" : "hsl(152, 56%, 28%)",
           }}
         >
           {copied ? (
