@@ -29,16 +29,16 @@ export default function ThemeToggle() {
     <button
       onClick={toggle}
       aria-label={dark ? "Switch to light mode" : "Switch to dark mode"}
-      className="fixed bottom-6 right-6 z-50 w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl"
+      className="w-9 h-9 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110 cursor-pointer"
       style={{
-        backgroundColor: dark ? "#2d2d2d" : "#ffffff",
+        backgroundColor: dark ? "#2d2d2d" : "rgba(0,0,0,0.05)",
         border: dark ? "1px solid rgba(255,255,255,0.1)" : "1px solid rgba(0,0,0,0.08)",
       }}
     >
       {dark ? (
-        <Sun size={20} weight="duotone" className="text-yellow-400" />
+        <Sun size={16} weight="duotone" className="text-yellow-400" />
       ) : (
-        <Moon size={20} weight="duotone" className="text-charcoal" />
+        <Moon size={16} weight="duotone" className="text-charcoal" />
       )}
     </button>
   );

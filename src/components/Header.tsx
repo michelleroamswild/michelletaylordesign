@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { LinkedinLogo, List, X } from "@phosphor-icons/react";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -18,16 +18,8 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-md">
       <div className="container-site flex items-center justify-between h-20">
-        <Link href="/" className="flex items-center gap-2.5">
-          <Image
-            src="/images/logos/LogoMark.png"
-            alt="Michelle Taylor"
-            width={9}
-            height={9}
-          />
-          <span className="text-sm font-extrabold uppercase tracking-[0.15em] text-charcoal">
-            Michelle Taylor
-          </span>
+        <Link href="/" className="text-sm font-extrabold uppercase tracking-[0.15em] text-charcoal">
+          Michelle Taylor
         </Link>
 
         <nav className="hidden md:flex items-center gap-5">
@@ -60,21 +52,25 @@ export default function Header() {
           <a
             href="/michelletaylorresume2026.pdf"
             target="_blank"
-            className="btn-primary transition-all hover:opacity-85 hover:-translate-y-0.5"
+            className="btn-primary"
             style={{ backgroundColor: "var(--color-purple)" }}
           >
             Download Resum&eacute;
           </a>
+          <ThemeToggle />
         </nav>
 
-        <button
-          className="md:hidden p-2 text-charcoal"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle menu"
-          aria-expanded={menuOpen}
-        >
-          {menuOpen ? <X size={22} /> : <List size={22} />}
-        </button>
+        <div className="md:hidden flex items-center gap-2">
+          <ThemeToggle />
+          <button
+            className="p-2 text-charcoal"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle menu"
+            aria-expanded={menuOpen}
+          >
+            {menuOpen ? <X size={22} /> : <List size={22} />}
+          </button>
+        </div>
       </div>
 
       {menuOpen && (

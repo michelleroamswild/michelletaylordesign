@@ -3,7 +3,7 @@ import { Geist, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import ThemeToggle from "@/components/ThemeToggle";
+
 
 const geist = Geist({ subsets: ["latin"] });
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], variable: "--font-heading" });
@@ -84,7 +84,6 @@ export default function RootLayout({
         <Header />
         <main>{children}</main>
         <Footer />
-        <ThemeToggle />
       </body>
     </html>
   );

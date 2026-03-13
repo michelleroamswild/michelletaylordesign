@@ -7,6 +7,7 @@ import {
 } from "@phosphor-icons/react/dist/ssr";
 import CaseStudyCard from "@/components/CaseStudyCard";
 import HeroText from "@/components/HeroText";
+import CopyEmail from "@/components/CopyEmail";
 import { getProjects, getHomePage } from "@/lib/content";
 
 
@@ -51,6 +52,7 @@ export default function Home() {
                   </div>
                 );
               })}
+              <CopyEmail email="mictaylo@gmail.com" />
             </div>
           </div>
 

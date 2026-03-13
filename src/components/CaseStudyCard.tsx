@@ -168,7 +168,7 @@ export default function CaseStudyCard({
                   return (
                     <div
                       key={kr.label}
-                      className="rounded-lg p-3 text-center flex flex-col items-center justify-center"
+                      className={`rounded-lg p-3 text-center flex flex-col items-center justify-center ${darkText ? "key-result-light" : "key-result-dark"}`}
                       style={{ backgroundColor: darkText ? "rgba(0,0,0,0.05)" : "rgba(255,255,255,0.1)" }}
                     >
                       {Icon && (
@@ -176,10 +176,10 @@ export default function CaseStudyCard({
                           size={20}
                           weight="duotone"
                           style={accent ? { color: accent } : undefined}
-                          className={`mx-auto mb-1 ${!accent ? (darkText ? "text-charcoal" : "text-white") : ""}`}
+                          className={`mx-auto mb-1 ${darkText ? "key-result-accent" : ""} ${!accent ? (darkText ? "text-charcoal" : "text-white") : ""}`}
                         />
                       )}
-                      <p className={`text-lg font-bold ${textColor}`} style={accent ? { color: accent } : undefined}>{kr.value}</p>
+                      <p className={`text-lg font-bold ${textColor} ${darkText ? "key-result-accent" : ""}`} style={accent ? { color: accent } : undefined}>{kr.value}</p>
                       <p className={`text-xs ${mutedColor}`}>{kr.label}</p>
                     </div>
                   );

@@ -860,7 +860,8 @@ export default function RoamsWild() {
                 </a>
                 <Link
                   href={content.ctaBackHref}
-                  className="btn-primary !bg-black/10 !text-charcoal hover:!bg-black/20 inline-flex items-center gap-2"
+                  className="btn-primary inline-flex items-center gap-2 hover:opacity-85 hover:-translate-y-0.5 transition-all"
+                    style={{ backgroundColor: "hsl(249, 80%, 60%)" }}
                 >
                   <ArrowLeft size={18} weight="bold" />
                   {content.ctaBackText}
