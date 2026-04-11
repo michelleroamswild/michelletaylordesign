@@ -558,7 +558,7 @@ export default function ExpenseManagementPage() {
                     <Link
                       href={content.footerCtaButtonHref}
                       className="btn-primary inline-flex items-center gap-2"
-                      style={{ backgroundColor: "var(--color-purple)" }}
+                      style={{ backgroundColor: "#ffffff", color: "#1a1a1a" }}
                     >
                       <ArrowLeft size={18} weight="bold" />
                       {content.footerCtaButtonText}
@@ -569,7 +569,7 @@ export default function ExpenseManagementPage() {
                     <Link
                       href={content.footerAboutHref}
                       className="btn-primary inline-flex items-center gap-2"
-                      style={{ backgroundColor: "var(--color-purple)" }}
+                      style={{ backgroundColor: "#ffffff", color: "#1a1a1a" }}
                     >
                       {content.footerAboutButtonText}
                       <ArrowRight size={14} weight="bold" />
