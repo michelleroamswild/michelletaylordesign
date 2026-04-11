@@ -21,6 +21,15 @@ import {
   AirplaneTilt,
   Car,
   Handshake,
+  Compass,
+  Lightning,
+  TreeStructure,
+  Flask,
+  Target,
+  UserCircle,
+  Camera,
+  Funnel,
+  PencilLine,
 } from "@phosphor-icons/react/dist/ssr";
 import { getPageContent } from "@/lib/content";
 
@@ -45,6 +54,15 @@ const iconMap: Record<string, any> = {
   AirplaneTilt,
   Car,
   Handshake,
+  Compass,
+  Lightning,
+  TreeStructure,
+  Flask,
+  Target,
+  UserCircle,
+  Camera,
+  Funnel,
+  PencilLine,
 };
 
 export function generateMetadata() {
@@ -75,6 +93,17 @@ export default function AboutPage() {
     label: string;
     icon: string;
     color: string;
+  }>;
+  const workingStyles = content.workingStyles as Array<{
+    icon: string;
+    title: string;
+    description: string;
+    signal: string;
+  }>;
+  const skillsBuckets = content.skillsBuckets as Array<{
+    title: string;
+    icon: string;
+    items: string[];
   }>;
 
   // Parse **highlighted** segments from headline
@@ -188,6 +217,44 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      {/* Skills & Expertise */}
+      <section className="section-spacing" style={{ backgroundColor: "var(--color-purple-light)" }}>
+        <div className="container-site" style={{ maxWidth: "72rem" }}>
+          <h2 className="heading-lg mb-12 text-center">{content.skillsTitle}</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {skillsBuckets.map((bucket) => {
+              const BucketIcon = iconMap[bucket.icon];
+              return (
+                <div key={bucket.title} className="bg-white rounded-xl p-6">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div
+                      className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0"
+                      style={{ backgroundColor: "color-mix(in srgb, var(--color-purple) 12%, white)" }}
+                    >
+                      {BucketIcon && <BucketIcon size={20} weight="duotone" style={{ color: "var(--color-purple)" }} />}
+                    </div>
+                    <h3 className="text-base font-bold text-charcoal">{bucket.title}</h3>
+                  </div>
+                  <ul className="space-y-2">
+                    {bucket.items.map((item) => (
+                      <li key={item} className="flex items-start gap-2.5">
+                        <span
+                          className="mt-[0.55rem] w-1.5 h-1.5 rounded-full shrink-0"
+                          style={{ backgroundColor: "var(--color-purple)" }}
+                        />
+                        <span className="text-sm text-muted leading-relaxed">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* How I'm Wired — hidden for now, data still in about.md */}
 
       {/* Experience Timeline */}
       <section className="section-spacing bg-white">

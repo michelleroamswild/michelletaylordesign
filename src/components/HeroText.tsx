@@ -37,7 +37,7 @@ const highlightLinks: HighlightLink[] = [
     href: "/expense-management",
     image: "/images/expense-management/ExpenseManagementMobile.png",
     imageAlt: "Capital One expense management",
-    accent: "hsl(249, 80%, 60%)",
+    accent: "hsl(152, 56%, 37%)",
   },
 ];
 

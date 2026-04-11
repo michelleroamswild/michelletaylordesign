@@ -44,7 +44,7 @@ export default function Home() {
                     key={trait}
                     className="flex items-start gap-4"
                   >
-                    <Icon size={20} weight="duotone" className="shrink-0 mt-0.5" style={{ color: "hsl(249, 80%, 60%)" }} />
+                    <Icon size={20} weight="duotone" className="shrink-0 mt-0.5" style={{ color: "hsl(152, 56%, 37%)" }} />
                     <div>
                       <p className="text-base font-bold text-charcoal">{trait}</p>
                       <p className="text-sm text-muted mt-0.5">{details[i]}</p>
@@ -58,8 +58,8 @@ export default function Home() {
 
           {/* How I Work */}
           <div className="mt-16 md:mt-24">
-            <div className="border bg-white p-4 md:p-14" style={{ borderColor: "hsl(249, 60%, 88%)" }}>
-              <p className="text-sm font-bold uppercase tracking-wider text-center mb-4" style={{ color: "hsl(249, 80%, 60%)" }}>
+            <div className="border bg-white p-4 md:p-14" style={{ borderColor: "hsl(152, 40%, 85%)" }}>
+              <p className="text-sm font-bold uppercase tracking-wider text-center mb-4" style={{ color: "hsl(152, 56%, 37%)" }}>
                 How I work
               </p>
               <h2 className="heading-md text-center text-charcoal max-w-4xl mx-auto mb-16">
@@ -72,7 +72,7 @@ export default function Home() {
                   const iconMap: Record<string, any> = { Strategy, TreeStructure, Wrench };
                   const Icon = iconMap[item.icon] ?? Strategy;
                   const colors = [
-                    { icon: "hsl(249, 80%, 60%)", bg: "hsl(249, 80%, 95%)", hover: "linear-gradient(135deg, hsla(249, 80%, 60%, 0.06), hsla(214, 100%, 50%, 0.04))" },
+                    { icon: "hsl(152, 56%, 37%)", bg: "hsl(152, 56%, 95%)", hover: "linear-gradient(135deg, hsla(152, 56%, 37%, 0.06), hsla(214, 100%, 50%, 0.04))" },
                     { icon: "hsl(214, 100%, 50%)", bg: "hsl(214, 100%, 95%)", hover: "linear-gradient(135deg, hsla(214, 100%, 50%, 0.06), hsla(67, 100%, 50%, 0.04))" },
                     { icon: "hsl(74, 68%, 35%)", bg: "hsl(74, 68%, 92%)", hover: "linear-gradient(135deg, hsla(74, 68%, 35%, 0.06), hsla(26, 90%, 54%, 0.04))" },
                   ];
