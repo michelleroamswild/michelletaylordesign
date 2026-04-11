@@ -582,7 +582,7 @@ export default function BoltAbandonedCarts() {
                   <Link
                     href="/"
                     className="btn-primary inline-flex items-center gap-2"
-                    style={{ backgroundColor: "hsl(152, 56%, 37%)" }}
+                    style={{ backgroundColor: "#ffffff", color: "#1a1a1a" }}
                   >
                     <ArrowLeft size={18} weight="bold" />
                     {content.footerCtaButtonText}
@@ -595,7 +595,7 @@ export default function BoltAbandonedCarts() {
                   <Link
                     href={content.footerAboutHref}
                     className="btn-primary inline-flex items-center gap-2"
-                    style={{ backgroundColor: "hsl(152, 56%, 37%)" }}
+                    style={{ backgroundColor: "#ffffff", color: "#1a1a1a" }}
                   >
                     {content.footerAboutButtonText}
                     <ArrowRight size={14} weight="bold" />

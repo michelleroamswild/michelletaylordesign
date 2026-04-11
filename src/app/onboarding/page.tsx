@@ -415,44 +415,46 @@ export default function OnboardingCaseStudy() {
       </section>
 
       {/* Discovery & Process Mapping */}
-      <section className="section-spacing bg-white">
+      <section className="section-spacing bg-white overflow-hidden">
         <div className="container-site">
           <div className="case-study-section">
-            <div className="max-w-3xl mb-10">
-              <p className="text-sm font-semibold uppercase tracking-wider text-bolt-green mb-3">
-                {content.discoveryLabel}
-              </p>
-              <h2 className="heading-lg mb-6">
-                {content.discoveryTitle}
-              </h2>
-              <p className="body-lg mb-6">
-                {content.discoveryDescription}
-              </p>
-              <p className="body-lg mb-6">
-                {content.discoveryDescription2}
-              </p>
-              <ul className="space-y-2 mb-6">
-                {discoveryBullets.map((bullet, i) => (
-                  <li key={i} className="body-lg flex items-start gap-2">
-                    <span className="mt-2 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: "#FF9AF1" }} />
-                    {bullet}
-                  </li>
-                ))}
-              </ul>
-              <p className="body-lg">
-                {content.discoveryDescription3}
-              </p>
-            </div>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-wider text-bolt-green mb-3">
+                  {content.discoveryLabel}
+                </p>
+                <h2 className="heading-lg mb-6">
+                  {content.discoveryTitle}
+                </h2>
+                <p className="body-lg mb-6">
+                  {content.discoveryDescription}
+                </p>
+                <p className="body-lg mb-6">
+                  {content.discoveryDescription2}
+                </p>
+                <ul className="space-y-2 mb-6">
+                  {discoveryBullets.map((bullet, i) => (
+                    <li key={i} className="body-lg flex items-start gap-2">
+                      <span className="mt-2 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: "#FF9AF1" }} />
+                      {bullet}
+                    </li>
+                  ))}
+                </ul>
+                <p className="body-lg">
+                  {content.discoveryDescription3}
+                </p>
+              </div>
 
-            <ScrollReveal className="img-rounded">
-              <Image
-                src={content.discoveryImage}
-                alt={content.discoveryImageAlt}
-                width={1440}
-                height={810}
-                className="w-full h-auto"
-              />
-            </ScrollReveal>
+              <ScrollReveal className="img-rounded lg:-mr-[15vw]">
+                <Image
+                  src={content.discoveryImage}
+                  alt={content.discoveryImageAlt}
+                  width={1440}
+                  height={810}
+                  className="w-full h-auto"
+                />
+              </ScrollReveal>
+            </div>
           </div>
         </div>
 
@@ -516,28 +518,38 @@ export default function OnboardingCaseStudy() {
         </div>
       </section>
 
-      {/* Phase I Design Flow */}
+      {/* Live Prototype */}
       <section className="section-spacing bg-charcoal">
         <div className="container-site">
           <div className="case-study-section">
             <div className="max-w-3xl mb-10">
               <p className="text-sm font-semibold uppercase tracking-wider text-white/60 mb-3">
-                {content.phase1FlowLabel}
+                {content.prototypeLabel}
               </p>
               <h2 className="heading-lg !text-white mb-6">
-                {content.phase1FlowTitle}
+                {content.prototypeTitle}
               </h2>
+              <p className="body-lg text-white/70">
+                {content.prototypeDescription}
+              </p>
             </div>
 
             <ScrollReveal>
-              <Image
-                src="/images/onboarding/phase1-prototype.gif"
-                alt="Phase I onboarding prototype walkthrough"
-                width={1440}
-                height={900}
-                className="w-full h-auto"
-                unoptimized
-              />
+              <div className="rounded-xl overflow-hidden shadow-2xl border border-sand bg-white">
+                <div className="flex items-center gap-2 px-4 py-3 border-b border-sand bg-cream">
+                  <span className="w-3 h-3 rounded-full bg-[#FF5F57]" />
+                  <span className="w-3 h-3 rounded-full bg-[#FEBC2E]" />
+                  <span className="w-3 h-3 rounded-full bg-[#28C840]" />
+                  <span className="ml-3 text-xs text-muted truncate">{content.prototypeUrl}</span>
+                </div>
+                <iframe
+                  src={content.prototypeUrl}
+                  title="Bolt onboarding live prototype"
+                  className="w-full block"
+                  style={{ height: "min(90vh, 1000px)" }}
+                  loading="lazy"
+                />
+              </div>
             </ScrollReveal>
           </div>
         </div>
@@ -665,7 +677,7 @@ export default function OnboardingCaseStudy() {
                   <Link
                     href={content.footerButtonHref}
                     className="btn-primary inline-flex items-center gap-2"
-                    style={{ backgroundColor: "hsl(152, 56%, 37%)" }}
+                    style={{ backgroundColor: "#ffffff", color: "#1a1a1a" }}
                   >
                     <ArrowLeft size={18} weight="bold" />
                     {content.footerButtonText}
@@ -678,7 +690,7 @@ export default function OnboardingCaseStudy() {
                   <Link
                     href={content.footerAboutHref}
                     className="btn-primary inline-flex items-center gap-2"
-                    style={{ backgroundColor: "hsl(152, 56%, 37%)" }}
+                    style={{ backgroundColor: "#ffffff", color: "#1a1a1a" }}
                   >
                     {content.footerAboutButtonText}
                     <ArrowRight size={14} weight="bold" />

@@ -206,6 +206,12 @@ designGoals:
 phase1FlowLabel: "Phase I Design Flow"
 phase1FlowTitle: "A Streamlined path from contract to go-live"
 
+# Live Prototype
+prototypeLabel: "Live Prototype"
+prototypeTitle: "Try the onboarding flow"
+prototypeDescription: "Walk through an interactive prototype of the redesigned merchant onboarding experience."
+prototypeUrl: "https://bolt-playground.vercel.app/#onboarding"
+
 # Footer CTA
 footerThankYou: "Thank you for reading"
 footerHeading: "Want to see more of my work?"
