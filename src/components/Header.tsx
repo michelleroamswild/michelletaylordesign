@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { LinkedinLogo, List, X } from "@phosphor-icons/react";
+import { GithubLogo, LinkedinLogo, List, X } from "@phosphor-icons/react";
 
 
 export default function Header() {
@@ -48,6 +48,15 @@ export default function Header() {
             aria-label="LinkedIn"
           >
             <LinkedinLogo size={18} weight="bold" />
+          </a>
+          <a
+            href="https://github.com/michelleroamswild"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-charcoal hover:text-muted transition-colors"
+            aria-label="GitHub"
+          >
+            <GithubLogo size={18} weight="bold" />
           </a>
           <a
             href="/michelletaylorresume2026.pdf"
@@ -97,6 +106,15 @@ export default function Header() {
           >
             <LinkedinLogo size={22} weight="bold" />
             LinkedIn
+          </a>
+          <a
+            href="https://github.com/michelleroamswild"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-base text-charcoal py-3"
+          >
+            <GithubLogo size={22} weight="bold" />
+            GitHub
           </a>
           <a
             href="/michelletaylorresume2026.pdf"
