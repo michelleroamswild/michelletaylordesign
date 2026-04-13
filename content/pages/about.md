@@ -1,7 +1,7 @@
 ---
 # Metadata
 metaTitle: "About Michelle Taylor — Product Designer"
-metaDescription: "Michelle Taylor is a product designer with 10+ years of experience in e-commerce, fintech, and enterprise SaaS, specializing in strategy-led design for B2B and B2B2C products."
+metaDescription: "Michelle Taylor is a product designer with 12+ years of experience in e-commerce, fintech, and enterprise SaaS, specializing in strategy-led design for B2B and B2B2C products and hands-on design with AI and LLMs."
 
 # Hero Intro
 heroHeadline: "Curious by nature, my design process is grounded in **systems thinking** — designing digital products that **simplify complexity**, aligning user insight, technical reality, and business goals into **experiences that actually work**."
@@ -13,11 +13,14 @@ heroCtaTitle: "Get In Touch"
 
 # Overview
 professionalSummaryTitle: "Overview"
-professionalSummaryDescription: "Lead Product Designer with 10+ years of experience in complex B2B and B2B2C products spanning e-commerce, fintech, and enterprise. Known for translating business problems into scalable design solutions that drive revenue growth, operational efficiency, and customer adoption."
+professionalSummaryDescription: "Lead Product Designer with 12+ years of experience in complex B2B and B2B2C products spanning e-commerce, fintech, and enterprise. Known for translating business problems into scalable design solutions that drive revenue growth, operational efficiency, and customer adoption, and for shipping real products with AI using LLMs and agentic workflows."
 professionalBadges:
-  - label: "10+ Years in Product Design"
+  - label: "12+ Years in Product Design"
     icon: "CalendarDots"
     color: "hsl(152, 56%, 37%)"
+  - label: "Designing & Building with AI"
+    icon: "Sparkle"
+    color: "hsl(214, 100%, 50%)"
   - label: "E-Commerce"
     icon: "ShoppingCart"
     color: "hsl(67, 100%, 40%)"
@@ -68,11 +71,11 @@ skillsBuckets:
   - title: "Tools & Methods"
     icon: "Wrench"
     items:
-      - "Figma — prototyping, auto-layout, component systems"
+      - "Figma, prototyping, auto-layout, component systems"
       - "UserTesting & research platforms"
-      - "Jira & agile workflows"
       - "Wireframing & user flow documentation"
-      - "AI-assisted design and prototyping workflows"
+      - "AI-assisted design and prototyping with Claude Code and Figma MCP"
+      - "Building with LLMs (Claude, Gemini, Llama) and agentic workflows"
   - title: "Leadership"
     icon: "UsersThree"
     items:

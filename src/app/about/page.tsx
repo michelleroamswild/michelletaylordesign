@@ -30,6 +30,7 @@ import {
   Camera,
   Funnel,
   PencilLine,
+  Sparkle,
 } from "@phosphor-icons/react/dist/ssr";
 import { getPageContent } from "@/lib/content";
 
@@ -63,6 +64,7 @@ const iconMap: Record<string, any> = {
   Camera,
   Funnel,
   PencilLine,
+  Sparkle,
 };
 
 export function generateMetadata() {
