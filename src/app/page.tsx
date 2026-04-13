@@ -1,6 +1,7 @@
 import {
   CalendarDots,
   Compass,
+  Sparkle,
   Strategy,
   TreeStructure,
   Wrench,
@@ -36,7 +37,7 @@ export default function Home() {
             {/* Right - trait callouts */}
             <div className="flex flex-col gap-6">
               {home.traits.map((trait, i) => {
-                const icons = [CalendarDots, Compass, Strategy];
+                const icons = [CalendarDots, Compass, Sparkle];
                 const Icon = icons[i] ?? CalendarDots;
                 const details = home.traitDetails;
                 return (
