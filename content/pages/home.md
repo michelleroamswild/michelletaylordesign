@@ -9,7 +9,7 @@ traitDetails:
   - "Designing across companies like Bolt, Capital One, and C.H. Robinson, from startup to enterprise, across B2B, B2B2C, and SaaS products."
   - "Deep domain expertise in high-stakes industries where design directly impacts revenue and operations."
   - "Shipping real products with the use of LLMs (Claude, Gemini, Llama) and agentic workflows, from prototype to deployed app."
-howIWorkHeadline: "I bring a mix of strategic thinking, systems design, and hands-on building to every project."
+howIWorkHeadline: "I believe the most important design work happens before anything gets designed. It starts with the questions you ask, the assumptions you surface, and the constraints you negotiate. I'm endlessly curious, which means I ask a lot of questions early, because changing direction on a rough user flow costs nothing compared to rearchitecting a solution that's already in production. My closest collaborators are always my engineering and product partners. That alignment, between user needs, business goals, and technical reality, is what I believe turns good ideas into great products."
 howIWork:
   - title: "Product strategy & problem framing"
     icon: "Strategy"

@@ -63,9 +63,9 @@ export default function Home() {
               <p className="text-sm font-bold uppercase tracking-wider text-center mb-4" style={{ color: "hsl(152, 56%, 37%)" }}>
                 How I work
               </p>
-              <h2 className="heading-md text-center text-charcoal max-w-4xl mx-auto mb-16">
+              <p className="text-xl md:text-2xl font-medium leading-relaxed text-charcoal text-center max-w-5xl mx-auto mb-16">
                 {home.howIWorkHeadline}
-              </h2>
+              </p>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {home.howIWork.map((item, i) => {

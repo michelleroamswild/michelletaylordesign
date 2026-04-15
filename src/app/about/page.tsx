@@ -107,6 +107,11 @@ export default function AboutPage() {
     icon: string;
     items: string[];
   }>;
+  const designPhilosophy = (content.designPhilosophy ?? []) as Array<{
+    title: string;
+    icon: string;
+    body: string;
+  }>;
 
   // Parse **highlighted** segments from headline
   const heroHeadline = content.heroHeadline as string;
@@ -217,6 +222,32 @@ export default function AboutPage() {
               })}
             </div>
           </div>
+
+          {designPhilosophy.length > 0 && (
+            <div className="mt-16 md:mt-20" style={{ maxWidth: "72rem", marginInline: "auto" }}>
+              <h3 className="text-sm font-bold uppercase tracking-wider text-muted text-center mb-8">
+                {content.designPhilosophyTitle as string}
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {designPhilosophy.map((card) => {
+                  const CardIcon = iconMap[card.icon];
+                  return (
+                    <div
+                      key={card.title}
+                      className="rounded-xl p-6"
+                      style={{ backgroundColor: "var(--color-purple-light)" }}
+                    >
+                      <h4 className="text-base font-bold text-charcoal mb-3 flex items-center gap-2">
+                        {CardIcon && <CardIcon size={18} weight="duotone" style={{ color: "var(--color-purple)" }} />}
+                        {card.title}
+                      </h4>
+                      <p className="text-sm text-muted leading-relaxed">{card.body}</p>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          )}
         </div>
       </section>
 

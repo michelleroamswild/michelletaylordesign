@@ -49,6 +49,19 @@ professionalBadges:
     icon: "Eye"
     color: "hsl(74, 68%, 35%)"
 
+# Design Philosophy
+designPhilosophyTitle: "Design Philosophy"
+designPhilosophy:
+  - title: "Designing for the user"
+    icon: "UsersThree"
+    body: "I design for the person using the product, not the person who signed off on it. That means pushing for accessibility, simplicity, and fighting for clarity even when complexity feels easier to defend."
+  - title: "Usability over pixel-perfect polish"
+    icon: "Target"
+    body: "I care more about whether something works than it being pixel-perfect. Usability and experience come first. Polish matters, but not at the expense of the person trying to get something done."
+  - title: "Every decision needs a reason"
+    icon: "Compass"
+    body: "I also believe in pushing back on decisions that don't have a reason behind them. Good design should be explainable. If nobody can articulate why something is built the way it is, that's usually a sign it needs more thought, not more pixels."
+
 # Skills
 skillsTitle: "Skills & Expertise"
 skillsBuckets:
