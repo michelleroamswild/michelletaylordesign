@@ -320,15 +320,10 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(-1px);
 }
 
-.btn-primary[style*="#ffffff"]:hover {
+.btn-primary[style*="background-color: #ffffff"]:hover,
+.btn-primary[style*="background-color:#ffffff"]:hover {
   background: #1a1a1a !important;
   color: #ffffff !important;
-  transform: translateY(-1px);
-}
-
-.btn-primary[style*="#1a1a1a"]:hover {
-  background: #ffffff !important;
-  color: #1a1a1a !important;
   transform: translateY(-1px);
 }
 
